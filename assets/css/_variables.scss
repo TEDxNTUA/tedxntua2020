@@ -1,0 +1,61 @@
+// Brands
+$animation_time: 4;
+$primary: #F19386;
+$primary-hover: darken($primary, 10%);
+$secondary: #C1E3D3;
+$tertiary: #212529;
+$ted: #E62B1E;
+$info: #8eb4cb;
+$success: #2ab27b;
+$warning: #cbb956;
+$danger: #bf5329;
+
+// Border radius
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+// Input box shadow
+$input-btn-focus-width: 0;
+
+// Body
+$body-bg: $tertiary;
+$body-color: white;
+
+// Typography
+$font-family-sans-serif: "Fira Sans Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-stack: $font-family-sans-serif;
+$line-height-base: 1.6;
+$text-color: white;
+// Responsive
+$max-content-width: 1366px;
+
+// Section paddings
+$section-padding-x: 1rem;
+$section-padding-y: 1rem;
+
+// Navbar
+$navbar-default-bg: $tertiary;
+$navbar-scrolled-border: rgba(0, 0, 0, .2);
+$logo-height: 3.2rem;
+$navlink-color: white;
+$navlink-hover-color: $secondary;
+$navlink-padding: .375rem;
+$hotdog-color: lighten($body-color, 20%);
+
+// Footer
+$footer-text-color: white;
+$footer-default-bg: $tertiary;
+$footer-border-top: none;
+$footer-column-gap: 1.5rem;
+
+// Buttons
+$btn-default-color: $text-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #fff;

@@ -1,0 +1,43 @@
+{
+  "name": "tedxntua<VAR:YEAR>",
+  "version": "0.1.0",
+  "description": "Asset management with Webpack for TEDxNTUA websites.",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build:dev": "webpack --mode=development --config webpack-config/webpack.dev.conf.js",
+    "build:prod": "NODE_ENV=production webpack --mode=production --config webpack-config/webpack.prod.conf.js",
+    "build": "npm run build:prod",
+    "watch": "webpack --mode=development --config webpack-config/webpack.dev.conf.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+<VAR:REPO_URL>"
+  },
+  "keywords": [],
+  "author": "TEDxNTUA IT Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "<VAR:REPO_ISSUES_URL>"
+  },
+  "homepage": "<VAR:REPO_URL>",
+  "devDependencies": {
+    "clean-webpack-plugin": "^1.0.0",
+    "css-loader": "^1.0.1",
+    "mini-css-extract-plugin": "^0.4.5",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.26.1",
+    "webpack-bundle-tracker": "^0.4.2-beta",
+    "webpack-cli": "^3.1.2",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7"
+  }
+}

@@ -1,0 +1,40 @@
+{% load static %}
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %} | TEDxNTUA <VAR:YEAR></title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "images/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "images/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "images/favicon-16x16.png" %}">
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{% static "images/tedxntua-black-600.png" %}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    {% render_bundle "main" "css" %}
+</head>
+
+<body>
+
+    <header id="header" class="dark">
+        {% include "layouts/partials/nav.html" %}
+    </header>
+
+    <main id="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer id="footer">
+        {% include "layouts/partials/footer.html" %}
+    </footer>
+
+    {% render_bundle "main" "js" %}
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+
+</html>

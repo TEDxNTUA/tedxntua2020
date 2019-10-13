@@ -1,0 +1,54 @@
+/* GLOBALS */
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+html {
+	font-size: 110%;
+}
+
+body {
+	color: $body-color;
+	// Body is a column flexbox consisting of three parts:
+	// The header, the main and the footer
+	display: flex;
+	flex-direction: column;
+	font-family: 'Jura', sans-serif;
+	line-height: 150%;
+}
+
+header, main, footer {
+	flex-shrink: 0;
+}
+
+main {
+	// The main part occupies the full of the remaining space in the middle,
+	// essentially pushing the footer to the bottom of the page
+	// Seen at:
+	// https://dev.to/domysee/keeping-the-footer-at-the-bottom-with-css-flexbox-5h5f
+	flex-grow: 1;
+}
+
+a {
+	color: $primary;
+	&:hover {
+		color: $primary-hover;
+	    text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		border: 0;
+	}
+}
+
+::selection {
+	background: $primary;
+	color: $body-color;
+}
+
+
+h1, h2, h3, h4, h5{
+  color: $secondary;
+}
