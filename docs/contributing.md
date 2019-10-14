@@ -24,7 +24,7 @@ English should be used for variable names, docstrings, documentation etc for uni
 Basic house rules:
 1. [PEP 8](https://www.python.org/dev/peps/pep-0008/) compliance.
 1. Docstrings everywhere :)
-
+1. Comply to the project's `.editorconfig` (download the plugin [here](https://editorconfig.org/#download)).
 
 ## Contribute what?
 
