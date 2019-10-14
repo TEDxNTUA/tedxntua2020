@@ -8,7 +8,7 @@ The project contains some `<VAR:NAME>` occurrences for information that changes 
 
 ## Contributors
 Listed alphabetically:
-1. Ioannis Daras ([giannisdaras](https://github.com/giannisdaras))
+1. Lydia Balafouti ([LydiaBal](https://github.com/LydiaBal))
 1. Theodore Diamantidis ([tdiam](https://github.com/tdiam))
 1. Nikos Bellos ([nickbel7](https://github.com/nickbel7))
 
