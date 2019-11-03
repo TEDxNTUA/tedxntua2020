@@ -1,6 +1,6 @@
 '''
 Relevant Django docs:
-https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/howto/custom-template-tags/
+https://docs.djangoproject.com/en/2.2/howto/custom-template-tags/
 '''
 from django import template
 

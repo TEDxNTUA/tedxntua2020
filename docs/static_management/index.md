@@ -29,13 +29,13 @@ Media files are stored by default in `MEDIA_ROOT` which for our project is the `
 
 ## How do we serve them?
 
-This depends on whether we are in development or production mode. When in production mode, serving such files via Django is a major **performance overhead**. That's why [the Django docs encourage us not to](https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/howto/static-files/deployment/).
+This depends on whether we are in development or production mode. When in production mode, serving such files via Django is a major **performance overhead**. That's why [the Django docs encourage us not to](https://docs.djangoproject.com/en/2.2/howto/static-files/deployment/).
 
 ## How do we serve them in production mode then?
 
 Serving images, CSS, JS or any other static (and media) files is better handled directly by our web server, if not a separate dedicated server.
 
-We just need to add directives to map `static/` and `media/` URLs to the corresponding folders. Example Apache configuration [here](https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/howto/deployment/wsgi/modwsgi/#serving-files).
+We just need to add directives to map `static/` and `media/` URLs to the corresponding folders. Example Apache configuration [here](https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/modwsgi/#serving-files).
 
 ### Yes, but my static files are split among many directories. Wouldn't it be nicer if all lived in a single folder?
 
@@ -47,7 +47,7 @@ This is where the management command `collectstatic` comes in and does exactly t
 
 Running `collectstatic` every time to gather the static files would be cumbersome while developing. That's why Django's `runserver` does it automatically when `DEBUG` is `True`.
 
-But now we are missing the mapping from URLs to the folders. Django provides the [`static`](https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/howto/static-files/#serving-static-files-during-development) helper for that, so we can just add to `project/urls.py` the following:
+But now we are missing the mapping from URLs to the folders. Django provides the [`static`](https://docs.djangoproject.com/en/2.2/howto/static-files/#serving-static-files-during-development) helper for that, so we can just add to `project/urls.py` the following:
 
 ```python
 from django.conf import settings

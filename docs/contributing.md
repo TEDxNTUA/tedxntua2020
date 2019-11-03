@@ -11,7 +11,7 @@ In short:
 1. Follow the [installation instructions](installation.md).
 1. Create a branch for the feature you want to work on.
 1. When finished, push the feature branch to your repository.
-1. Create a pull request on the [upstream repo](<VAR:REPO_URL>) and describe the changes you've made.
+1. Create a pull request on the [upstream repo](https://github.com/TEDxNTUA/tedxntua2020) and describe the changes you've made.
 1. Participate in discussion between the team members on whether the feature needs improvements or should be merged.
 1. Repeat!
 
@@ -28,4 +28,4 @@ Basic house rules:
 
 ## Contribute what?
 
-Check the [running projects](<VAR:PROJECTS_URL>) to find things to work on.
+Check the [running projects](https://github.com/TEDxNTUA/tedxntua2020/projects) to find things to work on.

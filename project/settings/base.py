@@ -13,7 +13,7 @@ SECRET_KEY = env_str('SECRET_KEY', 'secret' if DEBUG else '')
 FILE_UPLOAD_PERMISSIONS = env_str('FILE_UPLOAD_PERMISSIONS')
 if FILE_UPLOAD_PERMISSIONS is not None:
     # Convert string to octal
-    # https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/ref/settings/#file-upload-permissions
+    # https://docs.djangoproject.com/en/2.2/ref/settings/#file-upload-permissions
     FILE_UPLOAD_PERMISSIONS = int(FILE_UPLOAD_PERMISSIONS, 8)
 
 # Application definition
@@ -75,7 +75,7 @@ DATABASES = {'default': dj_database_url.config()}
 
 
 # Password validation
-# https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -110,7 +110,7 @@ STATICFILES_DIRS = (
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/topics/i18n/
+# https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'

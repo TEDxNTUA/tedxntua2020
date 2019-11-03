@@ -36,7 +36,7 @@ class TeamMember(TranslatableModel):
 
     The `team` attribute is represented as a CharField with limited possible
     values. The definition follows the official documentation example:
-    https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/ref/models/fields/#choices
+    https://docs.djangoproject.com/en/2.2/ref/models/fields/#choices
     '''
     EXPERIENCE = 'experience'
     IT = 'it'

@@ -4,7 +4,7 @@ The project follows the [GoodCode.io](https://goodcode.io/articles/django-env-se
 
 ## Steps
 
-1. Setup and activate a **virtual environment** with `<VAR:PYTHON_VERSION>`. A useful guide on how to do this can be found [here](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv).
+1. Setup and activate a **virtual environment** with `python3.6`. A useful guide on how to do this can be found [here](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv).
 1. Install a MySQL client library for your system (`sudo apt install default-libmysqlclient-dev` for Linux).
 1. Run `pip install -e .` if in a production environment, or `pip install -e .[dev]` if in a development environment.
 1. Copy *env.sample* to *.env* and edit *.env* to customize the configuration for your local deployment.

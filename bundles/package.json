@@ -1,5 +1,5 @@
 {
-  "name": "tedxntua<VAR:YEAR>",
+  "name": "tedxntua2020",
   "version": "0.1.0",
   "description": "Asset management with Webpack for TEDxNTUA websites.",
   "directories": {
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+<VAR:REPO_URL>"
+    "url": "git+https://github.com/TEDxNTUA/tedxntua2020"
   },
   "keywords": [],
   "author": "TEDxNTUA IT Team",
   "license": "MIT",
   "bugs": {
-    "url": "<VAR:REPO_ISSUES_URL>"
+    "url": "https://github.com/TEDxNTUA/tedxntua2020/issues"
   },
-  "homepage": "<VAR:REPO_URL>",
+  "homepage": "https://github.com/TEDxNTUA/tedxntua2020",
   "devDependencies": {
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.1",

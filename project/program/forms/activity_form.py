@@ -38,7 +38,7 @@ class ActivityModelForm(TranslatableModelForm):
         Handles form save and get_image_from_presenter toggle.
 
         Useful links:
-        https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/topics/forms/modelforms/#the-save-method
+        https://docs.djangoproject.com/en/2.2/topics/forms/modelforms/#the-save-method
         https://stackoverflow.com/a/817364/11114199
         '''
         obj = super().save(commit=False)

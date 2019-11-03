@@ -1,7 +1,7 @@
 '''project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/topics/http/urls/
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -38,5 +38,5 @@ urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
 )
 
-admin.site.site_header = _('TEDxNTUA <VAR:YEAR> administration')
-admin.site.site_title = _('TEDxNTUA <VAR:YEAR> admin')
+admin.site.site_header = _('TEDxNTUA 2020 administration')
+admin.site.site_title = _('TEDxNTUA 2020 admin')

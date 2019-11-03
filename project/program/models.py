@@ -201,7 +201,7 @@ class Activity(TranslatableModel):
     may present many activities respectively
 
     Documentation for many-to-many relationships may be found here:
-    https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/topics/db/examples/many_to_many/
+    https://docs.djangoproject.com/en/2.2/topics/db/examples/many_to_many/
     '''
     presenters = models.ManyToManyField('Presenter')
 
@@ -347,7 +347,7 @@ class Presenter(TranslatableModel):
     # Managers are an easy way to create custom filters for queries.
     #
     # Documentation link:
-    # https://docs.djangoproject.com/en/<VAR:DJANGO_VERSION>/topics/db/managers/
+    # https://docs.djangoproject.com/en/2.2/topics/db/managers/
 
     objects = PresenterManager()
     speakers = PresenterTypeManager(Activity.TALK)
