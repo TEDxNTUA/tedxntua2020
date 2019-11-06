@@ -1,10 +1,5 @@
-# TEDxNTUA Base
-Django project that serves as a base for [TEDxNTUA](https://tedxntua.com)'s websites.
-
-## Usage
-Copy this repository into a new one, e.g. `tedxntua2019`.
-
-The project contains some `<VAR:NAME>` occurrences for information that changes for each event, such as the year of the event, the repository URL etc. Search for `<VAR:` in the project directory to find all of them and edit them accordingly.
+# TEDxNTUA 2020
+Django project for [TEDxNTUA](https://tedxntua.com)'s 2020 website.
 
 ## Contributors
 Listed alphabetically:
