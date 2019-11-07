@@ -55,7 +55,7 @@ class TeamMember(TranslatableModel):
         (VENUE_PRODUCTION, 'Venue & Production'),
     )
     translations = TranslatedFields(
-        name=models.CharField(max_length=225, default="")
+        name=models.CharField(max_length=255, default='')
     )
     email = models.EmailField()
     team = models.CharField(max_length=16, choices=TEAM_CHOICES)

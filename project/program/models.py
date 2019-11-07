@@ -320,7 +320,7 @@ class Presenter(TranslatableModel):
     First and last name are the only required fields.
     '''
     translations = TranslatedFields(
-        name=models.CharField(max_length=225, default=""),
+        name=models.CharField(max_length=255, default=''),
         occupation=models.CharField(max_length=255, blank=True),
         short_bio=models.TextField(blank=True, verbose_name='Short bio'),
         quote=models.CharField(max_length=255, blank=True,
