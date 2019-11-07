@@ -320,9 +320,7 @@ class Presenter(TranslatableModel):
     First and last name are the only required fields.
     '''
     translations = TranslatedFields(
-        name=models.CharField(max_length=510, default=""),
-        #first=models.CharField(max_length=255, verbose_name='First name'),
-        #=models.CharField(max_length=255, verbose_name='Last name'),
+        name=models.CharField(max_length=225, default=""),
         occupation=models.CharField(max_length=255, blank=True),
         short_bio=models.TextField(blank=True, verbose_name='Short bio'),
         quote=models.CharField(max_length=255, blank=True,
@@ -355,12 +353,9 @@ class Presenter(TranslatableModel):
     performers = PresenterTypeManager(Activity.PERFORMANCE)
     workshop_presenters = PresenterTypeManager(Activity.WORKSHOP)
 
-    # @property
-    # def fullname(self):
-    #     return ' '.join([self.first, self.last])
 
     def __str__(self):
-         return self.name
+        return self.name
 
 
 @receiver(models.signals.post_save, sender=Presenter)

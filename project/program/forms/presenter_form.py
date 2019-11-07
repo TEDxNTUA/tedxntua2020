@@ -29,8 +29,6 @@ class PresenterModelForm(TranslatableModelForm):
         model = Presenter
         fields = (
             'name',
-            #'first',
-            #'last',
             'occupation',
             'short_bio',
             'quote',
