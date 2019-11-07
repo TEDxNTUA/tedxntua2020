@@ -28,8 +28,9 @@ class PresenterModelForm(TranslatableModelForm):
     class Meta:
         model = Presenter
         fields = (
-            'first',
-            'last',
+            'name',
+            #'first',
+            #'last',
             'occupation',
             'short_bio',
             'quote',

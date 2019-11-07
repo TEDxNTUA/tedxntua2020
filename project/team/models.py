@@ -55,8 +55,9 @@ class TeamMember(TranslatableModel):
         (VENUE_PRODUCTION, 'Venue & Production'),
     )
     translations = TranslatedFields(
-        first=models.CharField(max_length=255, verbose_name='First name'),
-        last=models.CharField(max_length=255, verbose_name='Last name')
+        name=models.CharField(max_length=510, default="")
+        #first=models.CharField(max_length=255, verbose_name='First name'),
+        #last=models.CharField(max_length=255, verbose_name='Last name')
     )
     email = models.EmailField()
     team = models.CharField(max_length=16, choices=TEAM_CHOICES)
@@ -74,22 +75,23 @@ class TeamMember(TranslatableModel):
 
     objects = TeamMemberManager()
 
-    @property
-    def fullname(self):
-        '''
-        Fullname is not stored in the database, but is instead a "computed"
-        value derived from the first and last attributes.
-        The @property decorator in Python classes enables us to access the
-        value like a normal property (e.g. `print(member.fullname)`).
-        '''
-        return ' '.join([self.first, self.last])
+    # @property
+    # def fullname(self):
+    #     '''
+    #     Fullname is not stored in the database, but is instead a "computed"
+    #     value derived from the first and last attributes.
+    #     The @property decorator in Python classes enables us to access the
+    #     value like a normal property (e.g. `print(member.fullname)`).
+    #     '''
+    #     return ' '.join([self.first, self.last])
 
     def __str__(self):
         '''
         Objects of the TeamMember class are represented as strings by
         their fullname property
         '''
-        return self.fullname
+        return self.name 
+        #return self.fullname
 
 
 @receiver(models.signals.post_save, sender=TeamMember)
