@@ -72,6 +72,10 @@ class Partner(TranslatableModel):
 
     is_published = models.BooleanField(_('Published'), default=True)
 
+    leaflet = models.FileField(
+        upload_to='partners/leaflet/',
+    )
+
     objects = PartnerManager()
 
     def __str__(self):
