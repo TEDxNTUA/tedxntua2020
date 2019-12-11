@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% block content %}
+<article id="schedule">
+    <nav class="nav nav-tabs justify-content-end">
+        <a id="schedule-tab" data-toggle="tab" class="nav-link active" href="#schedule-pane">Schedule</a>
+        <a id="speakers-tab" data-toggle="tab" class="nav-link" href="#speakers-pane">Speakers</a>
+        <a id="performers-tab" data-toggle="tab" class="nav-link" href="#speakers-pane">Performers</a>
+        <a id="workshops-tab" data-toggle="tab" class="nav-link" href="#speakers-pane">Workshops</a>
+    </nav>
+    <div class="tab-content">
+        <div id="schedule-pane" class="tab-pane show active">
+            <table class="table full-schedule">
+                <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col" class="main-stage">MAIN STAGE</th>
+                        <th scope="col" class="side-stage">SIDE EVENTS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time">
+                            <div class="cell-content">08:30</div>
+                        </td>
+                        <td class="event">
+                            <div class="cell-content media">
+                                <div class="image-placeholder-1"></div>
+                                <div class="media-body">
+                                    <h5>Activity supertitle</h5>
+                                    <h6>Activity title</h6>
+                                </div>
+                            </div>
+                            <p>Activity subtitle (start-end)</p>
+                        </td>
+                        <td class="event">
+                            <div class="cell-content">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time">
+                            <div class="cell-content">08:30</div>
+                        </td>
+                        <td class="event">
+                            <div class="cell-content media">
+                                <div class="image-placeholder-1"></div>
+                                <div class="media-body">
+                                    <h5>Activity supertitle</h5>
+                                    <h6>Activity title</h6>
+                                </div>
+                            </div>
+                            <p>Activity subtitle (start-end)</p>
+                        </td>
+                        <td class="event">
+                            <div class="cell-content media">
+                                <div class="image-placeholder-1"></div>
+                                <div class="media-body">
+                                    <h5>Activity supertitle</h5>
+                                    <h6>Activity title</h6>
+                                </div>
+                            </div>
+                            <p>Activity subtitle (start-end)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time">
+                            <div class="cell-content">08:30</div>
+                        </td>
+                        <td class="event">
+                            <div class="cell-content media">
+                                <div class="image-placeholder-1"></div>
+                                <div class="media-body">
+                                    <h5>Activity supertitle</h5>
+                                    <h6>Activity title</h6>
+                                </div>
+                            </div>
+                            <p>Activity subtitle (start-end)</p>
+                        </td>
+                        <td class="event">
+                            <div class="cell-content">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time">
+                            <div class="cell-content">08:30</div>
+                        </td>
+                        <td class="event">
+                            <div class="cell-content media">
+                                <div class="image-placeholder-1"></div>
+                                <div class="media-body">
+                                    <h5>Activity supertitle</h5>
+                                    <h6>Activity title</h6>
+                                </div>
+                            </div>
+                            <p>Activity subtitle (start-end)</p>
+                        </td>
+                        <td class="event">
+                            <div class="cell-content media">
+                                <div class="image-placeholder-1"></div>
+                                <div class="media-body">
+                                    <h5>Activity supertitle</h5>
+                                    <h6>Activity title</h6>
+                                </div>
+                            </div>
+                            <p>Activity subtitle (start-end)</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="speakers-pane" class="tab-pane">
+            <div class="presenter-list container-fluid">
+                <div class="row">
+                    <div class="presenter-item col-3">
+                        <div class="image-placeholder-2"></div>
+                        <h3>Presenter name</h3>
+                        <p>Presenter description</p>
+                    </div>
+                    <div class="presenter-item col-3">
+                        <div class="image-placeholder-2"></div>
+                        <h3>Presenter name</h3>
+                        <p>Presenter description</p>
+                    </div>
+                    <div class="presenter-item col-3">
+                        <div class="image-placeholder-2"></div>
+                        <h3>Presenter name</h3>
+                        <p>Presenter description</p>
+                    </div>
+                    <div class="presenter-item col-3">
+                        <div class="image-placeholder-2"></div>
+                        <h3>Presenter name</h3>
+                        <p>Presenter description</p>
+                    </div>
+                    <div class="presenter-item col-3">
+                        <div class="image-placeholder-2"></div>
+                        <h3>Presenter name</h3>
+                        <p>Presenter description</p>
+                    </div>
+                    <div class="presenter-item col-3">
+                        <div class="image-placeholder-2"></div>
+                        <h3>Presenter name</h3>
+                        <p>Presenter description</p>
+                    </div>
+                    <div class="presenter-item col-3">
+                        <div class="image-placeholder-2"></div>
+                        <h3>Presenter name</h3>
+                        <p>Presenter description</p>
+                    </div>
+                    <div class="presenter-item col-3">
+                        <div class="image-placeholder-2"></div>
+                        <h3>Presenter name</h3>
+                        <p>Presenter description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}

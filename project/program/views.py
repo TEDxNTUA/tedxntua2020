@@ -17,7 +17,7 @@ class SpeakersView(View):
 
 
 class ScheduleView(View):
-    template_name = 'program/schedule.html'
+    template_name = 'program/index.html'
 
     def get(self, request):
         schedule = Activity.objects.get_schedule()

@@ -1,0 +1,48 @@
+article#schedule {
+    padding: 1em 2em;
+    nav.nav-tabs {
+        border-bottom: 0;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        a {
+            color: $body-color;
+        }
+        a.active {
+            border-bottom: 4px solid $body-color;
+        }
+    }
+    .full-schedule {
+        thead {
+            th {
+                width: 45%;
+            }
+            th:first-child {
+                width: 10%;
+            }
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .presenter-list {
+        margin: 0 auto;
+        max-width: 1366px;
+    }
+    .presenter-item {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .image-placeholder-1 {
+        width: 200px;
+        height: 120px;
+        background: #777777;
+        margin-right: 1rem;
+        margin-bottom: .5rem;
+    }
+    .image-placeholder-2 {
+        width: 100%;
+        padding-top: 80%;
+        background: #777777;
+        margin-bottom: .5rem;
+    }
+}
