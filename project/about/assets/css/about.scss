@@ -1,0 +1,22 @@
+article#about-page {
+    .demek-image {
+        background: $dark;
+        height: 12rem;
+    }
+    .demek-image.light {
+        background: $gray-500;
+    }
+    .header-image {
+        background: $dark;
+        height: 30rem;
+    }
+    .header-content {
+        background: $body-bg;
+        border: 1px solid $gray-900;
+        margin: -12rem auto 0;
+        max-width: 1024px;
+    }
+    .negative-mt {
+        margin-top: -8rem;
+    }
+}

@@ -3,7 +3,8 @@ from django.views import View
 
 
 class AboutView(View):
-    template_name = 'about/index.html'
+    template_name = 'about/index{}.html'
 
     def get(self, request):
-        return render(request, self.template_name, {})
+        version = request.GET.get('v', 'A')
+        return render(request, self.template_name.format(version), {})
