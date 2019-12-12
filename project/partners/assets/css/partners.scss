@@ -148,7 +148,7 @@ article.sponsors {
                 padding: 2rem 0;
                 .logo{
                     width: 12em;
-                    position: relative;	
+                    position: relative;
                 }
             }
         }
@@ -188,12 +188,12 @@ article.sponsors {
         }
         .category#PS .title-bottom{
             .btn-bottom{
-                height: 3em;   
+                height: 3em;
                 transform: skewX(45deg) translate(1.5em,0);
                 h4{
                     font-size: 140%;
                 }
-            }   
+            }
         }
         .category#GS .title-right{
             .btn-right{
@@ -206,12 +206,12 @@ article.sponsors {
         }
         .category#GS .title-bottom{
             .btn-bottom{
-                height: 2.6em;   
+                height: 2.6em;
                 transform: skewX(45deg) translate(1.3em,0);
                 h4{
                     font-size: 140%;
                 }
-            }   
+            }
         }
     }
 }
@@ -234,5 +234,5 @@ article.sponsors {
     article.sponsors .category#GS .child{
         @include make-col(5);
     }
-    
+
 }

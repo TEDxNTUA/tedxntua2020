@@ -1,4 +1,4 @@
-{% extends 'base.html' %}  
+{% extends 'base.html' %}
 {% block title %}Partners{% endblock %}
 {% block description %}This is the partners page (with leaflet){% endblock %}
 {% block content %}
@@ -12,29 +12,29 @@
                     <div class="card-container">
                             <div class="container-image">
                                 <a href="{{ partner.link }}">
-                                    <img src="{% static "images/tedxntua-black-600.png" %}" alt="random" class="logo">                           
+                                    <img src="{% static "images/tedxntua-black-600.png" %}" alt="random" class="logo">
                                 </a>
                                 {% if partner.leaflet %}
                                     <a href="{{ partner.link }}" class="title-right">
-                                        <button class="btn btn-partners btn-right"><h4>WEBSITE</h4></button> 
+                                        <button class="btn btn-partners btn-right"><h4>WEBSITE</h4></button>
                                     </a>
                                 {% else %}
                                     <a href="{{ partner.link }}" class="title-right">
-                                        <button class="btn btn-partners btn-right"></button> 
+                                        <button class="btn btn-partners btn-right"></button>
                                     </a>
                                 {% endif %}
-                                
+
                                 {% if partner.leaflet %}
                                     <a href="#myModal" class="title-bottom" data-toggle="modal">
                                         <button class="btn btn-partners btn-bottom"><h4>LEAFLET</h4></button>
                                     </a>
                                     <!-- Modal Image -->
                                     <div class="modal fade bd-example-modal-lg show" id="myModal" role="dialog" tabindex="-1">
-                                        <div class="modal-dialog"> 
+                                        <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-body" id="dynamic-content" data-dismiss="modal">
                                                     <!-- <iframe class="iframe-div" src="{% static "images/leaflet-cover-2019-web-dac3663699cbb7d1.jpg" %}" frameborder="0"></iframe> -->
-                                                    <img src="{% static "images/leaflet-cover-2019-web-dac3663699cbb7d1.jpg" %}" alt="" class="img-fluid"> 
+                                                    <img src="{% static "images/leaflet-cover-2019-web-dac3663699cbb7d1.jpg" %}" alt="" class="img-fluid">
                                                 </div>
                                             </div>
                                         </div>
@@ -43,7 +43,7 @@
                                     <a href="{{ partner.link }}" class="title-bottom">
                                         <button class="btn btn-partners btn-bottom"><h4>WEBSITE</h4></button>
                                     </a>
-                                {% endif %}                                
+                                {% endif %}
                             </div>
                     </div>
                 </div>
