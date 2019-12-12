@@ -1,0 +1,22 @@
+{% extends 'base.html' %}  
+{% block title %}Partners{% endblock %}
+{% block description %}This is the partners page (with leaflet){% endblock %}
+{% block content %}
+<section class="content">
+    <article class="sponsors">
+        {% for id, category in partners.items %}
+            <h2 class="page-heading">{{ category.title }}</h2>
+            <div class="category container-fluid p-0" id="{{ id }}">
+                {% for partner in category.items %}
+                    <div class="child">
+                        {% load static %}
+                        <img src="{% static "images/happyface.png" %}" alt="random" class="logo">
+			<span class="glyphicon glyphicon-menu-left">&lt;</span>
+			<span class="glyphicon glyphicon-menu-left">&lt;</span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </article>
+</section>
+{% endblock %}
