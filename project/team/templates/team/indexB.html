@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<article id="teamB">
+  <div class="container">
+    <div class="header-team">
+      <h1>The Team</h1>
+    </div>
+      <div class="team-members">
+      {% for key,team in teams.items %}
+        {% for member in team.members %}
+            <div class="col-lg-3 col-6 team-member">
+              <div class="info">
+                <div class="team-info">{{member.name}}</div>
+                <div class="member-info">Team {{team.title}}</div>
+              </div>
+            </div>
+        {% endfor %}
+      {% endfor %}
+      </div>
+  </div>
+</article>
+{% endblock %}

@@ -5,8 +5,7 @@ from .models import TeamMember
 
 
 class TeamView(View):
-    template_name = 'team/index.html'
-
     def get(self, request):
+        version = request.GET['v']
         teams = TeamMember.objects.get_teams()
-        return render(request, self.template_name, {'teams': teams})
+        return render(request, 'team/index' + version + '.html', {'teams': teams})

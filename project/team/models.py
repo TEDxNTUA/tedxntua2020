@@ -25,7 +25,7 @@ class TeamMemberManager(TranslatableManager):
                 'members': [],
             }
 
-        for member in self.get_queryset().filter(is_published=True):
+        for member in self.get_queryset().filter(is_published=True):    
             teams[member.team]['members'].append(member)
         return teams
 
