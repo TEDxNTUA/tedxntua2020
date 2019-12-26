@@ -39,6 +39,7 @@ class Partner(TranslatableModel):
     the official documentation example:
     https://docs.djangoproject.com/en/2.2/ref/models/fields/#urlfield
     '''
+    PLATINUM_SPONSORS = 'PS'
     GRAND_SPONSORS = 'GS'
     GRAND_CARRIER_SPONSORS = 'GCS'
     GRAND_HOSPITALITY_SPONSORS = 'GHS'
@@ -47,6 +48,7 @@ class Partner(TranslatableModel):
     MEDIA_PARTNERS = 'MP'
     COMMUNITY_PARTNERS = 'CP'
     PARTNER_TYPES = (
+        (PLATINUM_SPONSORS, _('Platinum Sponsor')),
         (GRAND_SPONSORS, _('Grand Sponsors')),
         (GRAND_CARRIER_SPONSORS, _('Grand Carrier Sponsors')),
         (GRAND_HOSPITALITY_SPONSORS, _('Grand Hospitality Sponsors')),
