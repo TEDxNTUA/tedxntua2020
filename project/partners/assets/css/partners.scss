@@ -142,6 +142,7 @@ article.sponsors {
     }
     #GS {
         .child {
+            // border-bottom: 10px solid #ffd700;
             @include make-col(12);
             .card-container{
                 margin: 0 auto;
