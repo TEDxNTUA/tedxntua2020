@@ -33,16 +33,14 @@ logger = logging.getLogger(__name__)
 class Stage(Enum):
     '''Enum class that represents the event stages'''
     MAIN = 'main'
-    PERFORMANCE = 'performance'
     SIDE = 'side'
 
     @classmethod
     def get_verbose_names(cls):
         '''The stage labels that will be shown in the schedule page'''
         return {
-            cls.MAIN.value: _('Main stage'),
-            cls.PERFORMANCE.value: _('Performances'),
-            cls.SIDE.value: _('Side events'),
+            cls.MAIN.value: _('MAIN STAGE'),
+            cls.SIDE.value: _('SIDE EVENTS'),
         }
 
     @classmethod
@@ -51,8 +49,8 @@ class Stage(Enum):
         map_to_stage = {
             Activity.GENERAL: cls.MAIN.value,
             Activity.TALK: cls.MAIN.value,
-            Activity.PERFORMANCE: cls.PERFORMANCE.value,
-            Activity.WORKSHOP: cls.SIDE.value,
+            Activity.PERFORMANCE: cls.MAIN.value,
+            Activity.SIDE_EVENT: cls.SIDE.value,
         }
         # Return None if activity type is not mapped to any stage
         return map_to_stage.get(activity.activity_type, None)
@@ -82,13 +80,11 @@ class ActivityManager(TranslatableManager):
         {
             '11:30': {
                 'main': <Activity: Exploring space (Talk)>,
-                'performance': None,
                 'side': None
             },
             '12:20': {
-                'main': None,
-                'performance': <Activity: Banjo session (Performance)>,
-                'side': <Activity: Labyrinth of Senses (Workshop)>
+                'main': <Activity: Banjo session (Performance)>,
+                'side': <Activity: Labyrinth of Senses (Side event)>
             },
             ...
         }
@@ -152,7 +148,7 @@ class ActivityTypeManager(TranslatableManager):
             activity_type=self.type_,
             is_published=True,
         )
- 
+
 
 class Activity(TranslatableModel):
     '''
@@ -162,13 +158,13 @@ class Activity(TranslatableModel):
     GENERAL = 'G'
     TALK = 'T'
     PERFORMANCE = 'P'
-    WORKSHOP = 'W'
+    SIDE_EVENT = 'S'
     HOSTING = 'H'
     TYPE_CHOICES = (
         (GENERAL, _('General')),
         (TALK, _('Talk')),
         (PERFORMANCE, _('Performance')),
-        (WORKSHOP, _('Workshop')),
+        (SIDE_EVENT, _('Side event')),
         (HOSTING, _('Hosting')),
     )
 
@@ -208,7 +204,7 @@ class Activity(TranslatableModel):
     objects = ActivityManager()
     talks = ActivityTypeManager(TALK)
     performances = ActivityTypeManager(PERFORMANCE)
-    workshops = ActivityTypeManager(WORKSHOP)
+    side_events = ActivityTypeManager(SIDE_EVENT)
 
     def __str__(self):
         return self.title
@@ -351,7 +347,7 @@ class Presenter(TranslatableModel):
     objects = PresenterManager()
     speakers = PresenterTypeManager(Activity.TALK)
     performers = PresenterTypeManager(Activity.PERFORMANCE)
-    workshop_presenters = PresenterTypeManager(Activity.WORKSHOP)
+    side_presenters = PresenterTypeManager(Activity.SIDE_EVENT)
 
 
     def __str__(self):
