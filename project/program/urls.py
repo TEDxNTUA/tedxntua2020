@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import SpeakersView
+from .views import PresenterView
 
 
 urlpatterns = [
-    path('', SpeakersView.as_view(), name='speakers'),
+    path('presenter/<int:id>', PresenterView.as_view(), name='presenter'),
 ]

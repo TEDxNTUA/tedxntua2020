@@ -1,0 +1,13 @@
+article{
+    .speaker-image{
+        margin: 0 auto;
+        width: 7em;
+        height: 7em;
+        background-color: black;
+    }
+
+    .main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

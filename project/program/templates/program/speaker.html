@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<article>
+        <button class="btn btn-secondary">Button</button>
+    <div class="speaker-info">
+        <div class="speaker-image"> </div>
+        <h1 class="speaker-name">{{presenter.name}}</h1>
+        <h2 class="speaker-occ">{{presenter.occupation}}</h2>
+        <p class="speaker-bio">{{presenter.short_bio}}</p>
+    </div>
+    <div class="speaker-talk"></div>
+</article>
+{% endblock %}

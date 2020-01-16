@@ -16,6 +16,20 @@ class SpeakersView(View):
         })
 
 
+class PresenterView(View):
+    template_name = 'program/speaker.html'
+
+    def get(self, request, *args, **kwargs):
+        try:
+            presenter = Presenter.objects.get(id=kwargs['id'])
+            return render(request, self.template_name, {
+                'presenter': presenter,
+            })
+        except Presenter.DoesNotExist:
+            # TODO
+            pass
+
+
 class ScheduleView(View):
     template_name = 'program/schedule.html'
 
