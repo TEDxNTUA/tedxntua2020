@@ -13,7 +13,6 @@ class ScheduleView(View):
         return render(request, self.template_name, {
             'schedule': schedule,
             'stages': stages,
-            'day': '<VAR:EVENT_DATE>',
         })
 
 class PresenterView(View):
