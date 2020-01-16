@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="btn-group mt-4">
+    <button class="btn btn-primary">Button</button>
+    <button class="btn btn-secondary">Button</button>
+    <div class="dropdown">
+        <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#"><span class="underline-hover">Action</span></a>
+            <a class="dropdown-item" href="#"><span class="underline-hover">Another action</span></a>
+            <a class="dropdown-item" href="#"><span class="underline-hover">Something else here</span></a>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex p-5 justify-content-between">
+    <div class="squares-overlayed orange-blue animated-hover" style="width: 64px; height: 64px"></div>
+    <div class="triangles blue-black animated-hover" style="width: 64px; height: 64px"></div>
+    <div class="verticals orange-black animated-hover" style="width: 64px; height: 64px"></div>
+    <div class="circle-in-black red bottom animated-hover" style="width: 64px; height: 64px"></div>
+    <div class="circle-in-black blue top animated-hover" style="width: 64px; height: 64px"></div>
+    <div class="white-rectangles-in-black animated-hover" style="width: 64px; height: 64px"></div>
+    <div class="squares-overlayed orange-black animated-hover" style="width: 64px; height: 64px"></div>
+    <div class="circle-in-black animated-hover" style="width: 64px; height: 64px"></div>
+</div>
+{% endblock %}

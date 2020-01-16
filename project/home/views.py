@@ -14,3 +14,9 @@ class HomeView(TemplateView):
             'speakers': speakers,
             'hosts': hosts,
         })
+
+class UIDemoView(TemplateView):
+    template_name = 'home/uidemo.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {})
