@@ -1,0 +1,28 @@
+article.schedule-page {
+    table {
+        margin-top: 2rem;
+        .cell-content {
+            display: flex;
+            flex-direction: row;
+            img {
+                width: 3rem;
+                height: 3rem;
+                background: #C4C4C4;
+                box-shadow: .5rem .5rem 0 0 black;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    thead {
+        font-family: $font-family-serif;
+        th:first-child {
+            width: 10%;
+        }
+        th {
+            width: 45%;
+        }
+    }
+    .stage-th {
+        text-align: center;
+    }
+}

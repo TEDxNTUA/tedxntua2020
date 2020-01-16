@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="event-page schedule-page">
+    <ul class="event-tabs nav justify-content-end">
+        <li class="nav-item">
+            <button class="btn btn-white">Speakers</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-white">Performances</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-white">Side events</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-secondary">Schedule</button>
+        </li>
+    </ul>
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">TIME</th>
+                {% for id, stage in stages.items %}
+                <th scope="col" class="stage-th">{{ stage }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for time, row in schedule.items %}
+            <tr>
+                <td class="time">{{ time }}</td>
+                {% for stage, event in row.items %}
+                <td>
+                    <div class="cell-content">
+                        <img src="" />
+                        <div class="info">
+                            <h5>{{ event.title }}</h5>
+                            <p>{{ event.subtitle }}</p>
+                        </div>
+                        <div class="chevron-right"></div>
+                    </div>
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</article>
+{% endblock %}
