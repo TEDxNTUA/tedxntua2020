@@ -1,60 +1,54 @@
-// Brands
-$primary: #F19386;
-$primary-hover: darken($primary, 10%);
-$secondary: #C1E3D3;
-$tertiary: #212529;
-$ted: #E62B1E;
-$info: #8eb4cb;
-$success: #2ab27b;
-$warning: #cbb956;
-$danger: #bf5329;
+// Colors
+$primary: hsl(33, 93, 54);
+$secondary: hsl(185, 29, 52);
+$red: hsl(0, 100, 50);
+$ted: hsl(4, 80, 51);
+$yiq-contrasted-threshold: 100;
 
-// Border radius
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
+// Options
+$enable-rounded: false;
+$enable-responsive-font-sizes: true;
 
 // Input box shadow
 $input-btn-focus-width: 0;
 
+// Buttons
+$btn-box-shadow: .25rem .25rem 0 0 black;
+$btn-border-width: 0;
+
 // Body
-$body-bg: #f1f1f1;
-$body-color: #222222;
+$body-bg: #fff;
+$body-color: #343a40;
+
+// Links
+$link-color: $body-color;
+$link-decoration: none;
+$link-hover-color: $link-color;
+$link-hover-decoration: none;
+
+// Borders
+$border-color: black;
 
 // Typography
-$font-family-sans-serif: "Fira Sans Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-$font-stack: $font-family-sans-serif;
-$line-height-base: 1.6;
-$text-color: white;
-// Responsive
-$max-content-width: 1366px;
+$font-family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-family-serif: Jura, serif;
+$font-family-base: $font-family-sans-serif;
 
-// Section paddings
-$section-padding-x: 1rem;
-$section-padding-y: 1rem;
-
-// Navbar
-$navbar-default-bg: $tertiary;
-$navbar-scrolled-border: rgba(0, 0, 0, .2);
-$logo-height: 3.2rem;
-$navlink-color: white;
-$navlink-hover-color: $secondary;
-$navlink-padding: .375rem;
-$hotdog-color: lighten($body-color, 20%);
+// Main
+$page-padding-x: 1rem;
+$page-padding-y: .75rem;
+$page-padding-x-lg: 2 * $page-padding-x;
+$page-padding-y-lg: 2 * $page-padding-y;
 
 // Footer
 $footer-text-color: white;
-$footer-default-bg: $tertiary;
+$footer-default-bg: white;
 $footer-border-top: none;
 $footer-column-gap: 1.5rem;
 
-// Buttons
-$btn-default-color: $text-color;
+// Animations
+$transition-base: all .1s ease-in-out;
 
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
-
-// Panels
-$panel-default-heading-bg: #fff;
+// Dropdowns
+$dropdown-border-color: black;
+$dropdown-link-hover-bg: inherit;

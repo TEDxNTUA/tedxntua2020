@@ -1,0 +1,57 @@
+{% load static %}
+
+<nav id="nav">
+    <a class="navbar-brand" href="/">
+        <img src="{% static "images/tedxntua_logo_blacktext.png" %}" />
+    </a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <div class="nav-link-icon squares-overlayed orange-blue"></div>
+                <span class="nav-item-text">Home</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                <div class="nav-link-icon triangles blue-black"></div>
+                <span class="nav-item-text">The event</span>
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">
+                    <div class="nav-dropdown-item-icon circle-in-black"></div>
+                    Speakers
+                </a>
+                <a class="dropdown-item" href="#">
+                    <div class="nav-dropdown-item-icon circle-in-black"></div>
+                    Performers
+                </a>
+                <a class="dropdown-item" href="#">
+                    <div class="nav-dropdown-item-icon white-rectangles-in-black"></div>
+                    Side events
+                </a>
+                <a class="dropdown-item" href="#">
+                    <div class="nav-dropdown-item-icon squares-overlayed orange-black"></div>
+                    Schedule
+                </a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <div class="nav-link-icon verticals orange-black"></div>
+                <span class="nav-item-text">Partners</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <div class="nav-link-icon circle-in-black red bottom"></div>
+                <span class="nav-item-text">About us</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <div class="nav-link-icon circle-in-black blue top"></div>
+                <span class="nav-item-text">Tickets</span>
+            </a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,77 @@
+$btn-box-shadow-size: .25rem;
+$btn-active-box-shadow-size: .05rem;
+$btn-box-shadow: $btn-box-shadow-size $btn-box-shadow-size 0 0 black;
+$btn-active-box-shadow: $btn-active-box-shadow-size $btn-active-box-shadow-size 0 0 black;
+$btn-active-transform: translate($btn-box-shadow-size - $btn-active-box-shadow-size, $btn-box-shadow-size - $btn-active-box-shadow-size);
+
+@mixin button-variant($background, $border, $hover-background: $background, $hover-border: $border, $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)) {
+    color: color-yiq($background);
+    @include gradient-bg($background);
+    border-color: $border;
+    @include box-shadow($btn-box-shadow);
+    transition: $transition-base;
+    margin-right: $btn-box-shadow-size;
+    margin-bottom: $btn-box-shadow-size;
+    font-family: $font-family-serif;
+
+    @include hover {
+        color: color-yiq($hover-background);
+        @include gradient-bg($hover-background);
+        border-color: $hover-border;
+        box-shadow: $btn-active-box-shadow;
+        transform: $btn-active-transform;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: $btn-active-box-shadow;
+        transform: $btn-active-transform;
+    }
+
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+        color: color-yiq($background);
+        background-color: $background;
+        border-color: $border;
+        // Remove CSS gradients if they're enabled
+        @if $enable-gradients {
+            background-image: none;
+        }
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle {
+        color: color-yiq($active-background);
+        background-color: $active-background;
+        @if $enable-gradients {
+            background-image: none; // Remove the gradient for the pressed/active state
+        }
+        border-color: $active-border;
+
+        &:focus {
+            box-shadow: $btn-active-box-shadow;
+            transform: $btn-active-transform;
+        }
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        @include button-variant($value, $value);
+    }
+}
+
+.btn-primary {
+    font-weight: bold;
+}
+
+.btn-white {
+    @include button-variant(white, black);
+    border-width: 1px;
+}
+
+.btn.dropdown-toggle + .dropdown-menu {
+    font-family: $font-family-serif;
+}

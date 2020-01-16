@@ -5,17 +5,12 @@ html, body {
 	width: 100%;
 }
 
-html {
-	font-size: 110%;
-}
-
 body {
 	color: $body-color;
 	// Body is a column flexbox consisting of three parts:
 	// The header, the main and the footer
 	display: flex;
 	flex-direction: column;
-	font-family: 'Jura', sans-serif;
 	line-height: 150%;
 }
 
@@ -28,19 +23,8 @@ main {
 	// essentially pushing the footer to the bottom of the page
 	// Seen at:
 	// https://dev.to/domysee/keeping-the-footer-at-the-bottom-with-css-flexbox-5h5f
-	flex-grow: 1;
-}
-
-a {
-	color: $primary;
-	&:hover {
-		color: $primary-hover;
-	    text-decoration: none;
-	}
-	&:focus {
-		outline: none;
-		border: 0;
-	}
+    flex-grow: 1;
+    padding: 0 $page-padding-x $page-padding-y;
 }
 
 ::selection {
@@ -49,6 +33,20 @@ a {
 }
 
 
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5, h6 {
   color: $body-color;
+  font-family: $font-family-serif;
+  font-weight: bold;
+}
+
+.underline,
+:hover > .underline-hover,
+.underline-parent:hover .underline-hover {
+    box-shadow: inset 0 -5px $primary, 0 1px $primary;
+}
+
+@include media-breakpoint-up(lg) {
+    main {
+        padding: 0 $page-padding-x-lg $page-padding-y-lg;
+    }
 }

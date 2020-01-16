@@ -7,7 +7,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~compass-mixins/lib/compass/css3";
 
-
 /** GENERAL GUIDELINES **/
 
 /* 	MOBILE FIRST APPROACH
@@ -38,7 +37,9 @@
 @import "globals";
 
 // INSERT HERE OTHER COMPONENT STYLES
-// ...
+@import "buttons";
+@import "nav";
+@import "graphics";
 
 // INDIVIDUAL PAGE STYLES
 
