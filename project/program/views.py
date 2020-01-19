@@ -1,19 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 
 from .models import Presenter, Activity, Stage
-
-
-class SpeakersView(View):
-    template_name = 'program/speakers.html'
-
-    def get(self, request, *args, **kwargs):
-        speakers = Presenter.objects.get_speakers()
-        hosts = Presenter.objects.get_hosts()
-        return render(request, self.template_name, {
-            'speakers': speakers,
-            'hosts': hosts,
-        })
 
 
 class ScheduleView(View):
@@ -26,4 +14,13 @@ class ScheduleView(View):
             'schedule': schedule,
             'stages': stages,
             'day': '<VAR:EVENT_DATE>',
+        })
+
+class PresenterView(View):
+    template_name = 'program/presenter.html'
+
+    def get(self, request):
+        presenter = get_object_or_404(Presenter, pk=request.kwargs['id'])
+        return render(request, self.template_name, {
+            'presenter': presenter,
         })
