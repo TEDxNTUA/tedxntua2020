@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <article class="event-page schedule-page">
-    <ul class="event-tabs nav justify-content-end">
+    <ul class="event-tabs nav">
         <li class="nav-item">
             <button class="btn btn-white">Speakers</button>
         </li>
@@ -15,34 +15,56 @@
             <button class="btn btn-secondary">Schedule</button>
         </li>
     </ul>
-    <table class="table table-borderless">
-        <thead>
-            <tr>
-                <th scope="col">TIME</th>
+    <div id="schedule-table" role="table" data-activetab="main">
+        <div role="rowgroup" class="table-heading">
+            <div role="row">
+                <span role="columnheader">TIME</span>
                 {% for id, stage in stages.items %}
-                <th scope="col" class="stage-th">{{ stage }}</th>
+                <span role="columnheader" class="d-none d-lg-inline">{{ stage }}</span>
                 {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
+                <form role="columnheader" class="d-lg-none">
+                    <select id="stage-selector" aria-label="Filter by event stage" class="form-control">
+                        {% for id, stage in stages.items %}
+                        <option{% if forloop.first %} selected{% endif %} value="{{ id }}">{{ stage }}</option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div role="rowgroup">
             {% for time, row in schedule.items %}
-            <tr>
-                <td class="time">{{ time }}</td>
+            <div role="row" class="{% if not row.main %}hide-main {% endif %}{% if not row.side %}hide-side {% endif %}">
+                <span role="cell" class="time">{{ time }}</span>
                 {% for stage, event in row.items %}
-                <td>
-                    <div class="cell-content">
-                        <img src="" />
+                <span role="cell">
+                    {% if event %}
+                    <a class="cell-content" href="{% url "presenter" event.presenter.id %}">
+                        <img src="https://picsum.photos/200" />
                         <div class="info">
                             <h5>{{ event.title }}</h5>
                             <p>{{ event.subtitle }}</p>
                         </div>
-                        <div class="chevron-right"></div>
-                    </div>
-                </td>
+                        <div class="chevron-container">
+                            <div class="chevron-right"></div>
+                        </div>
+                    </a>
+                    {% else %}
+                    <div class="cell-content"></div>
+                    {% endif %}
+                </span>
                 {% endfor %}
-            </tr>
+            </div>
             {% endfor %}
-        </tbody>
-    </table>
+        </div>
+    </div>
 </article>
+{% endblock %}
+{% block scripts %}
+<script>
+    const scheduleTable = document.getElementById("schedule-table")
+    const stageSelector = document.getElementById("stage-selector")
+    stageSelector.addEventListener("change", evt => {
+        scheduleTable.setAttribute("data-activetab", evt.target.value)
+    })
+</script>
 {% endblock %}
