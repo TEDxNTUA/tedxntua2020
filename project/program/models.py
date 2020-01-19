@@ -2,7 +2,7 @@
 Models for the "Program" section of the website.
 
 The event consists of Activities presented by Presenters, where each activity
-happens on one of the three stages: Main event, Performances, Side events.
+happens on one of the two stages: Main event, Side events.
 
 In this module you'll find:
 - Django models for each entity.
@@ -94,6 +94,7 @@ class ActivityManager(TranslatableManager):
         # Initialize each line to contain None for each stage
         blank_line = {stage.value: None for stage in Stage}
 
+        # TODO prefetch presenter
         activities = Activity.objects.filter(
             is_published=True,
             start__isnull=False,
@@ -193,13 +194,11 @@ class Activity(TranslatableModel):
 
     is_published = models.BooleanField(_('Published'), default=True)
 
-    '''An activity may be presented by many people and a presenter
-    may present many activities respectively
-
-    Documentation for many-to-many relationships may be found here:
-    https://docs.djangoproject.com/en/2.2/topics/db/examples/many_to_many/
-    '''
-    presenters = models.ManyToManyField('Presenter')
+    presenter = models.ForeignKey(
+        'Presenter',
+        null=True,
+        on_delete=models.SET_NULL,
+    )
 
     objects = ActivityManager()
     talks = ActivityTypeManager(TALK)
@@ -265,31 +264,6 @@ def warm_activity_images(sender, instance, **kwargs):
         logger.info('No image file added for this activity: %s', instance)
 
 
-class PresenterManager(TranslatableManager):
-    '''Class-level functionality'''
-    def get_speakers(self):
-        '''Returns a list of all speakers with their talk info.
-
-        Unlike the rest of the models file, here we make the assumption
-        that each speaker is presenting only a single talk.
-        '''
-        speakers = self.get_queryset().filter(
-            activity__activity_type=Activity.TALK,
-            is_published=True,
-        ).distinct()
-        for speaker in speakers:
-            speaker.talk = speaker.activity_set.filter(is_published=True).first()
-        return speakers
-
-    def get_hosts(self):
-        '''Returns the host of the event'''
-        hosts = self.get_queryset().filter(
-            activity__activity_type=Activity.HOSTING,
-            is_published=True,
-        ).distinct()
-        return hosts
-
-
 # Presenter model & managers
 
 class PresenterTypeManager(TranslatableManager):
@@ -344,11 +318,11 @@ class Presenter(TranslatableModel):
     # Documentation link:
     # https://docs.djangoproject.com/en/2.2/topics/db/managers/
 
-    objects = PresenterManager()
+    objects = TranslatableManager()
     speakers = PresenterTypeManager(Activity.TALK)
     performers = PresenterTypeManager(Activity.PERFORMANCE)
     side_presenters = PresenterTypeManager(Activity.SIDE_EVENT)
-
+    hosts = PresenterTypeManager(Activity.HOSTING)
 
     def __str__(self):
         return self.name

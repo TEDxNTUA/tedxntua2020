@@ -27,7 +27,7 @@ class ActivityModelForm(TranslatableModelForm):
             'end',
             'image',
             'get_image_from_presenter',
-            'presenters',
+            'presenter',
             'title',
             'subtitle',
             'description',
@@ -44,15 +44,13 @@ class ActivityModelForm(TranslatableModelForm):
         obj = super().save(commit=False)
 
         get_im = self.cleaned_data.get('get_image_from_presenter', False)
-        presenters = self.cleaned_data.get('presenters', None)
-        if get_im and presenters:
-            presenter = presenters.first()
-            # Set image field to point to first presenter's image
+        presenter = self.cleaned_data.get('presenter', None)
+        if get_im and presenter:
+            # Set image field to point to presenter's image
             if presenter.image:
                 obj.image.name = presenter.image.name
 
         if commit:
             obj.save()
-            self.save_m2m()
 
         return obj
