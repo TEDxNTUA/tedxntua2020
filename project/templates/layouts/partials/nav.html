@@ -1,54 +1,67 @@
 {% load static %}
 
-<nav id="nav">
-    <a class="navbar-brand" href="/">
-        <img src="{% static "images/tedxntua_logo_blacktext.png" %}" />
+<nav id="nav" aria-label="Navigation header">
+    <a class="navbar-brand" href="/" aria-label="Go to homepage">
+        <img src="{% static "images/tedxntua_logo_blacktext.png" %}"
+             alt="TEDxNTUA logo" />
     </a>
-    <ul class="navbar-nav">
+    <button class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-nav" aria-controls="navbar-nav"
+            aria-label="Toggle navigation menu" aria-expanded="false">
+        <div class="navbar-toggler-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+        </div>
+        <span class="unexpanded">MENU</span>
+        <span class="expanded">CLOSE</span>
+    </button>
+    <hr></hr>
+    <ul role="menu" id="navbar-nav" class="navbar-nav collapse"
+        aria-label="Navigation menu">
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a role="menuitem" class="nav-link" href="#">
                 <div class="nav-link-icon squares-overlayed orange-blue"></div>
                 <span class="nav-item-text">Home</span>
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+            <a role="menuitem" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
                 <div class="nav-link-icon triangles blue-black"></div>
-                <span class="nav-item-text">The event</span>
+                <span class="nav-item-text">The event<span class="sr-only">(Toggle dropdown)</span></span>
             </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">
+            <div role="menu" class="dropdown-menu">
+                <a role="menuitem" class="nav-link dropdown-item" href="#">
                     <div class="nav-dropdown-item-icon circle-in-black"></div>
                     Speakers
                 </a>
-                <a class="dropdown-item" href="#">
+                <a role="menuitem" class="nav-link dropdown-item" href="#">
                     <div class="nav-dropdown-item-icon circle-in-black"></div>
                     Performers
                 </a>
-                <a class="dropdown-item" href="#">
+                <a role="menuitem" class="nav-link dropdown-item" href="#">
                     <div class="nav-dropdown-item-icon white-rectangles-in-black"></div>
                     Side events
                 </a>
-                <a class="dropdown-item" href="#">
+                <a role="menuitem" class="nav-link dropdown-item" href="#">
                     <div class="nav-dropdown-item-icon squares-overlayed orange-black"></div>
                     Schedule
                 </a>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a role="menuitem" class="nav-link" href="#">
                 <div class="nav-link-icon verticals orange-black"></div>
                 <span class="nav-item-text">Partners</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a role="menuitem" class="nav-link" href="#">
                 <div class="nav-link-icon circle-in-black red bottom"></div>
                 <span class="nav-item-text">About us</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a role="menuitem" class="nav-link" href="#">
                 <div class="nav-link-icon circle-in-black blue top"></div>
                 <span class="nav-item-text">Tickets</span>
             </a>
