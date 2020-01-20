@@ -8,9 +8,4 @@ class HomeView(TemplateView):
     template_name = 'home/index.html'
 
     def get(self, request, *args, **kwargs):
-        speakers = Presenter.objects.get_speakers()
-        hosts = Presenter.objects.get_hosts()
-        return render(request, self.template_name, {
-            'speakers': speakers,
-            'hosts': hosts,
-        })
+        return render(request, self.template_name)
