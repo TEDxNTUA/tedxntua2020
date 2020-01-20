@@ -15,7 +15,7 @@ class ActivityModelForm(TranslatableModelForm):
     get_image_from_presenter = forms.BooleanField(
         required=False,
         label=_('Get image from presenter'),
-        help_text=_('If selected, the image will be overridden by that of the first presenter'),
+        help_text=_('If selected, the image will be overridden by that of the presenter'),
     )
 
     class Meta:
