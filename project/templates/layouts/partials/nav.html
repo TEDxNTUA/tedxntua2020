@@ -1,4 +1,8 @@
+{% load i18n %}
 {% load static %}
+{% load lang_extras %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language as CURR_LANG %}
 
 <nav id="nav" aria-label="Navigation header">
     <a class="navbar-brand" href="/" aria-label="Go to homepage">
@@ -65,6 +69,18 @@
                 <div class="nav-link-icon circle-in-black blue top"></div>
                 <span class="nav-item-text">Tickets</span>
             </a>
+        </li>
+        <li class="nav-item language-switch-container">
+            <h6>LANGUAGE</h6>
+            <div role="group" class="btn-group btn-group-toggle" data-toggle="buttons" id="language-switch"
+                 aria-label="Select website language">
+                {% for code, lang_name in LANGUAGES %}
+                <label class="btn{% if code == CURR_LANG %} active{% endif %}" aria-label="{{ lang_name }}">
+                    <input type="radio" id="language-switch-{{ code }}" name="language" autocomplete="off" checked>
+                    {{ code | lang_short_name }}
+                </label>
+                {% endfor %}
+            </div>
         </li>
     </ul>
 </nav>
