@@ -1,0 +1,59 @@
+article{
+    .article{
+
+    }
+    .speaker-image{
+        margin: 0;
+        height: 20em;
+        width: 20em;
+        background-color: grey;
+        box-shadow: 0.8rem 0.8rem 0 0 black;
+        flex-shrink: 0;
+
+    }
+
+    .speaker-bio{
+        height:5em;
+        overflow: hidden;
+    }
+
+    .speaker-info{
+        margin-left: 7em;
+        width: auto;
+    }
+
+    .speaker-name{
+        font-weight: bold;
+    }
+
+    .speaker-main{
+        display: flex;
+        flex-direction: row;
+        //flex-wrap: wrap;
+        margin-top: 1.5em;
+    }
+
+    .speaker-scnd{
+        display: flex;
+        flex-direction: row;
+        margin-top: 4em;
+    }
+
+    .line{
+        background-color: black;
+        margin: 0;
+        height: 13em;
+        width: 0.2em;
+        flex-shrink: 0;
+    }
+
+    .speaker-talk{
+        margin-left: 1em;
+    }
+
+    .speaker-activity{
+        font-weight: bold;
+        margin-bottom: 0em;
+    }
+
+}
