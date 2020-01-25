@@ -13,14 +13,14 @@
     </div>
     <br>
     <div class="speaker-scnd">
-        <div class="line"></div> 
         {% for activity in presenter.activity_set.all %}
         <div class="speaker-talk">
-            <p class="speaker-activity">{{ activity.title }}</p>
-            <p>{{activity.activity_type}} | {{activity.time_span}}</p>
+            <h5 class="speaker-activity">{{ activity.title }}</h5>
+            <p class="speaker-time">{{activity.get_activity_type_display | upper}} | {{activity.time_span}}</p>
             <p>{{activity.subtitle}}</p>
         </div>
     {% endfor %}
     </div>
+
 </article>
 {% endblock %}

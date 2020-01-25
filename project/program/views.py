@@ -38,7 +38,7 @@ class SideEventsView(View):
 
 
 class PresenterView(View):
-    template_name = 'program/presenter.html'
+    template_name = 'program/speaker.html'
 
     def get(self, request, slug):
         presenter = get_object_or_404(Presenter, slug=slug)

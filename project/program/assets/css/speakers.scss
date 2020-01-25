@@ -43,8 +43,8 @@ article{
 
     .speaker-occ{
         font-family: $font-family-sans-serif;
-        color: black;
         font-weight: lighter;
+        margin-bottom: 0.8em;
     }
 
     .line{
@@ -56,12 +56,17 @@ article{
     }
 
     .speaker-talk{
-        margin-left: 1em;
+        padding:0em 1em 0em 1em;
+        border-left: 4px solid black;
     }
 
     .speaker-activity{
-        font-weight: bold;
         margin-bottom: 0em;
+        color: black;
     }
 
+    .speaker-time{
+        font-family: $font-family-sans-serif;
+        font-weight: lighter;
+    }
 }
