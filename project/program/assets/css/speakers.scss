@@ -15,6 +15,7 @@ article{
     .speaker-bio{
         height:5em;
         overflow: hidden;
+        margin-bottom: 1em;
     }
 
     .speaker-info{
@@ -24,6 +25,7 @@ article{
 
     .speaker-name{
         font-weight: bold;
+        color: black;
     }
 
     .speaker-main{
@@ -37,6 +39,12 @@ article{
         display: flex;
         flex-direction: row;
         margin-top: 4em;
+    }
+
+    .speaker-occ{
+        font-family: $font-family-sans-serif;
+        color: black;
+        font-weight: lighter;
     }
 
     .line{
