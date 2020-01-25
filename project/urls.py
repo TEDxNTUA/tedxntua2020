@@ -25,8 +25,7 @@ from django.utils.translation import ugettext_lazy as _
 urlpatterns = [
     path('', include('project.home.urls')),
     path('', include('django.conf.urls.i18n')),
-    path('schedule/', include('project.program.schedule_urls')),
-    path('speakers/', include('project.program.urls')),
+    path('', include('project.program.urls')),
     path('partners/', include('project.partners.urls')),
     path('team/', include('project.team.urls')),
     path('about/', include('project.about.urls')),
