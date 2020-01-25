@@ -10,15 +10,38 @@
                 {% for partner in category.items %}
                     <div class="child">
                         {% load static %}
-                        <img src="{% static "images/happyface.png" %}" alt="random" class="logo">
-                        <div class="arrow-container">
-                            <span class="glyphicon glyphicon-menu-left">&lt;</span>
-                            <span class="glyphicon glyphicon-menu-left">&lt;</span>
+                        <div class="card-container">
+                                <div class="container-image">
+                                    <img src="{% static "images/tedxntua-black-600.png" %}" alt="random" class="logo">                           
+                                    <button class="btn btn-partners btn-right">
+                                        {% if partner.partner_type == 'PS' or partner.partner_type == 'GS' %}
+                                            <a href="" class="title-right">WEBSITE</a>
+                                        {% endif %}
+                                    </button>
+                                    {% if partner.partner_type == 'PS' or partner.partner_type == 'GS' %}
+                                        <button class="btn btn-partners btn-bottom" onclick="onClick('{{partner}}')">
+                                            <a href="" class="title-bottom">LEAFLET</a>
+                                        </button>
+                                    {% else %}
+                                        <button class="btn btn-partners btn-bottom">
+                                            <a href="" class="title-bottom">WEBSITE</a>
+                                        </button>
+                                    {% endif %}                                
+                                </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
         {% endfor %}
     </article>
+    <div id="modal" class="w3-modal" onClick="this.style.display='none'">
+        <img class="w3-modal-content" id="leaflet" style="width:100%">
+    </div>
 </section>
 {% endblock %}
+<script>
+    function onClick(element){
+        document.getElementById("leaflet").src = element.leaflet.url;
+        document.getElementById("modal").style.display = "block";
+    }
+</script>
