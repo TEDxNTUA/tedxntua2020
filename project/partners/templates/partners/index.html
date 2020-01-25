@@ -52,3 +52,9 @@
     {% endfor %}
 </article>
 {% endblock %}
+<script>
+    function onClick(element){
+        document.getElementById("leaflet").src = element.leaflet.url;
+        document.getElementById("modal").style.display = "block";
+    }
+</script>
