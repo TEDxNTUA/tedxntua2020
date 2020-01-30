@@ -10,7 +10,7 @@ from ..forms import PresenterModelForm
 
 class PresenterAdmin(PartiallyTranslatableAdmin):
     form = PresenterModelForm
-    list_display = ('__str__', 'occupation', 'link_html', 'activity_list', 'is_published')
+    list_display = ('__str__', 'slug', 'occupation', 'link_html', 'activity_list', 'is_published')
     list_filter = ('activity__activity_type', 'is_published')
 
     def link_html(self, obj):

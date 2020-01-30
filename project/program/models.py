@@ -19,11 +19,13 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
+from django_extensions.db.fields import AutoSlugField
 
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
-from parler.models import TranslatableModel, TranslatedFields
+from parler.models import TranslatableModel, TranslatedFields, TranslationDoesNotExist
 from parler.managers import TranslatableQuerySet, TranslatableManager
+from project.utils.slug import EnglishAutoSlugField
 
 
 logger = logging.getLogger(__name__)
@@ -281,7 +283,6 @@ class PresenterTypeManager(TranslatableManager):
             is_published=True,
         ).distinct()
 
-
 class Presenter(TranslatableModel):
     '''
     Person that participates in the event as a guest,
@@ -323,6 +324,8 @@ class Presenter(TranslatableModel):
     performers = PresenterTypeManager(Activity.PERFORMANCE)
     side_presenters = PresenterTypeManager(Activity.SIDE_EVENT)
     hosts = PresenterTypeManager(Activity.HOSTING)
+
+    slug = EnglishAutoSlugField(populate_from=['name'], overwrite=True)
 
     def __str__(self):
         return self.name

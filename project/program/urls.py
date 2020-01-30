@@ -6,5 +6,5 @@ from .views import ScheduleView, PresenterView
 urlpatterns = [
     path('schedule/', ScheduleView.as_view(), name='schedule'),
     # TODO: Use slugs
-    path('presenter/<int:id>', PresenterView.as_view(), name='presenter'),
+    path('presenter/<slug:slug>', PresenterView.as_view(), name='presenter'),
 ]

@@ -19,8 +19,8 @@ class ScheduleView(View):
 class PresenterView(View):
     template_name = 'program/presenter.html'
 
-    def get(self, request):
-        presenter = get_object_or_404(Presenter, pk=request.kwargs['id'])
-        return render(request, self.template_name, {
+    def get(self, request, slug):
+        presenter = get_object_or_404(Presenter, slug=slug)
+        return render(request, self.template_name,{
             'presenter': presenter,
         })

@@ -23,10 +23,6 @@ setup(
         'django-versatileimagefield',
         'django-webpack-loader',
         'django-parler',
+        'django-extensions',
     ],
-    extras_require={
-        'dev': [
-            'django-extensions',
-        ],
-    },
 )
