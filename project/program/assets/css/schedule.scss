@@ -59,7 +59,7 @@ article.schedule-page {
     .cell-content {
         display: flex;
         flex-direction: row;
-        img {
+        .image {
             flex-shrink: 0;
             width: 3.5em;
             height: 3.5em;
@@ -79,7 +79,7 @@ article.schedule-page {
         }
         &:hover {
             color: darken($body-color, 25%);
-            img {
+            .image {
                 opacity: 1;
             }
             .chevron-container {
@@ -119,7 +119,7 @@ article.schedule-page {
         [role="columnheader"], [role="cell"] {
             margin-left: 2.5em;
         }
-        .cell-content img {
+        .cell-content .image {
             margin-right: 1.25em;
         }
     }
