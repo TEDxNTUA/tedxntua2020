@@ -25,7 +25,7 @@ from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 from parler.models import TranslatableModel, TranslatedFields, TranslationDoesNotExist
 from parler.managers import TranslatableQuerySet, TranslatableManager
-from project.utils.slug.py import EnglishAutoSlugField
+from project.utils.slug import EnglishAutoSlugField
 
 
 logger = logging.getLogger(__name__)
@@ -325,7 +325,7 @@ class Presenter(TranslatableModel):
     side_presenters = PresenterTypeManager(Activity.SIDE_EVENT)
     hosts = PresenterTypeManager(Activity.HOSTING)
 
-    slug = CustomAutoSlugField(populate_from=['name'],overwrite=True,)
+    slug = EnglishAutoSlugField(populate_from=['name'], overwrite=True)
 
     def __str__(self):
         return self.name
