@@ -4,8 +4,8 @@ article{
     }
     .speaker-image{
         margin: 0;
-        height: 20em;
-        width: 20em;
+        height: 15em;
+        width: 15em;
         background-color: grey;
         box-shadow: 0.8rem 0.8rem 0 0 black;
         flex-shrink: 0;
@@ -13,14 +13,18 @@ article{
     }
 
     .speaker-bio{
-        height:5em;
+        height:0em;
         overflow: hidden;
-        margin-bottom: 1em;
+        margin-bottom: 0em;
+        text-align: justify;
     }
 
     .speaker-info{
-        margin-left: 7em;
         width: auto;
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .speaker-name{
@@ -30,15 +34,16 @@ article{
 
     .speaker-main{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         //flex-wrap: wrap;
         margin-top: 1.5em;
+        align-items: center;
     }
 
     .speaker-scnd{
         display: flex;
         flex-direction: row;
-        margin-top: 4em;
+        margin-top: 2em;
     }
 
     .speaker-occ{
@@ -68,5 +73,38 @@ article{
     .speaker-time{
         font-family: $font-family-sans-serif;
         font-weight: lighter;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    article {
+        .speaker-main{
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .speaker-info{
+            margin-top: 0em;
+            margin-left: 7em;
+            align-items: flex-start;
+        }
+
+        .speaker-scnd{
+            display: flex;
+            flex-direction: row;
+            margin-top: 4em;
+        }
+
+        .speaker-bio{
+            height:5em;
+            overflow: hidden;
+            margin-bottom: 1em;
+        }
+
+        .speaker-image{
+            height: 20em;
+            width: 20em;
+        }
+
     }
 }
