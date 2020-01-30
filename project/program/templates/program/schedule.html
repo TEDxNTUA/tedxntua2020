@@ -39,7 +39,20 @@
                 <span role="cell">
                     {% if event %}
                     <a class="cell-content" href="{% url "presenter" event.presenter.id %}">
-                        <img src="https://picsum.photos/200" />
+                        {% if event.image %}
+                        <img class="image"
+                             srcset="{{ event.image.thumbnail.320x320.url }} 320w,
+                                     {{ event.image.thumbnail.720x720.url }} 720w,
+                                     {{ event.image.thumbnail.1024x1024.url }} 1024w"
+                            sizes="(max-width: 576px) 320px,
+                                   (max-width: 992px) 720px,
+                                   1024px"
+                            src="{{ event.image.thumbnail.320x320.url }}"
+                            alt="" />
+                        {% else %}
+                        <div class="image placeholder squares-overlayed blue-black"
+                             aria-hidden="true"></div>
+                        {% endif %}
                         <div class="info">
                             <h5>{{ event.title }}</h5>
                             <p>{{ event.subtitle }}</p>
