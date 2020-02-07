@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'project.program',
     'project.team',
     'project.about',
+    'project.feed',
     'project.users',
     'versatileimagefield',
     'parler',
