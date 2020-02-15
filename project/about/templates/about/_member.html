@@ -1,0 +1,12 @@
+{% load static %}
+<div class="member">
+    {% if member.image %}
+    <div class="slider-image normal">
+        <img src="{{ member.image.url }}" />
+    </div>
+    {% endif %}
+    <div class="slider-image hover">
+        <img src="{% static "images/morty.png" %}" />
+    </div>
+    <p>{{ member.name }}</p>
+</div>

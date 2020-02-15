@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load iter_extras %}
+{% block content %}
+<article class="about-page">
+    <section id="team">
+        <h2>TEAM</h2>
+        <div class="cube-container">
+            {% with members|iter as M %}
+            <div class="cube-row">
+                <div class="spacer" aria-hidden="true">
+                    <span></span><span class="side"></span><span class="side"></span><span class="side"></span>
+                </div>
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+            </div>
+            <div class="cube-row">
+                <div class="spacer" aria-hidden="true">
+                    <span class="side"></span><span class="side"></span>
+                </div>
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+            </div>
+            <div class="cube-row">
+                <div class="spacer" aria-hidden="true">
+                    <span></span><span class="side"></span>
+                </div>
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+            </div>
+            <div class="cube-row">
+                <div class="spacer" aria-hidden="true"></div>
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+            </div>
+            <div class="cube-row">
+                <div class="spacer" aria-hidden="true">
+                    <span class="side"></span><span class="side"></span><span class="side"></span>
+                </div>
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+            </div>
+            <div class="cube-row">
+                <div class="spacer" aria-hidden="true">
+                    <span></span><span class="side"></span><span class="side"></span>
+                </div>
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+            </div>
+            <div class="cube-row">
+                <div class="spacer" aria-hidden="true">
+                    <span></span><span></span><span class="side"></span>
+                </div>
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+                {% include "about/_member.html" with member=M|yield %}
+            </div>
+            {% endwith %}
+        </div>
+    </section>
+</article>
+{% endblock %}
+{% block scripts %}
+<script>
+    const members = document.getElementsByClassName("member")
+    for (let i = 0; i < members.length; ++i) {
+        const el = members[i]
+        const containers = el.getElementsByTagName("div")
+        const normalContainer = containers[0], hoverContainer = containers[1]
+        el.addEventListener("mousemove", evt => {
+            const offset = window.scrollX + el.getBoundingClientRect().left
+            const hoverWidth = Math.min(el.clientWidth, evt.clientX - offset)
+            normalContainer.style.width = el.clientWidth - hoverWidth + "px"
+            hoverContainer.style.width = hoverWidth + "px"
+        })
+        el.addEventListener("mouseleave", evt => {
+            normalContainer.style.width = "100%"
+            hoverContainer.style.width = 0
+        })
+    }
+</script>
+{% endblock %}
