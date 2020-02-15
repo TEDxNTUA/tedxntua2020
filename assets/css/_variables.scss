@@ -55,3 +55,13 @@ $transition-base: all .1s ease-in-out;
 // Dropdowns
 $dropdown-border-color: black;
 $dropdown-link-hover-bg: inherit;
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px
+);
