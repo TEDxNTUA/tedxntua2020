@@ -2,9 +2,6 @@ $chevron-size: 1.5em;
 $chevron-linewidth: $chevron-size / 8;
 
 article.schedule-page {
-    [role="table"] {
-        margin-top: 2rem;
-    }
     [role="row"] {
         display: flex;
         flex-direction: row;

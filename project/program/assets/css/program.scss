@@ -1,5 +1,6 @@
 article.event-page {
     ul.event-tabs {
+        margin-bottom: 2rem;
         justify-content: flex-start;
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -8,6 +9,9 @@ article.event-page {
             flex-shrink: 0;
             scroll-snap-align: start;
             margin: 0 1rem 0 0;
+        }
+        .btn-secondary {
+            font-weight: bold;
         }
     }
 }

@@ -1,20 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <article class="event-page schedule-page">
-    <ul class="event-tabs nav">
-        <li class="nav-item">
-            <button class="btn btn-white">Speakers</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-white">Performances</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-white">Side events</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-secondary">Schedule</button>
-        </li>
-    </ul>
+    {% include "program/_event-tabs.html" %}
     <div id="schedule-table" role="table" data-activetab="main">
         <div role="rowgroup" class="table-heading">
             <div role="row">
@@ -38,7 +25,7 @@
                 {% for stage, event in row.items %}
                 <span role="cell">
                     {% if event %}
-                    <a class="cell-content" href="{% url "presenter" event.presenter.id %}">
+                    <a class="cell-content" href="{% url "presenter" slug=event.presenter.slug %}">
                         {% if event.image %}
                         <img class="image"
                              srcset="{{ event.image.thumbnail.320x320.url }} 320w,

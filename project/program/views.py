@@ -5,25 +5,37 @@ from .models import Presenter, Activity, Stage
 
 
 class SpeakersView(View):
-    template_name = 'program/speakers.html'
+    template_name = 'program/listing.html'
 
     def get(self, request):
-        speakers = Presenter.speakers.all()
-        return render(request, self.template_name, {'speakers': speakers})
+        items = Presenter.speakers.all()
+        return render(request, self.template_name, {
+            'listing_type': 'speakers',
+            'items': items,
+        })
 
 class PerformersView(View):
-    template_name = 'program/performers.html'
+    template_name = 'program/listing.html'
 
     def get(self, request):
-        performers = Presenter.performers.all()
-        return render(request, self.template_name, {'performers': performers})
+        items = Presenter.performers.all()
+        return render(request, self.template_name, {
+            'listing_type': 'performers',
+            'items': items,
+        })
 
 class SideEventsView(View):
-    template_name = 'program/side_events.html'
+    template_name = 'program/listing.html'
 
     def get(self, request):
-        side_events = Activity.side_events.all()
-        return render(request, self.template_name, {'side_events': side_events})
+        # Side events view is special in that the listing shows the *activities*
+        # instead of their presenters
+        items = Activity.side_events.select_related('presenter').all()
+        return render(request, self.template_name, {
+            'listing_type': 'side_events',
+            'items': items,
+        })
+
 
 class PresenterView(View):
     template_name = 'program/presenter.html'
