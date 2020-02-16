@@ -1,14 +1,23 @@
-$cube-size: 4em;
-$cube-side-size: 0.25 * $cube-size;
+$fallback-cube-size: 4em;
+$fallback-cube-side-ratio: 0.25;
+$fallback-cube-side-size: $fallback-cube-side-ratio * $fallback-cube-size;
 
 article.about-page {
     section#team {
         position: relative;
-        display: flex;
-        width: 100%;
-        flex-flow: row nowrap;
+        header {
+            width: 100%;
+            margin-bottom: 1rem;
+            h2 {
+                display: inline;
+            }
+        }
     }
     .member {
+        position: relative;
+        width: calc(100% / 3);
+        padding-bottom: calc(100% / 3);
+        cursor: pointer;
         p {
             position: absolute;
             bottom: 0;
@@ -23,115 +32,133 @@ article.about-page {
             text-shadow: 1px 1px 0 black;
             z-index: 10;
         }
-        .hover {
-            display: none;
+    }
+    .slider-image {
+        display: block;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        // So that border is not included in width
+        box-sizing: content-box;
+        overflow: hidden;
+        img {
+            position: absolute;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+        }
+        &.normal {
+            width: 100%;
+            left: auto;
+            right: 0;
+            img {
+                right: 0;
+            }
+        }
+        &.on-hover {
+            width: 0;
+            left: 0;
+            right: auto;
+            img {
+                left: 0;
+            }
+        }
+        &.hover {
+            border-right: 1px solid rgba(darken($secondary, 30%), .5);
+        }
+    }
+    #simple-view {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    #cube-view {
+        display: none;
+        --cubeview-unit-width: 1;
+        --cube-size: $fallback-cube-size;
+        --cube-side-ratio: $fallback-cube-side-ratio;
+        // We need the ems so we also divide by cube-size.
+        font-size: 2em;
+        font-size: calc(
+            (100vw - 2 * #{$page-padding-x-lg})
+                / var(--cubeview-unit-width)
+                / var(--cube-size)
+        );
+        header {
+            position: absolute;
+            padding-right: 1rem;
+        }
+    }
+    .cube-row {
+        display: flex;
+        .member {
+            position: relative;
+            flex: 0 1 auto;
+            width: $fallback-cube-size;
+            width: calc(1em * var(--cube-size));
+            height: $fallback-cube-size;
+            height: calc(1em * var(--cube-size));
+            padding: 0;
+            max-width: none;
+            margin-top: $fallback-cube-side-size;
+            margin-top: calc(1em * var(--cube-side-ratio) * var(--cube-size));
+            background: $secondary;
+            &::before, &::after {
+                content: "";
+                position: absolute;
+            }
+            &::before {
+                left: 0;
+                bottom: 100%;
+                width: $fallback-cube-size;
+                width: calc(1em * var(--cube-size));
+                height: $fallback-cube-side-size;
+                height: calc(1em * var(--cube-side-ratio) * var(--cube-size));
+                background: $red;
+                transform: skewX(-45deg) translateX(0.5 * $fallback-cube-side-size);
+                transform: skewX(-45deg) translateX(calc(0.5em * var(--cube-side-ratio) * var(--cube-size)));
+            }
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                width: $fallback-cube-side-size;
+                width: calc(1em * var(--cube-side-ratio) * var(--cube-size));
+                height: $fallback-cube-size;
+                height: calc(1em * var(--cube-size));
+                background: $primary;
+                transform: skewY(-45deg) translateY(-0.5 * $fallback-cube-side-size);
+                transform: skewY(-45deg) translateY(calc(-0.5em * var(--cube-side-ratio) * var(--cube-size)));
+            }
+            .slider-image {
+                &.hover {
+                    border-width: 2px;
+                }
+                img {
+                    width: $fallback-cube-size;
+                    width: calc(1em * var(--cube-size));
+                    height: $fallback-cube-size;
+                    height: calc(1em * var(--cube-size));
+                }
+            }
         }
     }
 }
 
 @include media-breakpoint-up(md) {
     article.about-page {
-        h2 {
-            position: absolute;
-        }
-        .cube-container {
-            // The container width is 9.75 cubes
-            // We also divide by $cube-size to get the pure multiplier
-            font-size: calc((100vw - 2 * #{$page-padding-x}) / (#{$cube-size / 1em} * 9.75));
-        }
-        .cube-row {
-            display: flex;
-            .member {
-                position: relative;
-                width: $cube-size;
-                height: $cube-size;
-                margin-top: $cube-side-size;
-                &:not(:last-child) {
-                    margin-right: $cube-size;
-                }
-                background: $secondary;
-                cursor: pointer;
-                &::before, &::after {
-                    content: "";
-                    position: absolute;
-                }
-                &::before {
-                    z-index: -1;
-                    left: 0;
-                    bottom: 100%;
-                    width: $cube-size;
-                    height: $cube-side-size;
-                    background: $red;
-                    transform: skewX(-45deg) translateX(0.5 * $cube-side-size);
-                }
-                &::after {
-                    position: absolute;
-                    top: 0;
-                    left: 100%;
-                    width: $cube-side-size;
-                    height: $cube-size;
-                    background: $primary;
-                    transform: skewY(-45deg) translateY(-0.5 * $cube-side-size);
-                }
-                .slider-image {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    height: 100%;
-                    overflow: hidden;
-                    img {
-                        position: absolute;
-                        width: $cube-size;
-                        height: $cube-size;
-                        object-fit: contain;
-                    }
-                    &.normal {
-                        width: 100%;
-                        left: auto;
-                        right: 0;
-                        img {
-                            right: 0;
-                        }
-                    }
-                    &.hover {
-                        width: 0;
-                        left: 0;
-                        right: auto;
-                        img {
-                            left: 0;
-                        }
-                    }
-                }
-                &:hover .slider-image.hover {
-                    border-right: 1px solid black;
-                }
-            }
-            .spacer {
-                display: flex;
-                span {
-                    display: block;
-                    width: $cube-size;
-                    &.side {
-                        width: $cube-side-size;
-                    }
-                }
-            }
+        .member p {
+            font-size: 1rem;
         }
     }
 }
 
 @include media-breakpoint-up(lg) {
     article.about-page {
-        .cube-container {
-            font-size: calc((100vw - 2 * #{$page-padding-x-lg}) / (#{$cube-size / 1em} * 9.75));
+        #simple-view {
+            display: none;
         }
-    }
-}
-
-@include media-breakpoint-up(xl) {
-    article.about-page {
-        .member p {
-            font-size: 1.25rem;
+        #cube-view {
+            display: block;
         }
     }
 }
