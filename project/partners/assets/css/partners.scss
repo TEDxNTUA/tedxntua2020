@@ -58,7 +58,9 @@ article.sponsors {
     .btn:hover{
         background-color: grayscale($color: #100010);
     }
+    /////////////////////////////////
     // Modal
+    /////////////////////////////////
     .modal{
         padding-right: 0 !important;
         // border: solid green;
@@ -76,6 +78,7 @@ article.sponsors {
         height: 95% !important;
         background: transparent;
         border: 0;
+        padding: 0 0.5rem;
         // border: solid blue;
     }
     .modal-body{
@@ -143,6 +146,22 @@ article.sponsors {
     }
     *{
         // border : 1px solid red;
+    }
+    @media (max-width: 420px){
+        .category:not(#PS):not(#GS) .child{
+            font-size: 0.75rem;
+            .btn-right{
+                width: 1.6em;
+                transform: skewY(45deg) translate(0, 0.8em);
+            }
+            .btn-bottom{
+                height: 1.6em;
+                transform: skewX(45deg) translate(0.8em, 0);
+            }
+            h4{
+                font-size: 105%;
+            }
+        }
     }
     @include media-breakpoint-up(lg) {
         .category#PS .title-right{
