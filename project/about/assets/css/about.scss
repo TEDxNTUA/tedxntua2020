@@ -102,6 +102,12 @@ article.about-page {
             margin-top: $fallback-cube-side-size;
             margin-top: calc(1em * var(--cube-side-ratio) * var(--cube-size));
             background: $secondary;
+            &.c2 {
+                background: $primary;
+            }
+            &.c3 {
+                background: $red;
+            }
             &::before, &::after {
                 content: "";
                 position: absolute;
@@ -117,6 +123,12 @@ article.about-page {
                 transform: skewX(-45deg) translateX(0.5 * $fallback-cube-side-size);
                 transform: skewX(-45deg) translateX(calc(0.5em * var(--cube-side-ratio) * var(--cube-size)));
             }
+            &.c2::before {
+                background: $secondary;
+            }
+            &.c3::before {
+                background: $primary;
+            }
             &::after {
                 position: absolute;
                 top: 0;
@@ -128,6 +140,12 @@ article.about-page {
                 background: $primary;
                 transform: skewY(-45deg) translateY(-0.5 * $fallback-cube-side-size);
                 transform: skewY(-45deg) translateY(calc(-0.5em * var(--cube-side-ratio) * var(--cube-size)));
+            }
+            &.c2::after {
+                background: $red;
+            }
+            &.c3::after {
+                background: $secondary;
             }
             .slider-image {
                 &.hover {

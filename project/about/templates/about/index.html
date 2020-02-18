@@ -198,7 +198,9 @@
                     // Add gutter before this cube, unless it's the first one
                     rowEl.appendChild(createSpacer(uGutter));
                 }
-                rowEl.appendChild(members[mIdx + mOff].cloneNode(true))
+                let child = members[mIdx + mOff].cloneNode(true)
+                child.classList.add(`c${(mIdx + mOff) % 3 + 1}`)
+                rowEl.appendChild(child)
             }
 
             // Update member index
