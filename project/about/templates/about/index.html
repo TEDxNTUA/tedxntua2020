@@ -5,7 +5,7 @@
     <section id="team">
         <div id="simple-view">
             <header>
-                <h2 class="underline">MEET THE TEAM</h2>
+                <h2>MEET THE TEAM</h2>
             </header>
             {% for member in members %}
             <div class="member">
@@ -23,6 +23,115 @@
             {% endfor %}
         </div>
         <div id="cube-view"></div>
+    </section>
+    <section id="about">
+        <img srcset="{% static "images/tedxntua_photo_540.jpg" %} 540w,
+                     {% static "images/tedxntua_photo_1200.jpg" %} 1200w,
+                     {% static "images/tedxntua_photo_2400.jpg" %} 2400w"
+            sizes="(max-width: 768px) 540px,
+                    (max-width: 1440px) 1200px,
+                    2400px"
+            src="{% static "images/tedxntua_photo_540.jpg" %}"
+            alt="TEDxNTUA organizing team and volunteers celebrating the conclusion of the 2019 event" />
+        <div class="about-section" id="about-tedxntua">
+            <h3>What is TEDxNTUA?</h3>
+            <p>
+                TEDxNTUA is a conference that features <strong>talks</strong> on
+                the topics of <strong>popular science</strong>,
+                <strong>art</strong> and <strong>social issues</strong>,
+                <strong>stories that can inspire</strong>, as well as
+                <strong>intriguing workshops</strong> and
+                <strong>performances</strong>. It runs under the auspices of the
+                National Technical University of Athens, Greece
+                (<a class="underline" href="https://www.ntua.gr" target="_blank">NTUA</a>)
+                and is aimed at the local community of the university and of
+                Athens.
+            </p>
+
+            <p>
+                Our organizing team comprises
+                <strong>volunteer students</strong> &mdash;mainly of NTUA&mdash;
+                who embrace the notion of spreading worthy ideas, as put forth
+                by the TED organization. Our aspiration as a team is to build
+                this event into a platform where community members can engage
+                with one another and spark fruitful discussion about our common
+                concerns, like <strong>engineering</strong> and building
+                <strong>a better and more inclusive society</strong>.
+            </p>
+
+            <p>
+                Since the project’s inception in <strong>2015</strong>, the
+                student community having consistently shown their support with
+                their participation as attendees or volunteers, have helped
+                establish it as an institution and imbued us with a sense of
+                duty towards them.
+            </p>
+
+            <p>
+                TEDxNTUA has a <strong>non-profit</strong> motive and is solely
+                funded by sponsor companies, organizations and patrons. It is
+                supervised by NTUA professors and formally belongs to the
+                Institute of Communication and Computer Systems
+                (<a class="underline" href="https://www.iccs.gr" target="_blank">ICCS</a>)
+                of NTUA.
+            </p>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-6 about-section" id="about-ted">
+                    <h3>What is TED?</h3>
+                    <p>
+                        TED is a nonprofit organization devoted to
+                        <strong>Ideas Worth Spreading</strong>. Started as a
+                        four-day conference in California 30 years ago, TED has
+                        grown to support its mission with multiple initiatives. The
+                        two annual TED Conferences invite the world's leading
+                        thinkers and doers to speak for 18 minutes or less. Many of
+                        these talks are then made available, free, at TED.com.
+                    </p>
+                    <p>
+                        <strong>TED speakers</strong> have included Bill Gates, Jane
+                        Goodall, Elizabeth Gilbert, Sir Richard Branson, Nandan
+                        Nilekani, Philippe Starck, Ngozi Okonjo-Iweala, Sal Khan and
+                        Daniel Kahneman.
+                    </p>
+                    <p>
+                        The annual TED Conference takes place each spring in
+                        Vancouver, British Columbia. TED's media initiatives include
+                        <strong>TED.com</strong>, where new TED Talks are posted
+                        daily; the <strong>Open Translation Project</strong>, which
+                        provides subtitles and interactive transcripts as well as
+                        translations from volunteers worldwide; the educational
+                        initiative <strong>TED-Ed</strong>. TED has established the
+                        annual <strong>TED Prize</strong>, where exceptional
+                        individuals with a wish to change the world get help
+                        translating their wishes into action; <strong>TEDx</strong>,
+                        which supports individuals or groups in hosting local,
+                        self-organized TED-style events around the world, and the
+                        <strong>TED Fellows</strong> program, helping world-changing
+                        innovators from around the globe to amplify the impact of
+                        their remarkable projects and activities.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 about-section" id="about-tedx">
+                    <h3>What is TEDx?</h3>
+                    <p>
+                        In the spirit of ideas worth spreading, TEDx is a program of
+                        <strong>local, self-organized events</strong> that bring
+                        people together to share a TED-like experience. At a TEDx
+                        event, TED Talks video and live speakers combine to spark
+                        <strong>deep discussion and connection</strong>. These
+                        local, self-organized events are branded TEDx, where
+                        <em>x = independently organized TED event</em>.
+                    </p>
+                    <p>
+                        The TED Conference provides general guidance for the TEDx
+                        program, but individual TEDx event are self-organized.
+                        (Subject to certain rules and regulations.)
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 </article>
 {% endblock %}
@@ -117,12 +226,12 @@
         cubeView.style.setProperty('--cubeview-unit-width', uMaxWidth)
     }
 
-    createCubeView([
-        [4, 1], [5, 0], [4, 1], [5, 0], [4, 1], [4, 2], [3, 3],
-    ])
-    /*createCubeView([
-        [6, 2], [7, 1], [8, 0], [7, 1],
-    ])*/
+    let layout = [[4, 1], [5, 0], [4, 1], [5, 0], [4, 1], [4, 2], [3, 3]]
+    // TRIANGULAR
+    // layout = [[3, 3], [4, 2], [4, 1], [5, 0], [4, 1], [5, 0], [4, 1]]
+    // SMALLER
+    // layout = [[6, 2], [7, 1], [8, 0], [7, 1]]
+    createCubeView(layout)
 
     function slideMember(el, normalOv, hoverOv, hoverWidth) {
         normalOv.style.width = el.clientWidth - hoverWidth + "px"
