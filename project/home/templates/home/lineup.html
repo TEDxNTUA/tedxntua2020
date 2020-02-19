@@ -1,0 +1,65 @@
+<section id="lineup">
+    <header>
+        <h2>LINE UP</h2>
+    </header>
+    <ul class="nav home-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#speakers" class="nav-link active" id="speakers-tab"
+                data-toggle="tab" role="tab" aria-controls="speakers"
+                aria-selected="true">
+                Speakers
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#performers" class="nav-link" id="performers-tab"
+                data-toggle="tab" role="tab" aria-controls="performers"
+                aria-selected="false">
+                Performers
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#side_events" class="nav-link" id="side_events-tab"
+                data-toggle="tab" role="tab" aria-controls="side_events"
+                aria-selected="false">
+                Side events
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        {% for lineup_type, items in lineup.items %}
+        <div class="tab-pane show{% if forloop.first %} active{% endif %}"
+            id="{{ lineup_type }}" role="tabpanel"
+            aria-labelledby="{{ lineup_type }}-tab">
+            {% for item in items %}
+                {% if lineup_type == "side_events" %}
+                    <a href="{% url "presenter" slug=item.presenter.slug %}">
+                        <img srcset="{{ item.image.thumbnail.320x320.url }} 320w,
+                                     {{ item.image.thumbnail.720x720.url }} 720w,
+                                     {{ item.image.thumbnail.1024x1024.url }} 1024w"
+                             sizes="(max-width: 576px) 320px,
+                                    (max-width: 992px) 720px,
+                                    1024px"
+                             src="{{ item.image.thumbnail.320x320.url }}"
+                             alt="" />
+                        <h4>{{ item.title }}</h4>
+                        <p>{{ item.subtitle }}</p>
+                    </a>
+                {% else %}
+                    <a href="{% url "presenter" slug=item.slug %}">
+                        <img srcset="{{ item.image.thumbnail.320x320.url }} 320w,
+                                     {{ item.image.thumbnail.720x720.url }} 720w,
+                                     {{ item.image.thumbnail.1024x1024.url }} 1024w"
+                             sizes="(max-width: 576px) 320px,
+                                    (max-width: 992px) 720px,
+                                    1024px"
+                             src="{{ item.image.thumbnail.320x320.url }}"
+                             alt="" />
+                        <h4>{{ item.name }}</h4>
+                        <p>{{ item.occupation }}</p>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
