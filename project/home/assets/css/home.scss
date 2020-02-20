@@ -72,6 +72,18 @@ article.home-page {
             line-height: 1.15;
         }
     }
+    .nav-scrollable-tabs {
+        margin-top: .5em;
+        a {
+            display: inline;
+            margin-right: .5em;
+            font-size: 1.25em;
+            &.active {
+                color: black;
+                @include underline(0, .2em);
+            }
+        }
+    }
     .checkerboard-view {
         display: none;
     }
@@ -112,25 +124,21 @@ article.home-page {
                 line-height: 1;
             }
         }
-        .home-tabs {
+        .nav-scrollable-tabs {
             position: fixed;
             left: 0;
             bottom: calc(#{$box-size} + 4vh);
             display: flex;
             flex-flow: column nowrap;
+            margin: 0;
             padding-left: $page-padding-x-lg;
             font-size: $box-size / 8;
             .nav-item {
                 margin: 1em 0;
             }
-            .nav-link {
-                display: inline;
-                padding: 0;
+            a {
                 font-size: 2em;
-                &.active {
-                    color: black;
-                    @include underline(0, .2em);
-                }
+                margin-right: 0;
             }
         }
         .tab-content {
