@@ -1,0 +1,21 @@
+ul.nav-scrollable-tabs {
+    margin-bottom: 2em;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    .nav-item {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        margin: 0 1em 0 0;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    ul.nav-scrollable-tabs {
+        justify-content: flex-end;
+        .nav-item {
+            margin: 0 0 0 1em;
+        }
+    }
+}
