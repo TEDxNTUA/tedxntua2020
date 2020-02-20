@@ -33,6 +33,7 @@ urlpatterns += i18n_patterns(
     path('partners/', include('project.partners.urls')),
     path('team/', include('project.team.urls')),
     path('about/', include('project.about.urls')),
+    
     path('tickets/', RedirectView.as_view(url='<VAR:TICKETS_URL>'))
 )
 
