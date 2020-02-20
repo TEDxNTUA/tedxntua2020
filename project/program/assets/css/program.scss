@@ -1,28 +1,7 @@
 article.event-page {
-    ul.event-tabs {
-        margin-bottom: 2rem;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        .nav-item {
-            flex-shrink: 0;
-            scroll-snap-align: start;
-            margin: 0 1rem 0 0;
-        }
+    ul.nav-scrollable-tabs {
         .btn-secondary {
             font-weight: bold;
-        }
-    }
-}
-
-@include media-breakpoint-up(md) {
-    article.event-page {
-        ul.event-tabs {
-            justify-content: flex-end;
-            .nav-item {
-                margin: 0 0 0 1rem;
-            }
         }
     }
 }

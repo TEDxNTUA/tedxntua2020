@@ -1,5 +1,5 @@
 {% with url_name=request.resolver_match.url_name %}
-<ul class="event-tabs nav">
+<ul class="nav nav-scrollable-tabs">
     <li class="nav-item">
         <a href="{% url 'speakers' %}" class="btn {% if url_name == 'speakers' %}btn-secondary{% else %}btn-white{% endif %}">Speakers</a>
     </li>
