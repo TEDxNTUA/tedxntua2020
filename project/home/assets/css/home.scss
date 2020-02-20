@@ -38,66 +38,152 @@
 $box-size: 16vmin;
 
 article.home-page {
-    header {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        height: $box-size;
-        font-size: $box-size / 8;
-        &::before {
-            content: "";
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: $box-size;
-            height: $box-size;
-            background: $primary;
+    section#lineup .tab-content {
+        font-size: .85rem;
+    }
+    .tab-pane {
+        a {
+            margin-bottom: .5em;
         }
-        h2 {
+        .media {
             position: relative;
-            z-index: 10;
-            padding: calc(#{$box-size / 2} - .5em) 1rem;
-            padding-left: $page-padding-x;
-            background: black;
-            background: linear-gradient(90deg, black 0%, black $box-size,
-                            $primary $box-size);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: white;
-            -webkit-text-fill-color: transparent;
-            font-size: 5em;
-            font-style: italic;
-            font-weight: 300;
+            width: 100%;
+            padding-bottom: 100%;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .info {
+            margin-top: 1em;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        h5 {
+            font-size: 1.15em;
             line-height: 1;
+            color: black;
+        }
+        p {
+            line-height: 1.15;
         }
     }
-    .home-tabs {
-        position: fixed;
-        left: 0;
-        bottom: calc(#{$box-size} + 4vh);
-        display: flex;
-        flex-flow: column nowrap;
-        padding-left: $page-padding-x;
-        font-size: $box-size / 8;
-        .nav-item {
-            margin: 1em 0;
-        }
-        .nav-link {
-            display: inline;
-            padding: 0;
-            font-size: 2em;
-            &.active {
-                color: black;
-                @include underline(0, .2em);
-            }
-        }
+    .checkerboard-view {
+        display: none;
     }
 }
 
 @include media-breakpoint-up(lg) {
     article.home-page {
-        header h2, .home-tabs {
+        header {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            height: $box-size;
+            font-size: $box-size / 8;
+            &::before {
+                content: "";
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: $box-size;
+                height: $box-size;
+                background: $primary;
+            }
+            h2 {
+                position: relative;
+                z-index: 10;
+                padding: calc(#{$box-size / 2} - .5em) 1rem;
+                padding-left: $page-padding-x-lg;
+                background: black;
+                background: linear-gradient(90deg, black 0%, black $box-size,
+                                $primary $box-size);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: white;
+                -webkit-text-fill-color: transparent;
+                font-size: 5em;
+                font-style: italic;
+                font-weight: 300;
+                line-height: 1;
+            }
+        }
+        .home-tabs {
+            position: fixed;
+            left: 0;
+            bottom: calc(#{$box-size} + 4vh);
+            display: flex;
+            flex-flow: column nowrap;
             padding-left: $page-padding-x-lg;
+            font-size: $box-size / 8;
+            .nav-item {
+                margin: 1em 0;
+            }
+            .nav-link {
+                display: inline;
+                padding: 0;
+                font-size: 2em;
+                &.active {
+                    color: black;
+                    @include underline(0, .2em);
+                }
+            }
+        }
+        .tab-content {
+            width: 80%;
+            margin-left: auto;
+        }
+        .tab-pane {
+            padding: 0;
+        }
+        .simple-view {
+            display: none;
+        }
+        .checkerboard-view {
+            display: grid;
+            a {
+                position: relative;
+                max-width: 100%;
+                margin-bottom: 0;
+                padding-bottom: 100%;
+            }
+            .media {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            img {
+                transition: transform .1s ease-in-out;
+            }
+            .info {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                margin-top: .5em;
+                padding: 0 .5em;
+                transition: top .1s ease-in-out;
+            }
+            a:hover {
+                img {
+                    transform: scale(1.05);
+                }
+                .info {
+                    top: 102.5%;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    article.home-page {
+        .checkerboard-view {
+            font-size: 1rem;
         }
     }
 }
