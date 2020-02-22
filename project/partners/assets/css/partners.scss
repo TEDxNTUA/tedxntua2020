@@ -84,6 +84,8 @@ article.sponsors {
     .modal-body{
         height: 100% !important;
         padding: 0 !important;
+        display: flex;
+        align-items: center;
         // border: solid yellow;
     }
     .img-fluid{
@@ -91,6 +93,7 @@ article.sponsors {
         max-width: 100%;
         display: block;
         margin: 0 auto;
+        height: 100% !important;
 
     }
 
