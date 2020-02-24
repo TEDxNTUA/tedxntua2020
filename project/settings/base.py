@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'project.team',
     'project.about',
     'project.users',
+    'project.feed',
     'versatileimagefield',
     'parler',
     'django.contrib.admin',
