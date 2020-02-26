@@ -27,7 +27,7 @@
     </ul>
     <div class="tab-content">
         {% for lineup_type, items in lineup.items %}
-        <div class="tab-pane container-fluid show{% if forloop.first %} active{% endif %}"
+        <div class="tab-pane container-fluid{% if forloop.first %} show active{% endif %}"
             id="{{ lineup_type }}" role="tabpanel"
             aria-labelledby="{{ lineup_type }}-tab">
             <div class="simple-view row">
