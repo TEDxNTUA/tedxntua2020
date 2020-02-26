@@ -1,7 +1,7 @@
 * {
     // border: 2px solid red; 
     box-sizing: border-box;
-  }
+}
 //   html{
 //     position: fixed;
 //     top: 0;
@@ -21,121 +21,182 @@ main{
     padding: 0 !important;
     margin: 0 !important;
 }
-  .container-1 {
-    // border: solid yellow;
-    position: fixed;
-    top: 9rem;
-    bottom: 0;
-    // left: 0;
-    // right: 0;
-    width: 100%;
-    display: flex;
-    // align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-  }
-  .layout-1{
-    // border: solid yellow;
-    width: 90%;
-    height: 95%;
-    position: relative;
-    // top: -2rem;
-    overflow-y: -moz-hidden-unscrollable;
-  }
-  .button-container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 3rem;
-  }
-  button{
-    min-height: 2rem;
-    padding: 0 2em;
-    margin: 1.5em 1.5em;
-  }
-  .feed-container{
-    height: 100%;
-    display: flex;
-    align-items: stretch;
-    flex-direction: row;
-    border: 3px solid $primary; //lightgray
-  }
-  .schedule{
-    width: 30%;
-    height: auto;
-    border-right: 3px solid $secondary; //gray
-    overflow-y: scroll;
-  }
-  #coming{
-    width: 100%;
-    height: 4rem;
-    font-size: 1.5vw;
-    background: lightgray;
-    display: flex;
-    align-items: center;
-    padding: 0 0.5em;
-  }
-  .schedule-list{
-    width: 100%;
-    height: 92%;
-  }
-  .announcements{
-    width: 70%;
-    overflow-y: scroll;
-  }
-  .event{
-    width: 100%;
-    min-height: 10em;
-    background: lightgray;
-    border-bottom: 3px solid $secondary; //gray
-  }
-  .event-time{
-    height: 2.5em;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  #start-time{
-    font-size: 150%;
-    margin: 0 0.7em; /*2em in notification with scss*/
-  }
-  .event-info{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-  }
-  .event-thumbnail{
-    height: 100%;
-    display: flex;
-    margin: 0 1em; /*3em in notification with scss*/
-  }
-  .square{
-    height: 6.5em;
-    width: 6.5em;
-    margin: 0 auto;
-    background-color: gray;
-  }
-  .event-title{
-    word-wrap: break-word;
-    padding-bottom: 0.5em;
-    padding-right: 1em;
-    overflow-x: auto;     /*maybe add bigger font weight*/
-  }
+.container-1 {
+  // border: solid yellow;
+  position: fixed;
+  top: 9rem;
+  bottom: 0;
+  // left: 0;
+  // right: 0;
+  width: 100%;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.layout-1{
+  // border: solid yellow;
+  width: 90%;
+  height: 95%;
+  position: relative;
+  // top: -2rem;
+  overflow-y: -moz-hidden-unscrollable;
+  border-bottom: 3px solid $primary;
+}
+.button-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3rem;
+}
+button{
+  min-height: 2rem;
+  padding: 0 2em;
+  margin: 1.5em 1.5em;
+}
+.feed-container{
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  border: 3px solid $primary; //lightgray
+}
+.schedule{
+  width: 30%;
+  height: auto;
+  border-right: 3px solid $secondary; //gray
+}
+#coming{
+  width: 100%;
+  height: 4rem;
+  font-size: 1.5vw;
+  background: lightgray;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5em;
+}
+.schedule-list{
+  width: 100%;
+  height: 92%;
+  overflow-y: scroll;
+}
+.announcements{
+  width: 70%;
+  overflow-y: scroll;
+}
+.event{
+  width: 100%;
+  min-height: 10em;
+  background: lightgray;
+  border-bottom: 3px solid $secondary; //gray
+}
+.event-time{
+  height: 2.5em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+#start-time{
+  font-size: 150%;
+  margin: 0 0.7em; /*2em in notification with scss*/
+}
+.event-info{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.event-thumbnail{
+  height: 100%;
+  display: flex;
+  margin: 0 1em; /*3em in notification with scss*/
+}
+.square{
+  height: 6.5em;
+  width: 6.5em;
+  margin: 0 auto;
+  background-color: gray;
+}
+.event-title{
+  word-wrap: break-word;
+  padding-bottom: 0.5em;
+  padding-right: 1em;
+  overflow-x: auto;     /*maybe add bigger font weight*/
   p{
     font-size: 130%;
     margin: 0;
   }
-  .notification{
+}
+
+.notification{
+  width: 100%;
+  min-height: 10em;
+  background: white;
+  border-bottom: 3px solid $secondary; //lightgray
+  #start-time{
+      margin: 0 2em;
+  }
+  .event-thumbnail{
+      margin: 0 3em;
+  }
+}
+
+@media (max-width: 575.98px){
+  .container-1 {
+    top: 5rem;
+  }
+  .layout-1{
     width: 100%;
-    height: 10em;
-    background: white;
-    border-bottom: 3px solid $secondary; //lightgray
-    #start-time{
-        margin: 0 2em;
-    }
-    .event-thumbnail{
-        margin: 0 3em;
+    height: 100%;
+    border-bottom: 0;
+  }
+  button{
+    min-height: 2rem;
+    padding: 0 1.5em;
+    margin: 1em 0.5em;
+  }
+  .feed-container{
+    flex-direction: column;
+    border: 0;
+  }
+  .schedule{
+    width: 100%;
+    height: auto;
+    // max-height: 45%;
+    border-right: 0;
+    border-bottom: 3px solid $secondary; //gray
+    border-bottom: 0;
+  }
+  #coming{
+    width: 100%;
+    height: 3rem;
+    font-size: 120%;
+    padding: 0 0.5em;
+    background-color: #F4A460;
+    border-bottom: solid #FF7F50;
+    // border-bottom-left-radius: 1em;
+    // border-bottom-right-radius: 1em;
+  }
+  .schedule-list{
+    // height: 80%;
+    // display: none;   //if display none, schedule list is collapsed at login
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+  }
+  .event-title{
+    p{
+      font-size: 100%;
     }
   }
-  
+  .announcements{
+    width: 100%;
+  }
+  .notification{
+    #start-time{
+        margin: 0 0.7em;
+    }
+    .event-thumbnail{
+        margin: 0 1em;
+    }
+  }
+}

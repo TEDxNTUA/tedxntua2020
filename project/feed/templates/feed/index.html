@@ -10,8 +10,8 @@
             </div>
             <div class="feed-container">
                 <div class="schedule">
-                    <div id="coming">COMING UP</div>
-                    <div class="schedule-list">
+                    <div id="coming" onclick="myListCollapse()">COMING UP</div>
+                    <div class="schedule-list" id="myList">
                         <div class="event">
                             <div class="event-time">
                                 <p id="start-time">09:45</p>
@@ -30,16 +30,16 @@
                             </div>
                         </div>
                         <div class="event"></div>
+                        <!-- <div class="event"></div>
                         <div class="event"></div>
                         <div class="event"></div>
-                        <div class="event"></div>
-                        <div class="event"></div>
+                        <div class="event"></div> -->
                     </div>
                 </div>
                 <div class="announcements">
                     <div class="notification">
                         <div class="event-time">
-                            <p id="start-time">09:45</p>
+                            <p id="start-time">2 min</p>
                         </div>
                         <div class="event-info">
                             <div class="event-thumbnail">
@@ -63,4 +63,23 @@
             </div>
         </div>
     </div>
+    <script>
+        function myListCollapse(){
+            var x = document.getElementById("myList");
+            var y = document.getElementById("coming");
+            var w = parseInt(window.screen.width);
+            if(w <= 575){
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                    y.style.borderRadius = "0";
+                } 
+                else {
+                    x.style.display = "none";
+                    y.style.borderBottomLeftRadius = "1em";
+                    y.style.borderBottomRightRadius = "1em";
+                }
+            }
+        }
+    </script>
 {% endblock %}
+
