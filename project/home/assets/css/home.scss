@@ -2,6 +2,7 @@ $box-size: 16vmin;
 
 article.home-page {
     .tab-pane {
+        padding: 0;
         a {
             margin-bottom: .5em;
         }
@@ -48,7 +49,6 @@ article.home-page {
         display: none;
     }
     > section {
-        min-height: 100vh;
         margin-bottom: 4rem;
     }
     section#lineup .tab-content {
@@ -57,7 +57,7 @@ article.home-page {
     section#venue{
         .map{
             display: flex;
-            height: 12em;
+            flex-direction: column;
         }
 
         .location{
@@ -66,7 +66,6 @@ article.home-page {
             flex-direction: column;
             background-color: $secondary;
             font-weight: lighter;
-            width: 12em;
             text-align: center;
             padding: 1em;
         }
@@ -74,6 +73,7 @@ article.home-page {
         .location h5{
             color: black;
             margin-bottom: 0.5em;
+            font-size: 1.25em;
         }
 
         .location p{
@@ -85,8 +85,23 @@ article.home-page {
         }
 
         iframe{
+            height: 16em;
             flex-grow: 1;
             border:3px solid $secondary;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .image-container {
+            border: 3px solid $secondary;
+            border-top-width: 0;
+            margin-bottom: 2em;
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 }
@@ -152,13 +167,6 @@ article.home-page {
                 margin-right: 0;
             }
         }
-        .tab-content {
-            width: 80%;
-            margin-left: auto;
-        }
-        .tab-pane {
-            padding: 0;
-        }
         .simple-view {
             display: none;
         }
@@ -196,8 +204,40 @@ article.home-page {
                 }
             }
         }
-        section#lineup .tab-content {
-            margin-bottom: 16%; // 20% * 80%
+        section#lineup {
+            .tab-content {
+                width: 80%;
+                margin-left: auto;
+                margin-bottom: 16%; // 20% * 80%
+            }
+        }
+        section#venue {
+            .map {
+                height: 12em;
+                flex-direction: row;
+                font-size: 1.5rem;
+            }
+            .location {
+                width: 12em;
+            }
+            iframe {
+                height: auto;
+            }
+            .content {
+                flex-direction: row;
+                width: 80%;
+                margin: 4em 0 16% auto; // 20% * 80%
+            }
+            .image-container {
+                order: 1;
+                width: 18em; // 12em * 1.5rem
+                height: 18em;
+                border-top-width: 3px;
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
         }
     }
 }
