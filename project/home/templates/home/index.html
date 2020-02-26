@@ -9,6 +9,7 @@
 {% endblock %}
 {% block scripts %}
 <script>
+    // Checkerboard grid view generator
     const tabs = document.querySelectorAll("#lineup .tab-pane")
 
     function createSpacer() {
@@ -70,5 +71,56 @@
     for (const tabEl of tabs) {
         createCheckerboardView(tabEl, layout)
     }
+</script>
+<script>
+    // Section scroll handler
+    // sx: section (abbrev.)
+    const INTERSECTION_THRESHOLD = 0.5
+    const sxs = document.querySelectorAll('article.home-page > section')
+    let activeIdx
+    const visibleSxs = []
+    const sxOverlays = []
+    const sxIdToIdx = {}
+    sxs.forEach((sx, idx) => {
+        // Build id to index mapper
+        sxIdToIdx[sx.id] = idx
+        // Find overlays
+        sxOverlays.push(sx.querySelectorAll('header, .nav-scrollable-tabs'))
+    })
+
+    function switchActiveSx(newActiveIdx) {
+        if (typeof activeIdx !== 'undefined') {
+            // Hide current
+            sxOverlays[activeIdx].forEach(el => el.classList.remove('show'))
+        }
+        // Show new
+        sxOverlays[newActiveIdx].forEach(el => el.classList.add('show'))
+        activeIdx = newActiveIdx
+    }
+
+    const options = {
+        root: null,
+        rootMargin: '0',
+        threshold: 0.5,
+    }
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const thisIdx = sxIdToIdx[entry.target.id]
+
+            if (entry.isIntersecting && entry.intersectionRatio > 0) {
+                // Activate visible section
+                visibleSxs[thisIdx] = true
+                switchActiveSx(thisIdx)
+            } else if (!entry.isIntersecting && entry.intersectionRatio === 0) {
+                // Also activate other visible section when current disappears
+                visibleSxs[thisIdx] = false
+                let otherVisibleIdx = visibleSxs.indexOf(true)
+                if (otherVisibleIdx >= 0) {
+                    switchActiveSx(otherVisibleIdx)
+                }
+            }
+        })
+    })
+    sxs.forEach(el => observer.observe(el))
 </script>
 {% endblock %}

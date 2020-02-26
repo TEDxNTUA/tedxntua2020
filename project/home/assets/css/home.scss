@@ -47,6 +47,10 @@ article.home-page {
     .checkerboard-view {
         display: none;
     }
+    > section {
+        min-height: 100vh;
+        margin-bottom: 4rem;
+    }
     section#lineup .tab-content {
         font-size: .85rem;
     }
@@ -92,17 +96,22 @@ article.home-page {
         header {
             position: fixed;
             left: 0;
-            bottom: 0;
+            bottom: calc(-100% - #{$box-size});
             height: $box-size;
             font-size: $box-size / 8;
+            transition: bottom .5s ease-in-out;
             &::before {
                 content: "";
                 position: fixed;
                 left: 0;
-                bottom: 0;
+                bottom: calc(-100% - #{$box-size});
                 width: $box-size;
                 height: $box-size;
                 background: $primary;
+                transition: bottom .5s ease-in-out;
+            }
+            &.show, &.show::before {
+                bottom: 0;
             }
             h2 {
                 position: relative;
@@ -125,12 +134,16 @@ article.home-page {
         .nav-scrollable-tabs {
             position: fixed;
             left: 0;
-            bottom: calc(#{$box-size} + 4vh);
+            bottom: -100%;
             display: flex;
             flex-flow: column nowrap;
             margin: 0;
             padding-left: $page-padding-x-lg;
             font-size: $box-size / 8;
+            transition: bottom .5s ease-in-out;
+            &.show {
+                bottom: calc(#{$box-size} + 4vh);
+            }
             .nav-item {
                 margin: 1em 0;
             }
@@ -182,6 +195,9 @@ article.home-page {
                     top: 102.5%;
                 }
             }
+        }
+        section#lineup .tab-content {
+            margin-bottom: 16%; // 20% * 80%
         }
     }
 }
