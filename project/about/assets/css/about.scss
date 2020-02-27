@@ -167,10 +167,10 @@ article.about-page {
             width: 100%;
             height: auto;
             object-fit: cover;
-            border: 6px solid $secondary;
+            border: 4px solid $secondary;
         }
         h3 {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
         p {
             line-height: 1.75;
@@ -182,7 +182,7 @@ article.about-page {
     }
 
     .about-section {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     #about-tedxntua {
@@ -194,8 +194,8 @@ article.about-page {
         margin-right: auto;
         padding: 2rem;
         background-color: $body-bg;
-        border: 6px solid $secondary;
-        box-shadow: 0 -.5rem 1rem 0 rgba(0, 0, 0, .5);
+        border: 4px solid $secondary;
+        box-shadow: .25rem .25rem 0 0 black;
     }
 }
 
@@ -204,9 +204,15 @@ article.about-page {
         .member p {
             font-size: 1rem;
         }
+        section#about img, #about-tedxntua {
+            border-width: 6px;
+        }
+        .about-section {
+            margin-bottom: 4rem;
+        }
         #about-tedxntua {
             padding: 4rem;
-            box-shadow: 0 -1rem 2rem 0 rgba(0, 0, 0, .5);
+            box-shadow: .5rem .5rem 0 0 black;
         }
     }
 }
@@ -218,6 +224,9 @@ article.about-page {
         }
         #cube-view {
             display: block;
+        }
+        section#about {
+            margin-top: 6rem;
         }
     }
 }
