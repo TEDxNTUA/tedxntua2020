@@ -162,7 +162,7 @@ button{
   .schedule{
     width: 100%;
     height: auto;
-    // max-height: 45%;
+    max-height: 45%;
     border-right: 0;
     border-bottom: 3px solid $secondary; //gray
     border-bottom: 0;
@@ -178,7 +178,7 @@ button{
     // border-bottom-right-radius: 1em;
   }
   .schedule-list{
-    // height: 80%;
+    height: 80%;
     // display: none;   //if display none, schedule list is collapsed at login
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
