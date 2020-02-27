@@ -1,3 +1,4 @@
+$scroll-snap-enabled: false;
 $box-size: 16vmin;
 
 article.home-page {
@@ -34,7 +35,6 @@ article.home-page {
         }
     }
     .nav-scrollable-tabs {
-        margin-top: .5em;
         a {
             display: inline;
             margin-right: .5em;
@@ -49,7 +49,41 @@ article.home-page {
         display: none;
     }
     > section {
-        margin-bottom: 4rem;
+        padding: 2rem 0;
+        line-height: 1.5;
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+    header h2 {
+        margin-bottom: .35em;
+    }
+    section#hero {
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .content {
+            margin-top: 2em;
+            > p {
+                font-size: 1.2em;
+            }
+            details {
+                margin-bottom: 2em;
+            }
+            h2, h3 {
+                font-weight: normal;
+                line-height: 1;
+            }
+            h2 {
+                color: black;
+                font-size: 2em;
+            }
+            h3 {
+                margin-bottom: 1em;
+                font-size: 1.2em;
+            }
+        }
     }
     section#lineup .tab-content {
         font-size: .85rem;
@@ -104,9 +138,40 @@ article.home-page {
             }
         }
     }
+    section#about {
+        .auspices {
+            a {
+                display: block;
+                width: 18em;
+                max-width: 60%;
+                margin: 0 auto;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+            h5 {
+                text-align: center;
+                margin: 1em 0 .5em;
+            }
+        }
+        .content {
+            h3 {
+                margin: 2em 0 .5em;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-up(lg) {
+    @if $scroll-snap-enabled {
+        html {
+            scroll-snap-type: y proximity;
+        }
+        nav#nav {
+            scroll-snap-align: start;
+        }
+    }
     article.home-page {
         header {
             position: fixed;
@@ -155,6 +220,7 @@ article.home-page {
             margin: 0;
             padding-left: $page-padding-x-lg;
             font-size: $box-size / 8;
+            line-height: 1;
             transition: bottom .5s ease-in-out;
             &.show {
                 bottom: calc(#{$box-size} + 4vh);
@@ -204,11 +270,45 @@ article.home-page {
                 }
             }
         }
+        > section {
+            @if $scroll-snap-enabled {
+                scroll-snap-align: start;
+                padding-top: $page-padding-y-lg;
+            } @else {
+                padding-top: 4rem;
+            }
+            padding-bottom: $box-size;
+            font-size: 1.25rem;
+        }
+        section#hero {
+            display: flex;
+            .image-container {
+                max-width: 80vmin;
+                max-height: 80vmin;
+                flex-shrink: 0;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            .content {
+                align-self: center;
+                margin-left: 2em;
+                margin-top: 0;
+                > p {
+                    font-size: 1.5em;
+                }
+                a.btn {
+                    padding: .75rem 1.5rem;
+                    font-size: 1.5rem;
+                }
+            }
+        }
         section#lineup {
             .tab-content {
                 width: 80%;
                 margin-left: auto;
-                margin-bottom: 16%; // 20% * 80%
             }
         }
         section#venue {
@@ -236,6 +336,22 @@ article.home-page {
                 img {
                     height: 100%;
                     object-fit: cover;
+                }
+            }
+        }
+        section#about {
+            display: flex;
+            .auspices {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 80vmin;
+            }
+            .content {
+                h3:first-child {
+                    margin-top: 0;
                 }
             }
         }

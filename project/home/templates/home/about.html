@@ -1,0 +1,39 @@
+{% load static %}
+<section id="about">
+    <header>
+        <h2>ABOUT</h2>
+    </header>
+    <div class="auspices">
+        <a href="https://www.ntua.gr" target="_blank">
+            <img src="{% static "images/pyrforos.svg" %}"
+                alt="Pyrforos: The emblem of the National Technical University of Athens" />
+        </a>
+        <h5>Under the auspices of NTUA</h5>
+    </div>
+    <div class="content">
+        <h3>What is this event?</h3>
+        <p>
+            TEDx is a program that consists of <strong>local, self-organized
+            events</strong> that bring people together. It was created by TED
+            and is under the general guidance of the TED Conference.
+        </p>
+        <p>
+            TEDxNTUA is a conference that features talks on the topics of
+            <strong>popular science</strong>, <strong>art</strong>,
+            <strong>social issues</strong> and <strong>stories that can
+            inspire</strong>. It started in 2015 and is since run by NTUA
+            volunteer students.
+        </p>
+        <p>
+            Learn more about the event, meet this year’s team and learn how to
+            be a part of the next one, by clicking the button below.
+        </p>
+        <a href="{% url "about" %}" class="btn btn-lg btn-secondary">
+            Learn more about us &gt;
+        </a>
+        <h3>Oh, and don't forget to:</h3>
+        <a href="/tickets" class="btn btn-lg btn-primary">
+            Get your tickets!
+        </a>
+    </div>
+</section>
