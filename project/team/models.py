@@ -69,6 +69,15 @@ class TeamMember(TranslatableModel):
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
 
+    image_alt = VersatileImageField(
+        'Image',
+        upload_to='team/',
+        width_field='image_alt_width',
+        height_field='image_alt_height',
+    )
+    image_alt_height = models.PositiveIntegerField(editable=False, null=True)
+    image_alt_width = models.PositiveIntegerField(editable=False, null=True)
+
     is_published = models.BooleanField(_('Published'), default=True)
 
     objects = TeamMemberManager()
@@ -78,7 +87,7 @@ class TeamMember(TranslatableModel):
         Objects of the TeamMember class are represented as strings by
         their fullname property
         '''
-        return self.name 
+        return self.name
 
 
 @receiver(models.signals.post_save, sender=TeamMember)
@@ -93,7 +102,7 @@ def warm_team_member_images(sender, instance, **kwargs):
     https://django-versatileimagefield.readthedocs.io/en/latest/overview.html#create-images-wherever-you-need-them
     '''
 
-    for field in ['image']:
+    for field in ['image', 'image_alt']:
         img_warmer = VersatileImageFieldWarmer(
             instance_or_queryset=instance,
             rendition_key_set='Sizes',
