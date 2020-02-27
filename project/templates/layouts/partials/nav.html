@@ -72,11 +72,13 @@
         </li>
         <li class="nav-item language-switch-container">
             <h6>LANGUAGE</h6>
-            <div role="group" class="btn-group btn-group-toggle" data-toggle="buttons" id="language-switch"
-                 aria-label="Select website language">
+            <div role="group" class="btn-group btn-group-toggle language-switch"
+                data-toggle="buttons" aria-label="Select website language">
                 {% for code, lang_name in LANGUAGES %}
-                <label class="btn{% if code == CURR_LANG %} active{% endif %}" aria-label="{{ lang_name }}">
-                    <input type="radio" id="language-switch-{{ code }}" name="language" autocomplete="off" checked>
+                <label class="btn{% if code == CURR_LANG %} active{% endif %}"
+                    aria-label="{{ lang_name }}">
+                    <input type="radio" value="{{ code }}" name="language"
+                        autocomplete="off" checked>
                     {{ code | lang_short_name }}
                 </label>
                 {% endfor %}
