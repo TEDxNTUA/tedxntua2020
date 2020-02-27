@@ -183,6 +183,9 @@ article.about-page {
 
     .about-section {
         margin-bottom: 2rem;
+        a {
+            @include underline();
+        }
     }
 
     #about-tedxntua {
@@ -192,7 +195,7 @@ article.about-page {
         margin-top: -12vw;
         margin-left: auto;
         margin-right: auto;
-        padding: 2rem;
+        padding: 1.5rem;
         background-color: $body-bg;
         border: 4px solid $secondary;
         box-shadow: .25rem .25rem 0 0 black;
