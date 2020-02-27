@@ -74,10 +74,8 @@
 <script>
     // Section scroll handler
     // sx: section (abbrev.)
-    const INTERSECTION_THRESHOLD = 0.5
     const sxs = document.querySelectorAll('article.home-page > section')
     let activeIdx
-    const visibleSxs = []
     const sxOverlays = []
     const sxIdToIdx = {}
     sxs.forEach((sx, idx) => {
@@ -97,29 +95,30 @@
         activeIdx = newActiveIdx
     }
 
+    // Intersection observer that activates when element covers >50% of screen
+    // height.
+    // Adapted from: https://stackoverflow.com/q/57786082
     const options = {
-        root: null,
-        rootMargin: '0',
-        threshold: 0.5,
+        threshold: Array(21).fill().map((_, x) => x / 20),
     }
+    const sxIntersectionRatios = []
     const observer = new IntersectionObserver(entries => {
+        console.debug('Observed:', entries)
         entries.forEach(entry => {
             const thisIdx = sxIdToIdx[entry.target.id]
+            const h = entry.boundingClientRect.height
+            const wh = window.innerHeight
 
-            if (entry.isIntersecting && entry.intersectionRatio > 0) {
+            const viewportRatio = (h < wh) ? entry.intersectionRatio : (
+                entry.intersectionRatio * h / wh
+            )
+
+            if (entry.isIntersecting && viewportRatio >= 0.5) {
                 // Activate visible section
-                visibleSxs[thisIdx] = true
                 switchActiveSx(thisIdx)
-            } else if (!entry.isIntersecting && entry.intersectionRatio === 0) {
-                // Also activate other visible section when current disappears
-                visibleSxs[thisIdx] = false
-                let otherVisibleIdx = visibleSxs.indexOf(true)
-                if (otherVisibleIdx >= 0) {
-                    switchActiveSx(otherVisibleIdx)
-                }
             }
         })
-    })
+    }, options)
     sxs.forEach(el => observer.observe(el))
 </script>
 {% endblock %}
