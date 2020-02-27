@@ -9,14 +9,33 @@
             </header>
             {% for member in members %}
             <div class="member">
-                {% if member.image %}
                 <div class="slider-image normal">
-                    <img src="{% static "images/steph1_.png" %}" />
+                    {% if member.image %}
+                    <img srcset="{{ member.image.thumbnail.320x320.url }} 320w,
+                            {{ member.image.thumbnail.720x720.url }} 720w,
+                            {{ member.image.thumbnail.1024x1024.url }} 1024w"
+                        sizes="(max-width: 576px) 320px,
+                            (max-width: 992px) 720px,
+                            1024px"
+                        src="{{ member.image.thumbnail.320x320.url }}"
+                        alt="Picture #1 of {{ member.name }}" />
+                    {% else %}
+                    <img class="placeholder"
+                        src="{% static "images/member_no_photo.svg" %}" />
+                    {% endif %}
                     <p>{{ member.name }}</p>
                 </div>
-                {% endif %}
                 <div class="slider-image on-hover">
-                    <img src="{% static "images/steph2_.png" %}" />
+                    {% if member.image_alt %}
+                    <img srcset="{{ member.image_alt.thumbnail.320x320.url }} 320w,
+                            {{ member.image_alt.thumbnail.720x720.url }} 720w,
+                            {{ member.image_alt.thumbnail.1024x1024.url }} 1024w"
+                        sizes="(max-width: 576px) 320px,
+                            (max-width: 992px) 720px,
+                            1024px"
+                        src="{{ member.image_alt.thumbnail.320x320.url }}"
+                        alt="Picture #2 of {{ member.name }}" />
+                    {% endif %}
                     <p>{{ member.get_team_display|upper }} TEAM</p>
                 </div>
             </div>
