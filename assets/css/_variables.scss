@@ -15,10 +15,12 @@ $input-btn-focus-width: 0;
 // Buttons
 $btn-box-shadow: .25rem .25rem 0 0 black;
 $btn-border-width: 0;
+$input-btn-padding-y: .375rem;
+$input-btn-padding-x: 1rem;
 
 // Body
 $body-bg: #fff;
-$body-color: #343a40;
+$body-color: #242a30;
 
 // Links
 $link-color: $body-color;
@@ -50,7 +52,8 @@ $footer-border-top: none;
 $footer-column-gap: 1.5rem;
 
 // Animations
-$transition-base: all .1s ease-in-out;
+$transition-base-timing: .1s ease-in-out;
+$transition-base: all $transition-base-timing;
 
 // Dropdowns
 $dropdown-border-color: black;

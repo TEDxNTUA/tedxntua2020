@@ -1,0 +1,122 @@
+{% load i18n %}
+{% load static %}
+{% load lang_extras %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language as CURR_LANG %}
+<section id="footer-main">
+    <div id="find-us">
+        <header>
+            <h4>Find us</h4>
+        </header>
+        <ul class="contact">
+            <li>
+                <a href="https://www.facebook.com/tedxntua" target="_blank">
+                    <svg>
+                        <use xlink:href="{% static "images/social-icons.svg" %}#facebook" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/tedxntua" target="_blank">
+                    <svg>
+                        <use xlink:href="{% static "images/social-icons.svg" %}#twitter" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com/tedxntua" target="_blank">
+                    <svg>
+                        <use xlink:href="{% static "images/social-icons.svg" %}#instagram" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/tedxntua" target="_blank">
+                    <svg>
+                        <use xlink:href="{% static "images/social-icons.svg" %}#linkedin" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <a class="email" href="mailto:info&#64;tedxntua.com"
+            target="_blank">
+            <span class="underline-hover">info&#64;tedxntua.com</span>
+        </a>
+    </div>
+    <div id="more-stuff">
+        <header>
+            <h4>More stuff from us</h4>
+        </header>
+        <ul class="scrollable-cards">
+            <li>
+                <a href="https://2019.tedxntua.com" target="_blank"
+                    class="underline-parent">
+                    <img src="{% static "images/tedxntua2019.jpg" %}" />
+                    <div class="overlay">
+                        <h5 class="underline-hover">2019</h5>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://2018.tedxntua.com" target="_blank"
+                    class="underline-parent">
+                    <img src="{% static "images/tedxntua2018.jpg" %}" />
+                    <div class="overlay">
+                        <h5 class="underline-hover">2018</h5>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://2017.tedxntua.com" target="_blank"
+                    class="underline-parent">
+                    <img src="{% static "images/tedxntua2017.jpg" %}" />
+                    <div class="overlay">
+                        <h5 class="underline-hover">2017</h5>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://2015.tedxntua.com" target="_blank"
+                    class="underline-parent">
+                    <img src="{% static "images/tedxntua2015.jpg" %}" />
+                    <div class="overlay">
+                        <h5 class="underline-hover">2015</h5>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="footer-bottom">
+    <a class="footer-brand" href="/" aria-label="Go to homepage">
+        <img src="{% static "images/tedxntua_logo_blacktext.png" %}"
+            alt="TEDxNTUA logo" />
+    </a>
+    <div role="group" class="btn-group btn-group-toggle language-switch"
+        data-toggle="buttons" aria-label="Select website language">
+        {% spaceless %}
+            {% for code, lang_name in LANGUAGES %}
+            <label class="btn{% if code == CURR_LANG %} active{% endif %}"
+                aria-label="{{ lang_name }}">
+                <input type="radio" value="{{ code }}" name="language"
+                    autocomplete="off" checked>
+                {{ code | lang_short_name }}
+            </label>
+            {% endfor %}
+        {% endspaceless %}
+    </div>
+    <div class="legal">
+        <div class="links">
+            <span>&copy; TEDxNTUA 2020</span> &middot;
+            <a href="/privacy" class="underline-parent">
+                <span class="underline-hover">Privacy Policy</span>
+            </a> &middot;
+            <a href="/terms" class="underline-parent">
+                <span class="underline-hover">Terms of Use</span>
+            </a>
+        </div>
+        <p class="license">
+            This independent TEDx event is operated under license from TED.
+        </p>
+    </div>
+</section>

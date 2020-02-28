@@ -1,10 +1,65 @@
+{% load static %}
 <section id="venue">
+    <header>
+        <h2>VENUE</h2>
+    </header>
     <div class="map">
         <div class="location">
-                <h5>The HUB Events</h5>
-                <p>Alkminis 5, Kerameikos</p>
-                <p>Accesible</p>
+            <h5>The HUB Events</h5>
+            <p>Alkminis 5, Kerameikos</p>
+            <p>Accessible</p>
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.1201704669165!2d23.708200250390117!3d37.97432477962408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bce12fc3755d%3A0xae6f805aaabf7194!2zSFVCIEVWRU5UUywgVEhFLCDOkS7OlS4!5e0!3m2!1sen!2sgr!4v1581886057189!5m2!1sen!2sgr"  allowfullscreen=""></iframe>
+    </div>
+    <div class="content">
+        <div class="image-container">
+            <img src="{% static "images/hub_events.jpg" %}"
+                alt="Photo of The HUB Events' building" />
+        </div>
+        <ul class="nav nav-scrollable-tabs" role="tablist">
+            <li class="nav-item">
+                <a href="#public_transport" class="active" id="public_transport-tab"
+                    data-toggle="tab" role="tab" aria-controls="public_transport"
+                    aria-selected="true">
+                    Public transport
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#uber" id="uber-tab"
+                    data-toggle="tab" role="tab" aria-controls="uber"
+                    aria-selected="false">
+                    Get an Uber ride
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#by_car" id="by_car-tab"
+                    data-toggle="tab" role="tab" aria-controls="by_car"
+                    aria-selected="false">
+                    By car
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane container-fluid show active" id="public_transport"
+                role="tabpanel" aria-labelledby="public_transport-tab">
+                <p>
+                    The venue is 7 minutes away on foot from the nearest metro
+                    station, <strong>Kerameikos</strong> (M3 line).
+                </p>
+                <p>
+                    You can also get there by bus or trolley:
+                </p>
+                <ul>
+                    <li>Bus lines 049, 815, 838, 914, Β18, Γ18 (Kampa stop)</li>
+                    <li>Trolley line 21 (Kampa stop)</li>
+                </ul>
+            </div>
+            <div class="tab-pane container-fluid" id="uber" role="tabpanel"
+                aria-labelledby="uber-tab">
+            </div>
+            <div class="tab-pane container-fluid" id="by_car" role="tabpanel"
+                aria-labelledby="by_car-tab">
+            </div>
+        </div>
     </div>
 </section>

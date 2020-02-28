@@ -34,9 +34,12 @@ main {
 
 
 h1, h2, h3, h4, h5, h6 {
-  color: $body-color;
-  font-family: $font-family-serif;
-  font-weight: bold;
+    font-family: $font-family-serif;
+    font-weight: bold;
+}
+
+@mixin underline($in: 1px, $out: 5px) {
+    box-shadow: inset 0 (-$out) $primary, 0 $in $primary;
 }
 
 @mixin underline() {

@@ -1,0 +1,78 @@
+<section id="lineup">
+    <header>
+        <h2>LINE UP</h2>
+    </header>
+    <ul class="nav nav-scrollable-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#speakers" class="active" id="speakers-tab"
+                data-toggle="tab" role="tab" aria-controls="speakers"
+                aria-selected="true">
+                Speakers
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#performers" id="performers-tab"
+                data-toggle="tab" role="tab" aria-controls="performers"
+                aria-selected="false">
+                Performers
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#side_events" id="side_events-tab"
+                data-toggle="tab" role="tab" aria-controls="side_events"
+                aria-selected="false">
+                Side events
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        {% for lineup_type, items in lineup.items %}
+        <div class="tab-pane container-fluid{% if forloop.first %} show active{% endif %}"
+            id="{{ lineup_type }}" role="tabpanel"
+            aria-labelledby="{{ lineup_type }}-tab">
+            <div class="simple-view row">
+                {% for item in items %}
+                    {% if lineup_type == "side_events" %}
+                        <a class="col-6 col-md-4"
+                            href="{% url "presenter" slug=item.presenter.slug %}">
+                            <div class="media">
+                                <img srcset="{{ item.image.thumbnail.320x320.url }} 320w,
+                                            {{ item.image.thumbnail.720x720.url }} 720w,
+                                            {{ item.image.thumbnail.1024x1024.url }} 1024w"
+                                    sizes="(max-width: 576px) 320px,
+                                            (max-width: 992px) 720px,
+                                            1024px"
+                                    src="{{ item.image.thumbnail.320x320.url }}"
+                                    alt="" />
+                            </div>
+                            <div class="info">
+                                <h5>{{ item.title }}</h5>
+                                <p>{{ item.subtitle }}</p>
+                            </div>
+                        </a>
+                    {% else %}
+                        <a class="col-6 col-md-4"
+                            href="{% url "presenter" slug=item.slug %}">
+                            <div class="media">
+                                <img srcset="{{ item.image.thumbnail.320x320.url }} 320w,
+                                            {{ item.image.thumbnail.720x720.url }} 720w,
+                                            {{ item.image.thumbnail.1024x1024.url }} 1024w"
+                                    sizes="(max-width: 576px) 320px,
+                                            (max-width: 992px) 720px,
+                                            1024px"
+                                    src="{{ item.image.thumbnail.320x320.url }}"
+                                    alt="" />
+                            </div>
+                            <div class="info">
+                                <h5>{{ item.name }}</h5>
+                                <p>{{ item.occupation }}</p>
+                            </div>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="checkerboard-view"></div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
