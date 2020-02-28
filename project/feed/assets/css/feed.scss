@@ -55,6 +55,9 @@ button{
   padding: 0 2em;
   margin: 1.5em 1.5em;
 }
+.btn-primary{
+  margin: 0 1.5em !important;
+}
 .feed-container{
   height: 100%;
   display: flex;
@@ -154,6 +157,9 @@ button{
     min-height: 2rem;
     padding: 0 1.5em;
     margin: 1em 0.5em;
+  }
+  .btn-primary{
+    margin: 0 0.5em !important;
   }
   .feed-container{
     flex-direction: column;
