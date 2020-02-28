@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="event-page schedule-page">
+    {% include "program/_event-tabs.html" %}
+    <div id="schedule-table" role="table" data-activetab="main">
+        <div role="rowgroup" class="table-heading">
+            <div role="row">
+                <span role="columnheader">TIME</span>
+                {% for id, stage in stages.items %}
+                <span role="columnheader" class="d-none d-lg-inline">{{ stage }}</span>
+                {% endfor %}
+                <form role="columnheader" class="d-lg-none">
+                    <select id="stage-selector" aria-label="Filter by event stage" class="form-control">
+                        {% for id, stage in stages.items %}
+                        <option{% if forloop.first %} selected{% endif %} value="{{ id }}">{{ stage }}</option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div role="rowgroup">
+            {% for time, row in schedule.items %}
+            <div role="row" class="{% if not row.main %}hide-main {% endif %}{% if not row.side %}hide-side {% endif %}">
+                <span role="cell" class="time">{{ time }}</span>
+                {% for stage, event in row.items %}
+                <span role="cell">
+                    {% if event %}
+                    <a class="cell-content" href="{% url "presenter" slug=event.presenter.slug %}">
+                        {% if event.image %}
+                        <img class="image"
+                             srcset="{{ event.image.thumbnail.320x320.url }} 320w,
+                                     {{ event.image.thumbnail.720x720.url }} 720w,
+                                     {{ event.image.thumbnail.1024x1024.url }} 1024w"
+                            sizes="(max-width: 576px) 320px,
+                                   (max-width: 992px) 720px,
+                                   1024px"
+                            src="{{ event.image.thumbnail.320x320.url }}"
+                            alt="" />
+                        {% else %}
+                        <div class="image placeholder squares-overlayed blue-black"
+                             aria-hidden="true"></div>
+                        {% endif %}
+                        <div class="info">
+                            <h5>{{ event.title }}</h5>
+                            <p>{{ event.subtitle }}</p>
+                        </div>
+                        <div class="chevron-container">
+                            <div class="chevron-right"></div>
+                        </div>
+                    </a>
+                    {% else %}
+                    <div class="cell-content"></div>
+                    {% endif %}
+                </span>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</article>
+{% endblock %}
+{% block scripts %}
+<script>
+    const scheduleTable = document.getElementById("schedule-table")
+    const stageSelector = document.getElementById("stage-selector")
+    stageSelector.addEventListener("change", evt => {
+        scheduleTable.setAttribute("data-activetab", evt.target.value)
+    })
+</script>
+{% endblock %}

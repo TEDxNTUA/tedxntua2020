@@ -1,0 +1,36 @@
+article.listing-page {
+    .listing-grid {
+        display: flex;
+        flex-flow: row wrap;
+        a {
+            display: flex;
+            margin-bottom: 1rem;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        h5 {
+            margin-top: 1.25rem;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        h6 {
+            font-family: $font-family-sans-serif;
+            font-weight: 300;
+        }
+    }
+    .image {
+        width: 7.5em;
+        height: 7.5em;
+        object-fit: contain;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    article.listing-page {
+        .image {
+            width: 10em;
+            height: 10em;
+        }
+    }
+}

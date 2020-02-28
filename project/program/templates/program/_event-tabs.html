@@ -1,0 +1,16 @@
+{% with url_name=request.resolver_match.url_name %}
+<ul class="nav nav-scrollable-tabs">
+    <li class="nav-item">
+        <a href="{% url 'speakers' %}" class="btn {% if url_name == 'speakers' %}btn-secondary{% else %}btn-white{% endif %}">Speakers</a>
+    </li>
+    <li class="nav-item">
+        <a href="{% url 'performers' %}" class="btn {% if url_name == 'performers' %}btn-secondary{% else %}btn-white{% endif %}">Performers</a>
+    </li>
+    <li class="nav-item">
+        <a href="{% url 'side-events' %}" class="btn {% if url_name == 'side-events' %}btn-secondary{% else %}btn-white{% endif %}">Side events</a>
+    </li>
+    <li class="nav-item">
+        <a href="{% url 'schedule' %}" class="btn {% if url_name == 'schedule' %}btn-secondary{% else %}btn-white{% endif %}">Schedule</a>
+    </li>
+</ul>
+{% endwith %}

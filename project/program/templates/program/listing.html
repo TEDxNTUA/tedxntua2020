@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="event-page listing-page {{ listing_type }}-page">
+    {% include "program/_event-tabs.html" %}
+    <div class="container-fluid listing-grid">
+        {% for item in items %}
+            {% if listing_type == "side_events" %}
+                {% comment %}
+                    For side events, link to the presenter
+                {% endcomment %}
+            <a class="col col-6 col-md-4 col-lg-3 col-xl-2 underline-parent"
+                    href="{% url "presenter" slug=item.presenter.slug %}">
+            {% else %}
+            <a class="col col-6 col-md-4 col-lg-3 col-xl-2 underline-parent"
+                    href="{% url "presenter" slug=item.slug %}">
+            {% endif %}
+                {% if item.image %}
+                    <img class="image"
+                        srcset="{{ item.image.thumbnail.320x320.url }} 320w,
+                            {{ item.image.thumbnail.720x720.url }} 720w,
+                            {{ item.image.thumbnail.1024x1024.url }} 1024w"
+                        sizes="(max-width: 576px) 320px,
+                            (max-width: 992px) 720px,
+                            1024px"
+                        src="{{ item.image.thumbnail.320x320.url }}"
+                        alt="" />
+                {% else %}
+                    <div class="image placeholder squares-overlayed blue-black"
+                        aria-hidden="true"></div>
+                {% endif %}
+                {% if listing_type == "side_events" %}
+                    <h5 class="underline-hover">{{ item.title }}</h5>
+                    <h6>{{ item.subtitle }}</h6>
+                {% else %}
+                    <h5 class="underline-hover">{{ item.name }}</h5>
+                    <h6>{{ item.occupation }}</h6>
+                {% endif %}
+            </a>
+        {% endfor %}
+    </div>
+</article>
+{% endblock %}
