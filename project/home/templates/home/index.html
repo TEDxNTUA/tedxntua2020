@@ -1,7 +1,124 @@
 {% extends "base.html" %}
 {% block content %}
 <article class="home-page">
-<h2>Hello there</h2>
-{% include "home/venue.html" %}
+    {% include "home/hero.html" %}
+    {% include "home/lineup.html" %}
+    {% include "home/venue.html" %}
+    {% include "home/about.html" %}
 </article>
+{% endblock %}
+{% block scripts %}
+<script>
+    // Checkerboard grid view generator
+    const tabs = document.querySelectorAll("#lineup .tab-pane")
+
+    function createSpacer() {
+        let spacer = document.createElement("span")
+        spacer.setAttribute("aria-hidden", "true")
+        return spacer
+    }
+
+    /**
+     * Creates checkerboard grid view.
+     *
+     * @param {Element} tabEl The tab element that contains the original
+     *      elements and that will store the generated checkerboard grid view.
+     * @param {number[][]} layout Describes the grid layout as a 2d array with
+     *      numbered slots. Slots with negative values produce empty cells.
+     *
+     *      For example this layout:
+     *      [[0, -1, 2, -1, 4],
+     *       [-1, 1, -1, 3, -1]]
+     *      will arrange the items in a W shape:
+     *      x x x
+     *       x x
+     */
+    function createCheckerboardView(tabEl, layout) {
+        if (!layout.length) return
+
+        const simpleView = tabEl.children[0],
+              checkerboardView = tabEl.children[1]
+
+        checkerboardView.innerHTML = ""
+
+        const rows = layout.length, cols = layout[0].length
+        checkerboardView.style.gridTemplateColumns = "repeat(" + cols + ", 1fr)"
+
+        // Build cube rows
+        for (let i = 0; i < rows; ++i) {
+            for (let j = 0; j < cols; ++j) {
+                let elIdx = layout[i][j]
+                if (elIdx >= 0 && elIdx < simpleView.children.length) {
+                    let clone = simpleView.children[elIdx].cloneNode(true)
+                    checkerboardView.appendChild(clone)
+                } else {
+                    checkerboardView.appendChild(createSpacer())
+                }
+            }
+        }
+    }
+
+    let layout = [
+        [6, -1, 2, -1, 3],
+        [-1, 5, -1, 0, -1],
+        [-1, -1, 4, -1, 1],
+        [-1, 9, -1, 7, -1],
+        [-1, -1, 10, -1, 8],
+        [-1, -1, -1, 11, -1],
+    ]
+
+    for (const tabEl of tabs) {
+        createCheckerboardView(tabEl, layout)
+    }
+</script>
+<script>
+    // Section scroll handler
+    // sx: section (abbrev.)
+    const sxs = document.querySelectorAll('article.home-page > section')
+    let activeIdx
+    const sxOverlays = []
+    const sxIdToIdx = {}
+    sxs.forEach((sx, idx) => {
+        // Build id to index mapper
+        sxIdToIdx[sx.id] = idx
+        // Find overlays
+        sxOverlays.push(sx.querySelectorAll('header, .nav-scrollable-tabs'))
+    })
+
+    function switchActiveSx(newActiveIdx) {
+        if (typeof activeIdx !== 'undefined') {
+            // Hide current
+            sxOverlays[activeIdx].forEach(el => el.classList.remove('show'))
+        }
+        // Show new
+        sxOverlays[newActiveIdx].forEach(el => el.classList.add('show'))
+        activeIdx = newActiveIdx
+    }
+
+    // Intersection observer that activates when element covers >50% of screen
+    // height.
+    // Adapted from: https://stackoverflow.com/q/57786082
+    const options = {
+        threshold: Array(21).fill().map((_, x) => x / 20),
+    }
+    const sxIntersectionRatios = []
+    const observer = new IntersectionObserver(entries => {
+        console.debug('Observed:', entries)
+        entries.forEach(entry => {
+            const thisIdx = sxIdToIdx[entry.target.id]
+            const h = entry.boundingClientRect.height
+            const wh = window.innerHeight
+
+            const viewportRatio = (h < wh) ? entry.intersectionRatio : (
+                entry.intersectionRatio * h / wh
+            )
+
+            if (entry.isIntersecting && viewportRatio >= 0.5) {
+                // Activate visible section
+                switchActiveSx(thisIdx)
+            }
+        })
+    }, options)
+    sxs.forEach(el => observer.observe(el))
+</script>
 {% endblock %}
