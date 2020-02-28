@@ -3,7 +3,6 @@ article.sponsors {
     h2{
         text-align: center;
         margin-top: 2rem;
-        // margin-bottom: -1rem;
         font-size: 6vh;
     }
     .container-image{
@@ -63,7 +62,6 @@ article.sponsors {
     /////////////////////////////////
     .modal{
         padding-right: 0 !important;
-        // border: solid green;
     }
     .modal-dialog{
         width: 100% !important;
@@ -72,33 +70,30 @@ article.sponsors {
         margin: 0 auto;
         display: flex;
         align-items: center;
-        // border: solid red;
     }
     .modal-content{
         height: 95% !important;
         background: transparent;
         border: 0;
         padding: 0 0.5rem;
-        // border: solid blue;
     }
     .modal-body{
         height: 100% !important;
         padding: 0 !important;
         display: flex;
         align-items: center;
-        // border: solid yellow;
     }
     .img-fluid{
         max-height: 100%;
         max-width: 100%;
         display: block;
         margin: 0 auto;
-        // height: 100% !important;
         height: auto;
     }
-    // .img-fluid:hover{
-    //     transform: scale(1.2);
-    // }
+    .img-fluid:hover{
+        transform: scale(1.2);
+    }
+//////////////end of Modal image
 
     .category {
         display: flex;
