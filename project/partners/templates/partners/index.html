@@ -12,20 +12,20 @@
                         {% load static %}
                         <div class="card-container">
                                 <div class="container-image">
-                                    <a href="">
+                                    <a href="{{ partner.link }}">
                                         <img src="{% static "images/tedxntua-black-600.png" %}" alt="random" class="logo">                           
                                     </a>
-                                    {% if partner.partner_type == 'PS' or partner.partner_type == 'GS' %}
-                                        <a href="" class="title-right">
+                                    {% if partner.leaflet %}
+                                        <a href="{{ partner.link }}" class="title-right">
                                             <button class="btn btn-partners btn-right"><h4>WEBSITE</h4></button> 
                                         </a>
                                     {% else %}
-                                        <a href="" class="title-right">
+                                        <a href="{{ partner.link }}" class="title-right">
                                             <button class="btn btn-partners btn-right"></button> 
                                         </a>
                                     {% endif %}
                                     
-                                    {% if partner.partner_type == 'PS' or partner.partner_type == 'GS' %}
+                                    {% if partner.leaflet %}
                                         <a href="#myModal" class="title-bottom" data-toggle="modal">
                                             <button class="btn btn-partners btn-bottom"><h4>LEAFLET</h4></button>
                                         </a>
@@ -40,7 +40,7 @@
                                             </div>
                                         </div>
                                     {% else %}
-                                        <a href="" class="title-bottom">
+                                        <a href="{{ partner.link }}" class="title-bottom">
                                             <button class="btn btn-partners btn-bottom"><h4>WEBSITE</h4></button>
                                         </a>
                                     {% endif %}                                
