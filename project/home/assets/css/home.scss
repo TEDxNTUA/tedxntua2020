@@ -41,7 +41,7 @@ article.home-page {
             font-size: 1.25em;
             &.active {
                 color: black;
-                @include underline(0, .2em);
+                @include underline();
             }
         }
     }
