@@ -1,0 +1,336 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<article class="about-page">
+    <section id="team">
+        <div id="simple-view">
+            <header>
+                <h2>MEET THE TEAM</h2>
+            </header>
+            {% for member in members %}
+            <div class="member">
+                <div class="slider-image normal">
+                    {% if member.image %}
+                    <img srcset="{{ member.image.thumbnail.320x320.url }} 320w,
+                            {{ member.image.thumbnail.720x720.url }} 720w,
+                            {{ member.image.thumbnail.1024x1024.url }} 1024w"
+                        sizes="(max-width: 576px) 320px,
+                            (max-width: 992px) 720px,
+                            1024px"
+                        src="{{ member.image.thumbnail.320x320.url }}"
+                        alt="Picture #1 of {{ member.name }}" />
+                    {% else %}
+                    <img class="placeholder"
+                        src="{% static "images/member_no_photo.svg" %}" />
+                    {% endif %}
+                    <p>{{ member.name }}</p>
+                </div>
+                <div class="slider-image on-hover">
+                    {% if member.image_alt %}
+                    <img srcset="{{ member.image_alt.thumbnail.320x320.url }} 320w,
+                            {{ member.image_alt.thumbnail.720x720.url }} 720w,
+                            {{ member.image_alt.thumbnail.1024x1024.url }} 1024w"
+                        sizes="(max-width: 576px) 320px,
+                            (max-width: 992px) 720px,
+                            1024px"
+                        src="{{ member.image_alt.thumbnail.320x320.url }}"
+                        alt="Picture #2 of {{ member.name }}" />
+                    {% endif %}
+                    <p>{{ member.get_team_display|upper }} TEAM</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="cube-view"></div>
+    </section>
+    <section id="about">
+        <img srcset="{% static "images/tedxntua_photo_540.jpg" %} 540w,
+                     {% static "images/tedxntua_photo_1200.jpg" %} 1200w,
+                     {% static "images/tedxntua_photo_2400.jpg" %} 2400w"
+            sizes="(max-width: 768px) 540px,
+                    (max-width: 1440px) 1200px,
+                    2400px"
+            src="{% static "images/tedxntua_photo_540.jpg" %}"
+            alt="TEDxNTUA organizing team and volunteers celebrating the conclusion of the 2019 event" />
+        <div class="about-section" id="about-tedxntua">
+            <h3>What is TEDxNTUA?</h3>
+            <p>
+                TEDxNTUA is a conference that features <strong>talks</strong> on
+                the topics of <strong>popular science</strong>,
+                <strong>art</strong>, and <strong>social issues</strong>,
+                <strong>stories that can inspire</strong>, as well as
+                <strong>intriguing workshops</strong> and
+                <strong>performances</strong>. It runs under the auspices of the
+                National Technical University of Athens, Greece
+                (<a href="https://www.ntua.gr" target="_blank">NTUA</a>) and is
+                primarily aimed at the university community, but also at the
+                wider student and local communities of Athens.
+            </p>
+
+            <p>
+                Our organizing team consists of
+                <strong>volunteer students</strong>, mainly of NTUA, who embrace
+                the notion of spreading worthy ideas, as conceived by the TED
+                organization. Our aspiration as a team is to build this event
+                into a platform where people who can make a difference will have
+                their voices heard; where community members can engage with one
+                another and spark fruitful discussion about our common concerns,
+                like <strong>engineering</strong> and building
+                <strong>a better and more inclusive society</strong>.
+            </p>
+
+            <p>
+                Since the project’s inception in <strong>2015</strong>, the
+                members of the student community have consistently shown their
+                support with their participation as attendees or volunteers.
+                They have thus helped establish it as an institution and imbued
+                us with a sense of duty towards them. A crucial part in
+                achieving this, is our constant effort to make the event
+                <strong>open for everyone</strong>, by charging no attendance
+                fee, with the help of our partners.
+            </p>
+
+            <p>
+                TEDxNTUA has a <strong>non-profit</strong> motive and is solely
+                funded by sponsor companies, organizations and patrons. It is
+                supervised by NTUA professors and formally belongs to the
+                Institute of Communication and Computer Systems
+                (<a href="https://www.iccs.gr" target="_blank">ICCS</a>) of
+                NTUA.
+            </p>
+
+            <details>
+                <summary>I want to join the team!</summary>
+                <p>
+                    The organizing team is renewed each year. We are looking for
+                    <strong>passionate students</strong> with an interest in
+                    discovering people and ideas that need to be heard, building
+                    the overall experience of the event, collaborating with
+                    partners to fund the project, creating amazing graphic
+                    designs, identifying the ideal venue for the event, using
+                    the social media to tell compelling stories and promote the
+                    cause, or developing attractive websites and apps for our
+                    event.
+                </p>
+                <p>
+                    The team works together for months to deliver a
+                    <strong>unique experience</strong>, through a journey that,
+                    although demanding, is truly <strong>bonding</strong> and
+                    <strong>gratifying</strong> in the end.
+                </p>
+                <p>
+                    Alternatively, you can join us as a <strong>volunteer for
+                    the day of the event</strong> when greater assistance is
+                    needed.
+                </p>
+                <p>
+                    Applications open around September for the organizing team
+                    and 4-6 weeks before the event for the event-day volunteers.
+                    <strong>Stay tuned</strong> to our social media pages to be
+                    updated.
+                </p>
+            </details>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-6 about-section" id="about-ted">
+                    <h3>What is TED?</h3>
+                    <p>
+                        TED is a nonprofit organization devoted to
+                        <strong>Ideas Worth Spreading</strong>. Started as a
+                        four-day conference in California 30 years ago, TED has
+                        grown to support its mission with multiple initiatives.
+                        The two annual TED Conferences invite the world's
+                        leading thinkers and doers to speak for 18 minutes or
+                        less. Many of these talks are then made available, free,
+                        at <a href="https://www.ted.com" target="_blank">TED.com</a>.
+                    </p>
+                    <p>
+                        <strong>TED speakers</strong> have included Bill Gates,
+                        Jane Goodall, Elizabeth Gilbert, Sir Richard Branson,
+                        Nandan Nilekani, Philippe Starck, Ngozi Okonjo-Iweala,
+                        Sal Khan and Daniel Kahneman.
+                    </p>
+                    <p>
+                        The annual TED Conference takes place each spring in
+                        Vancouver, British Columbia. TED's media initiatives
+                        include
+                        <a href="https://www.ted.com" target="_blank">TED.com</a>,
+                        where new TED Talks are posted daily; the
+                        <a href="https://www.ted.com/about/programs-initiatives/ted-translators" target="_blank">Open Translation Project</a>,
+                        which provides subtitles and interactive transcripts as
+                        well as translations from volunteers worldwide; the
+                        educational initiative
+                        <a href="https://www.ted.com/about/programs-initiatives/ted-ed" target="_blank">TED-Ed</a>.
+                        TED has established the annual
+                        <a href="https://www.ted.com/about/programs-initiatives/ted-prize" target="_blank">TED Prize</a>, where exceptional individuals with a wish to change the
+                        world get help translating their wishes into action;
+                        <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank">TEDx</a>,
+                        which supports individuals or groups in hosting local,
+                        self-organized TED-style events around the world, and
+                        the <a href="https://www.ted.com/about/programs-initiatives/ted-fellows-program" target="_blank">TED Fellows</a> program, helping world-changing innovators
+                        from around the globe to amplify the impact of their
+                        remarkable projects and activities.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 about-section" id="about-tedx">
+                    <h3>What is TEDx?</h3>
+                    <p>
+                        In the spirit of ideas worth spreading, TEDx is a program of
+                        <strong>local, self-organized events</strong> that bring
+                        people together to share a TED-like experience. At a TEDx
+                        event, TED Talks video and live speakers combine to spark
+                        <strong>deep discussion and connection</strong>. These
+                        local, self-organized events are branded TEDx, where
+                        <em>x = independently organized TED event</em>.
+                    </p>
+                    <p>
+                        The TED Conference provides general guidance for the TEDx
+                        program, but individual TEDx event are self-organized.
+                        (Subject to certain rules and regulations.)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}
+{% block scripts %}
+<script>
+    // Variables with `u` prefix are measured in cube units
+    const header = document.querySelector("#simple-view header")
+    const cubeView = document.getElementById("cube-view")
+    const CUBE_SIZE_EM = 4,
+        CUBE_SIDE_INV_RATIO = 4,
+        uCUBE_SIDE_RATIO = 1 / CUBE_SIDE_INV_RATIO
+    cubeView.style.setProperty('--cube-size', CUBE_SIZE_EM)
+    cubeView.style.setProperty('--cube-side-ratio', uCUBE_SIDE_RATIO)
+
+    function createSpacer(uWidth) {
+        let spacer = document.createElement("span")
+        spacer.setAttribute("aria-hidden", "true")
+        spacer.style.width = uWidth * CUBE_SIZE_EM + "em"
+        return spacer
+    }
+
+    /**
+     * Creates cube view.
+     *
+     * @param {number[][]} cubeLayout Describes the layout without perspective.
+     *      It is given as a list of [number of cubes, offset from left] tuples.
+     *
+     *      For example, this layout:
+     *      x x x x
+     *       x x x
+     *          x x
+     *      corresponds to [[4, 0], [3, 1], [2, 4]].
+     * @param {number} [uGutter=1] Unit width between cubes.
+     */
+    function createCubeView(cubeLayout, uGutter=1) {
+        const members = document.querySelectorAll("#simple-view .member")
+        /* Perspective offset is the number of side unit widths that each row is
+        * moved to the right in order to align the cubes and show perspectivity.
+        * It is *decreased* by one for each row, since we have a
+        * rightside-perspective.
+        *
+        * Initialization:
+        * For each row, we calculate leftness as the offset that it would have
+        * if we started the first row with zero perspective offset.
+        * We initialize perspective offset to the negative of the minimum
+        * leftness so that the leftmost row ends up with zero total left offset.
+        */
+        const uLeftness = cubeLayout.map(([cubeNum, uOffset], index) => {
+            return uOffset - uCUBE_SIDE_RATIO * index
+        })
+        let uPerspectiveOffset = -Math.min(...uLeftness)
+
+        let mIdx = 0, rows = [], uMaxWidth = 0
+        // Build cube rows
+        cubeLayout.forEach(([uCubes, uRowOffset], rowIndex) => {
+            let uOffset = uRowOffset + uPerspectiveOffset
+            let rowEl = document.createElement("div")
+            rowEl.classList.add("cube-row")
+            // Create spacer
+            rowEl.appendChild(createSpacer(uOffset))
+            // Create member elements
+            for (let mOff = 0; mOff < uCubes && mIdx + mOff < members.length; ++mOff) {
+                if (uGutter > 0 && mOff > 0) {
+                    // Add gutter before this cube, unless it's the first one
+                    rowEl.appendChild(createSpacer(uGutter));
+                }
+                let child = members[mIdx + mOff].cloneNode(true)
+                child.classList.add(`c${(mIdx + mOff) % 3 + 1}`)
+                rowEl.appendChild(child)
+            }
+
+            // Update member index
+            mIdx += uCubes
+            rows.push(rowEl)
+            // Calculate row unit width
+            let uWidth = uOffset + uCubes + (uCubes - 1) * uGutter
+                            + uCUBE_SIDE_RATIO
+            if (uWidth > uMaxWidth) {
+                uMaxWidth = uWidth
+            }
+            // Update perspective offset for next row
+            uPerspectiveOffset -= uCUBE_SIDE_RATIO
+        })
+
+        // Render cube view
+        cubeView.innerHTML = ""
+        // Make header
+        let newHeader = header.cloneNode(true)
+        // Set width to first spacer's width
+        newHeader.style.width = rows[0].childNodes[0].style.width
+        cubeView.appendChild(newHeader)
+        // Render cube rows
+        rows.forEach(row => cubeView.appendChild(row))
+        cubeView.style.setProperty('--cubeview-unit-width', uMaxWidth)
+    }
+
+    let layout = [[4, 1], [5, 0], [4, 1], [5, 0], [4, 1], [4, 2], [3, 3]]
+    // TRIANGULAR
+    // layout = [[3, 3], [4, 2], [4, 1], [5, 0], [4, 1], [5, 0], [4, 1]]
+    // SMALLER
+    // layout = [[6, 2], [7, 1], [8, 0], [7, 1]]
+    createCubeView(layout)
+
+    function slideMember(el, normalOv, hoverOv, hoverWidth) {
+        normalOv.style.width = el.clientWidth - hoverWidth + "px"
+        hoverOv.style.width = hoverWidth + "px"
+        hoverOv.classList.add("hover")
+    }
+
+    function resetMember(el, normalOv, hoverOv) {
+        normalOv.style.width = "100%"
+        hoverOv.style.width = 0
+        hoverOv.classList.remove("hover")
+    }
+
+    const members = document.getElementsByClassName("member")
+    for (let i = 0; i < members.length; ++i) {
+        const el = members[i]
+        const overlays = el.getElementsByTagName("div")
+        const normalOv = overlays[0], hoverOv = overlays[1]
+        el.addEventListener("mousemove", evt => {
+            const offset = window.scrollX + el.getBoundingClientRect().left
+            const hoverWidth = Math.min(el.clientWidth, evt.clientX - offset)
+            slideMember(el, normalOv, hoverOv, hoverWidth)
+        })
+        el.addEventListener("touchmove", evt => {
+            if (evt.targetTouches.length) {
+                const touchX = evt.targetTouches[0].clientX
+                const offset = window.scrollX + el.getBoundingClientRect().left
+                const hoverWidth = Math.min(el.clientWidth, touchX - offset)
+                slideMember(el, normalOv, hoverOv, hoverWidth)
+            }
+        })
+        el.addEventListener("mouseleave", () => {
+            resetMember(el, normalOv, hoverOv)
+        })
+        el.addEventListener("touchend", () => {
+            resetMember(el, normalOv, hoverOv)
+        })
+    }
+</script>
+{% endblock %}
