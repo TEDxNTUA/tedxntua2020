@@ -40,11 +40,15 @@
 @import "buttons";
 @import "nav";
 @import "nav-scrollable-tabs";
+@import "footer";
 @import "language-switch";
 @import "graphics";
 
 // INDIVIDUAL PAGE STYLES
 @import "~@/home/assets/css/home.scss";
+@import "~@/program/assets/css/program.scss";
+@import "~@/program/assets/css/listing.scss";
+@import "~@/program/assets/css/schedule.scss";
 
 /*
  * GENERAL MEDIA QUERIES
