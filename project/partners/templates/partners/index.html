@@ -25,20 +25,9 @@
                                 {% endif %}
                                 
                                 {% if partner.leaflet %}
-                                    <a href="#myModal" class="title-bottom" data-toggle="modal">
+                                    <a href="#leaflet-modal" class="title-bottom" data-leaflet-url="{{ partner.leaflet.url }}" data-toggle="modal">
                                         <button class="btn btn-partners btn-bottom"><h4>LEAFLET</h4></button>
                                     </a>
-                                    <!-- Modal Image -->
-                                    <div class="modal fade bd-example-modal-lg show" id="myModal" role="dialog" tabindex="-1">
-                                        <div class="modal-dialog"> 
-                                            <div class="modal-content">
-                                                <div class="modal-body" id="dynamic-content" data-dismiss="modal">
-                                                    <!-- <iframe class="iframe-div" src="{% static "images/leaflet-cover-2019-web-dac3663699cbb7d1.jpg" %}" frameborder="0"></iframe> -->
-                                                    <img src="{% static "images/leaflet-cover-2019-web-dac3663699cbb7d1.jpg" %}" alt="" class="img-fluid"> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 {% else %}
                                     <a href="{{ partner.link }}" class="title-bottom">
                                         <button class="btn btn-partners btn-bottom"><h4>WEBSITE</h4></button>
@@ -50,5 +39,16 @@
             {% endfor %}
         </div>
     {% endfor %}
+    <!-- Modal Image -->
+    <div class="modal fade bd-example-modal-lg show" id="leaflet-modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog"> 
+            <div class="modal-content">
+                <div class="modal-body" data-dismiss="modal">
+                    <iframe class="iframe-div" id="leaflet-iframe" frameborder="0"></iframe>
+                    <!-- <img src="{% static "images/leaflet-cover-2019-web-dac3663699cbb7d1.jpg" %}" alt="" class="img-fluid">  -->
+                </div>
+            </div>
+        </div>
+    </div>
 </article>
 {% endblock %}
