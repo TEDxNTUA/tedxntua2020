@@ -73,25 +73,36 @@
 </script>
 <script>
     // Section scroll handler
-    // sx: section (abbrev.)
+    const observables = []
+    const obsIdToIdx = {}
+
+    // Add all sections to observables
     const sxs = document.querySelectorAll('article.home-page > section')
-    let activeIdx
-    const sxOverlays = []
-    const sxIdToIdx = {}
-    sxs.forEach((sx, idx) => {
-        // Build id to index mapper
-        sxIdToIdx[sx.id] = idx
-        // Find overlays
-        sxOverlays.push(sx.querySelectorAll('header, .nav-scrollable-tabs'))
+    sxs.forEach(sx => {
+        observables.push({
+            el: sx,
+            overlays: sx.querySelectorAll('header, .nav-scrollable-tabs'),
+        })
+    })
+    // Add footer to observables
+    observables.push({
+        el: document.getElementById('footer'),
+        overlays: [],
     })
 
-    function switchActiveSx(newActiveIdx) {
+    let activeIdx
+
+    function switchActive(newActiveIdx) {
         if (typeof activeIdx !== 'undefined') {
             // Hide current
-            sxOverlays[activeIdx].forEach(el => el.classList.remove('show'))
+            observables[activeIdx].overlays.forEach(overlay => {
+                overlay.classList.remove('show')
+            })
         }
         // Show new
-        sxOverlays[newActiveIdx].forEach(el => el.classList.add('show'))
+        observables[newActiveIdx].overlays.forEach(overlay => {
+            overlay.classList.add('show')
+        })
         activeIdx = newActiveIdx
     }
 
@@ -101,11 +112,9 @@
     const options = {
         threshold: Array(21).fill().map((_, x) => x / 20),
     }
-    const sxIntersectionRatios = []
     const observer = new IntersectionObserver(entries => {
-        console.debug('Observed:', entries)
         entries.forEach(entry => {
-            const thisIdx = sxIdToIdx[entry.target.id]
+            const thisIdx = obsIdToIdx[entry.target.id]
             const h = entry.boundingClientRect.height
             const wh = window.innerHeight
 
@@ -115,10 +124,14 @@
 
             if (entry.isIntersecting && viewportRatio >= 0.5) {
                 // Activate visible section
-                switchActiveSx(thisIdx)
+                switchActive(thisIdx)
             }
         })
     }, options)
-    sxs.forEach(el => observer.observe(el))
+
+    observables.forEach((item, idx) => {
+        observer.observe(item.el)
+        obsIdToIdx[item.el.id] = idx
+    })
 </script>
 {% endblock %}

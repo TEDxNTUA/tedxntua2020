@@ -88,20 +88,19 @@
     </div>
 </section>
 <section id="footer-bottom">
-    <a class="footer-brand" href="/" aria-label="Go to homepage">
+    <a class="footer-brand" href="{% url 'index' %}"
+        aria-label="Go to homepage">
         <img src="{% static "images/tedxntua_logo_blacktext.png" %}"
             alt="TEDxNTUA logo" />
     </a>
-    <div role="group" class="btn-group btn-group-toggle language-switch"
-        data-toggle="buttons" aria-label="Select website language">
+    <div role="group" class="btn-group language-switch"
+        aria-label="Select website language">
         {% spaceless %}
             {% for code, lang_name in LANGUAGES %}
-            <label class="btn{% if code == CURR_LANG %} active{% endif %}"
-                aria-label="{{ lang_name }}">
-                <input type="radio" value="{{ code }}" name="language"
-                    autocomplete="off" checked>
+            <a class="btn{% if code == CURR_LANG %} active{% endif %}"
+                aria-label="{{ lang_name }}" href="{% change_lang code %}">
                 {{ code | lang_short_name }}
-            </label>
+            </a>
             {% endfor %}
         {% endspaceless %}
     </div>

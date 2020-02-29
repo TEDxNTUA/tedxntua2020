@@ -100,6 +100,10 @@ nav#nav {
         height: 1em;
         margin-right: .4em;
     }
+    .nav-dropdown-item-icon img {
+        width: 100%;
+        height: 100%;
+    }
     .dropdown-menu {
         display: flex;
         flex-direction: column;
