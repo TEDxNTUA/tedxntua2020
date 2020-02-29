@@ -24,7 +24,8 @@
         aria-label="Navigation menu">
         <li class="nav-item">
             <a role="menuitem" class="nav-link" href="{% url 'index' %}">
-                <div class="nav-link-icon squares-overlayed orange-blue"></div>
+                <div class="nav-link-icon squares-overlayed orange-blue"
+                    aria-hidden="true"></div>
                 <span class="nav-item-text">Home</span>
             </a>
         </li>
@@ -32,7 +33,8 @@
             <a role="menuitem" class="nav-link dropdown-toggle"
                 href="{% url 'speakers' %}" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link-icon triangles blue-black"></div>
+                <div class="nav-link-icon triangles blue-black"
+                    aria-hidden="true"></div>
                 <span class="nav-item-text">
                     The event<span class="sr-only">(Toggle dropdown)</span>
                 </span>
@@ -40,41 +42,52 @@
             <div role="menu" class="dropdown-menu">
                 <a role="menuitem" class="nav-link dropdown-item"
                     href="{% url 'speakers' %}">
-                    <div class="nav-dropdown-item-icon circle-in-black"></div>
+                    <div class="nav-dropdown-item-icon" aria-hidden="true">
+                        <img src="{% static 'images/speakers_icon.png' %}"
+                            alt="" />
+                    </div>
                     Speakers
                 </a>
                 <a role="menuitem" class="nav-link dropdown-item"
                     href="{% url 'performers' %}">
-                    <div class="nav-dropdown-item-icon circle-in-black"></div>
+                    <div class="nav-dropdown-item-icon" aria-hidden="true">
+                        <img src="{% static 'images/performers_icon.png' %}"
+                            alt="" />
+                    </div>
                     Performers
                 </a>
                 <a role="menuitem" class="nav-link dropdown-item"
                     href="{% url 'side-events' %}">
-                    <div class="nav-dropdown-item-icon white-rectangles-in-black"></div>
+                    <div class="nav-dropdown-item-icon white-rectangles-in-black"
+                        aria-hidden="true"></div>
                     Side events
                 </a>
                 <a role="menuitem" class="nav-link dropdown-item"
                     href="{% url 'schedule' %}">
-                    <div class="nav-dropdown-item-icon squares-overlayed orange-black"></div>
+                    <div class="nav-dropdown-item-icon squares-overlayed orange-black"
+                        aria-hidden="true"></div>
                     Schedule
                 </a>
             </div>
         </li>
         <li class="nav-item">
             <a role="menuitem" class="nav-link" href="{% url 'partners' %}">
-                <div class="nav-link-icon verticals orange-black"></div>
+                <div class="nav-link-icon verticals orange-black"
+                    aria-hidden="true"></div>
                 <span class="nav-item-text">Partners</span>
             </a>
         </li>
         <li class="nav-item">
             <a role="menuitem" class="nav-link" href="{% url 'about' %}">
-                <div class="nav-link-icon circle-in-black red bottom"></div>
+                <div class="nav-link-icon circle-in-black red bottom"
+                    aria-hidden="true"></div>
                 <span class="nav-item-text">About us</span>
             </a>
         </li>
         <li class="nav-item">
             <a role="menuitem" class="nav-link" href="{% url 'tickets' %}">
-                <div class="nav-link-icon circle-in-black blue top"></div>
+                <div class="nav-link-icon circle-in-black blue top"
+                    aria-hidden="true"></div>
                 <span class="nav-item-text">Tickets</span>
             </a>
         </li>
