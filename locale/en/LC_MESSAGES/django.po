@@ -112,6 +112,50 @@ msgstr ""
 msgid "Side events"
 msgstr ""
 
+#: project/home/templates/home/venue.html:5
+msgid "home.venue.title"
+msgstr "VENUE"
+
+#: project/home/templates/home/venue.html:9
+msgid "home.venue.name"
+msgstr "The HUB Events"
+
+#: project/home/templates/home/venue.html:10
+msgid "home.venue.address"
+msgstr "Alkminis 5, Kerameikos"
+
+#: project/home/templates/home/venue.html:11
+msgid "home.venue.accessible"
+msgstr "Accessible"
+
+#: project/home/templates/home/venue.html:18
+msgid "home.venue.photo_alt"
+msgstr "Photo of The HUB Events' building"
+
+#: project/home/templates/home/venue.html:21
+msgid "home.venue.access"
+msgstr ""
+"<h3>How to get to The HUB Events?</h3>"
+"<h4>Public transport</h4>"
+"<p>"
+"The venue is 7 minutes away on foot from the nearest metro "
+"station, <strong>Kerameikos</strong> (M3 line)."
+"</p>"
+"<p>"
+"You can also get there by bus or trolley:"
+"</p>"
+"<ul>"
+"<li>Bus lines 049, 815, 838, 914, Β18, Γ18 (Kampa stop)</li>"
+"<li>Trolley line 21 (Kampa stop)</li>"
+"</ul>"
+"<p>"
+"Use the "
+"<a class=\"underline-parent\" href=\"http://telematics.oasa.gr/\">"
+"<span class=\"underline\">Best Route</span>"
+"</a> "
+"tool from the OASA website to get a detailed initerary."
+"</a>"
+
 #: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
 msgid "Link"
 msgstr ""

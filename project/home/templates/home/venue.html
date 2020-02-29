@@ -1,42 +1,24 @@
+{% load i18n %}
 {% load static %}
 <section id="venue">
     <header>
-        <h2>VENUE</h2>
+        <h2>{% trans 'home.venue.title' %}</h2>
     </header>
     <div class="map">
         <div class="location">
-            <h5>The HUB Events</h5>
-            <p>Alkminis 5, Kerameikos</p>
-            <p>Accessible</p>
+            <h5>{% trans 'home.venue.name' %}</h5>
+            <p>{% trans 'home.venue.address' %}</p>
+            <p>{% trans 'home.venue.accessible' %}</p>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.1201704669165!2d23.708200250390117!3d37.97432477962408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bce12fc3755d%3A0xae6f805aaabf7194!2zSFVCIEVWRU5UUywgVEhFLCDOkS7OlS4!5e0!3m2!1sen!2sgr!4v1581886057189!5m2!1sen!2sgr"  allowfullscreen=""></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.1201704669165!2d23.708200250390117!3d37.97432477962408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bce12fc3755d%3A0xae6f805aaabf7194!2zSFVCIEVWRU5UUywgVEhFLCDOkS7OlS4!5e0!3m2!1sen!2sgr!4v1581886057189!5m2!1sen!2sgr" allowfullscreen=""></iframe>
     </div>
     <div class="access">
         <div class="image-container">
             <img src="{% static "images/hub_events.jpg" %}"
-                alt="Photo of The HUB Events' building" />
+                alt="{% trans 'home.venue.photo_alt' %}" />
         </div>
         <div class="content">
-            <h3>How to get to The HUB Events?</h3>
-            <h4>Public transport</h4>
-            <p>
-                The venue is 7 minutes away on foot from the nearest metro
-                station, <strong>Kerameikos</strong> (M3 line).
-            </p>
-            <p>
-                You can also get there by bus or trolley:
-            </p>
-            <ul>
-                <li>Bus lines 049, 815, 838, 914, Β18, Γ18 (Kampa stop)</li>
-                <li>Trolley line 21 (Kampa stop)</li>
-            </ul>
-            <p>
-                Use the
-                <a class="underline-parent" href="http://telematics.oasa.gr/">
-                    <span class="underline">Best Route</span>
-                </a>
-                tool from the OASA website to get a detailed initerary.
-            </a>
+            {% trans 'home.venue.access' %}
         </div>
     </div>
 </section>

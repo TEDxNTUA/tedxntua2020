@@ -113,6 +113,50 @@ msgstr ""
 msgid "Side events"
 msgstr ""
 
+#: project/home/templates/home/venue.html:5
+msgid "home.venue.title"
+msgstr "ΧΩΡΟΣ"
+
+#: project/home/templates/home/venue.html:9
+msgid "home.venue.name"
+msgstr "The HUB Events"
+
+#: project/home/templates/home/venue.html:10
+msgid "home.venue.address"
+msgstr "Αλκμήνης 5, Κεραμεικός"
+
+#: project/home/templates/home/venue.html:11
+msgid "home.venue.accessible"
+msgstr "Προσβάσιμο"
+
+#: project/home/templates/home/venue.html:18
+msgid "home.venue.photo_alt"
+msgstr "Φωτογραφία του κτιρίου του The HUB Events"
+
+#: project/home/templates/home/venue.html:21
+msgid "home.venue.access"
+msgstr ""
+"<h3>Οδηγίες πρόσβασης</h3>"
+"<h4>Μέσα μαζικής μεταφοράς</h4>"
+"<p>"
+"Ο χώρος βρίσκεται 7 λεπτά μακριά με τα πόδια από τον κοντινότερο σταθμό "
+"μετρό, <strong>Κεραμεικός</strong> (γραμμή M3)."
+"</p>"
+"<p>"
+"Επίσης, μπορείς να έρθεις με λεωφορείο ή τρόλεϊ:"
+"</p>"
+"<ul>"
+"<li>Γραμμές λεωφορείων 049, 815, 838, 914, Β18, Γ18 (στάση Καμπά)</li>"
+"<li>Γραμμή τρόλεϊ 21 (στάση Καμπά)</li>"
+"</ul>"
+"<p>"
+"Χρησιμοποίησε το εργαλείο "
+"<a class=\"underline-parent\" href=\"http://telematics.oasa.gr/\">"
+"<span class=\"underline\">Βέλτιστη Διαδρομή</span>"
+"</a> "
+"της ιστοσελίδας του ΟΑΣΑ για αναλυτικές οδηγίες."
+"</a>"
+
 #: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
 msgid "Link"
 msgstr ""
