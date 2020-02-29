@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# TEDxNTUA 2020
+# Copyright (C) 2020 TEDxNTUA
+# This file is distributed under the same license as the tedxntua2020 package.
+# Theodoros Diamantidis <diamaltho@gmail.com>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-29 23:10+0000\n"
+"POT-Creation-Date: 2020-02-29 23:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,261 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: project/about/templates/about/index.html:9
+msgid "about.meet_the_team"
+msgstr "ΓΝΩΡΙΣΕ ΤΗΝ ΟΜΑΔΑ"
+
+#: project/about/templates/about/index.html:22
+msgid "Picture #1 of"
+msgstr "Φωτογραφία #1 του/της"
+
+#: project/about/templates/about/index.html:38
+msgid "Picture #2 of"
+msgstr "Φωτογραφία #2 του/της"
+
+#: project/about/templates/about/index.html:41
+#, python-format
+msgid "%(team_name)s TEAM"
+msgstr "ΟΜΑΔΑ %(team_name)s"
+
+#: project/about/templates/about/index.html:61
+msgid "about.tedxntua"
+msgstr ""
+"<h3>Τι είναι το TEDxNTUA;</h3><p>Το TEDxNTUA είναι ένα συνέδριο που "
+"περιλαμβάνει <strong>ομιλίες</strong> γύρω από την <strong>εκλαϊκευμένη "
+"επιστήμη</strong>, την <strong>τέχνη</strong>, και τα <strong>κοινωνικά "
+"ζητήματα</strong>, <strong>ιστορίες που εμπνέουν</strong>, καθώς και "
+"<strong>πολυδιάστατα workshops</strong> και <strong>παραστάσεις</strong>. "
+"Τελεί υπό την αιγίδα του Εθνικού Μετσόβιου Πολυτεχνείου (<a href=\"https://"
+"www.ntua.gr\" target=\"_blank\">ΕΜΠ</a>) και απευθύνεται κυρίως στην "
+"κοινότητα του πανεπιστημίου αλλά και στις ευρύτερες φοιτητικές και τοπικές "
+"κοινότητες της Αθήνας.</p><p>Η οργανωτική μας ομάδα αποτελείται από "
+"<strong>εθελοντές φοιτητές</strong>, κυρίως του ΕΜΠ, που ασπάζονται τη "
+"φιλοσοφία της κοινότητας του TED για &quot;ιδέες που αξίζει να "
+"διαδοθούν&quot;. Η φιλοδοξία μας σαν ομάδα είναι να αναπτύξουμε την εκδήλωση "
+"σε μία πλατφόρμα όπου θα μπορούν να ακουστούν οι φωνές ατόμων που μπορούν να "
+"κάνουν τη διαφορά. Όπου τα μέλη της κοινότητας θα μπορούν να αλληλεπιδρούν "
+"μεταξύ τους και να πυροδοτούν γόνιμες συζητήσεις για τις κοινές μας "
+"ανησυχίες, όπως η <strong>μηχανική</strong> και ο ρόλος της στο χτίσιμο "
+"<strong>μίας καλύτερης και πιο συμπεριληπτικής κοινωνίας</strong>.</p><p>Από "
+"την αρχή του εγχειρήματος το <strong>2015</strong>, τα μέλη της φοιτητικής "
+"κοινότητας έχουν δείξει σταθερά τη στήριξή τους, συμμετέχοντας τόσο ως "
+"θεατές όσο και ως εθελοντές. Έτσι, έχουν βοηθήσει να καθιερωθεί το TEDxNTUA "
+"σαν θεσμός και μας έχουν εμποτίσει με αίσθημα ευθύνης απέναντί τους. Για να "
+"επιτευχθεί αυτό, αποτελεί σημαντικό στοιχείο η συνεχής προσπάθειά μας να "
+"παρέχουμε μία εκδήλωση <strong>ανοιχτή προς όλους</strong> χωρίς αντίτιμο, "
+"με τη βοήθεια των συνεργατών μας.</p><p>Το TEDxNTUA έχει <strong>μη "
+"κερδοσκοπικό</strong> χαρακτήρα και χρηματοδοτείται αποκλειστικά από "
+"χορηγούς, όπως εταιρίες, οργανισμούς ή ευεργέτες. Τελεί υπό την επίβλεψη "
+"καθηγητών του ΕΜΠ και ανήκει θεσμικά στο Ερευνητικό Πανεπιστημιακό "
+"Ινστιτούτο Συστημάτων Επικοινωνιών και Υπολογιστών (<a href=\"https://www."
+"iccs.gr\" target=\"_blank\">ΕΠΙΣΕΥ</a>) του ΕΜΠ.</p>"
+
+#: project/about/templates/about/index.html:62
+msgid "about.join"
+msgstr ""
+"<details><summary><strong>Θέλω να συμμετέχω στην ομάδα!</strong></"
+"summary><p>Η οργανωτική ομάδα ανανεώνεται κάθε χρόνο. Αναζητούμε "
+"<strong>παθιασμένους φοιτητές</strong> με ενδιαφέρον στο να ανακαλύπτουν "
+"άτομα και ιδέες που χρειάζεται να ακουστούν, να χτίζουν τη συνολική εμπειρία "
+"της εκδήλωσης, να συνεργάζονται με χορηγούς που χρηματοδοτούν το project, να "
+"δημιουργούν εκπληκτικά γραφικά, να εντοπίζουν ιδανικούς χώρους για την "
+"εκδήλωση, να χρησιμοποιούν τα social media για να διηγηθούν συναρπαστικές "
+"ιστορίες και να προωθήσουν τον σκοπό μας, ή να αναπτύσσουν ελκυστικές "
+"ιστοσελίδες και εφαρμογές για την εκδήλωσή μας.</p><p>Τα μέλη της ομάδας "
+"εργάζονται μαζί για μήνες ώστε να φτιάξουν μία <strong>μοναδική εμπειρία</"
+"strong>, μέσω ενός ταξιδιού που, παρότι απαιτητικό, στο τέλος πραγματικά "
+"δημιουργεί <strong>δεσμούς</strong> και μας γεμίζει με <strong>ικανοποίηση</"
+"strong>.</p><p>Εναλλακτικά, μπορείς να συμμετέχεις ως <strong>εθελοντής/ρια "
+"για την ημέρα της εκδήλωσης</strong> όπου χρειαζόμαστε μεγαλύτερη βοήθεια.</"
+"p><p>Οι αιτήσεις ανοίγουν γύρω στον Σεπτέμβρη για την οργανωτική ομάδα και "
+"4-6 εβδομάδες πριν την εκδήλωση για τους εθελοντές εκείνης της μέρας. "
+"<strong>Συντονίσου</strong> στις σελίδες μας στα social media ώστε να "
+"παραμένεις ενημερωμένος/η.</p></details>"
+
+#: project/about/templates/about/index.html:67
+msgid "about.ted"
+msgstr ""
+"<h3>Τι είναι το TED;</h3><p>Το TED είναι ένας μη κερδοσκοπικός οργανισμός "
+"αφοσιωμένος σε <strong>Ιδέες που Αξίζει να Διαδοθούν</strong>. Ξεκινώντας ως "
+"τετραήμερο συνέδριο στην Καλιφόρνια 30 χρόνια πριν, το TED έχει μεγαλώσει "
+"για να υποστηρίξει την αποστολή του με πολλαπλές πρωτοβουλίες. Τα δύο ετήσια "
+"συνέδρια TED προσκαλούν τους καλύτερους στοχαστές του κόσμου για να μιλήσουν "
+"18 ή λιγότερα λεπτά. Πολλές από αυτές τις ομιλίες προσφέρονται δωρεάν στο "
+"κοινό, στο <a href=\"https://www.ted.com\" target=\"_blank\">TED.com</a>.</"
+"p><p>Μεταξύ των ατόμων που έχουν υπάρξει <strong>ομιλητές του TED</strong> "
+"είναι και ο Bill Gates, η Jane Goodall, η Elizabeth Gilbert, ο Sir Richard "
+"Branson, η Nandan Nilekani, ο Philippe Starck, η Ngozi Okonjo-Iweala, ο Sal "
+"Khan και ο Daniel Kahneman.</p><p>Το ετήσιο συνέδριο TED πραγματοποιείται "
+"κάθε άνοιξη στο Βανκούβερ, στη Βρετανική Κολομβία. Οι πρωτοβουλίες του TED "
+"σε θέματα κοινωνικής δικτύωσης, περιλαμβάνουν το <a href=\"https://www.ted."
+"com\" target=\"_blank\">TED.com</a>, όπου οι νέες ομιλίες δημοσιεύονται "
+"καθημερινά, υποτιτλίζονται και εφοδιάζονται με διαδραστικά transcripts από "
+"το <a href=\"https://www.ted.com/about/programs-initiatives/ted-translators"
+"\" target=\"_blank\">Open Translation Project</a>, και την εκπαιδευτική "
+"πρωτοβουλία <a href=\"https://www.ted.com/about/programs-initiatives/ted-ed"
+"\" target=\"_blank\">TED-Ed</a>. Το TED έχει καθιερώσει το ετήσιο <a href="
+"\"https://www.ted.com/about/programs-initiatives/ted-prize\" target=\"_blank"
+"\">TED Prize</a>, όπου εξέχοντες υποψήφιοι με μια ευχή να αλλάξουν τον κόσμο "
+"βοηθούν στη μετατροπή των ευχών τους σε πράξεις, το <a href=\"https://www."
+"ted.com/about/programs-initiatives/tedx-program\" target=\"_blank\">TEDx</"
+"a>, το οποίο υποστηρίζει πρόσωπα και ομάδες στη διοργάνωση τοπικών, αυτόνομα "
+"οργανωμένων εκδηλώσεων στο στυλ του TED σε ολόκληρο τον κόσμο, καθώς και το "
+"πρόγραμμα <a href=\"https://www.ted.com/about/programs-initiatives/ted-"
+"fellows-program\" target=\"_blank\">TED Fellows</a> που βοηθάει πρωτοπόρους "
+"που θέλουν να αλλάξουν τον κόσμο να ενισχύσουν τον αντίκτυπο των "
+"αξιοσημείωτων έργων τους, όπως και των δραστηριοτήτων τους.</p>"
+
+#: project/about/templates/about/index.html:70
+msgid "about.tedx"
+msgstr ""
+"<h3>Τι είναι το TEDx;</h3><p>Στο πνεύμα των Ιδεών που Αξίζει να Διαδοθούν, "
+"το TEDx είναι ένα πρόγραμμα <strong>τοπικών, αυτόνομα οργανωμένων "
+"εκδηλώσεων</strong> που φέρνουν τους ανθρώπους μαζί για να μοιραστούν μια "
+"εμπειρία TED. Σε μια εκδήλωση TEDx, τα βίντεο των ομιλιών TED και οι "
+"ζωντανοί ομιλητές συνδυάζονται για να προκαλέσουν <strong>βαθιά συζήτηση και "
+"σύνδεση</strong>. Αυτές οι τοπικές, αυτόνομα οργανωμένες εκδηλώσεις "
+"ονομάζονται TEDx, όπου <em>x = ανεξάρτητα οργανωμένη εκδήλωση TED</em>.</"
+"p><p>Το συνέδριο TED παρέχει γενικές οδηγίες για το πρόγραμμα TEDx, αλλά τα "
+"μεμονωμένα γεγονότα TEDx είναι αυτόνομα οργανωμένα (σύμφωνα με ορισμένους "
+"κανόνες και κανονισμούς).</p>"
+
+#: project/home/templates/home/about.html:5
+msgid "home.about.title"
+msgstr "ΣΧΕΤΙΚΑ"
+
+#: project/home/templates/home/about.html:10
+msgid "home.about.pyrforos"
+msgstr "Πυρφόρος: Το έμβλημα του Εθνικού Μετσόβιου Πολυτεχνείου"
+
+#: project/home/templates/home/about.html:12
+msgid "home.about.auspices"
+msgstr "Υπό την αιγίδα του ΕΜΠ"
+
+#: project/home/templates/home/about.html:15
+msgid "home.about.content"
+msgstr ""
+"<h3>Τι είναι αυτή η εκδήλωση;</h3><p>Το TEDx είναι ένα πρόγραμμα "
+"<strong>τοπικών, αυτόνομα οργανωμένων εκδηλώσεων</strong> που φέρνουν τους "
+"ανθρώπους μαζί. Δημιουργήθηκε από το TED και υπόκειται στη γενική καθοδήγηση "
+"του συνεδρίου TED.</p><p>Το TEDxNTUA είναι ένα συνέδριο που περιλαμβάνει "
+"ομιλίες γύρω από την <strong>εκλαϊκευμένη επιστήμη</strong>, την "
+"<strong>τέχνη</strong> και τα <strong>κοινωνικά ζητήματα</strong>, "
+"<strong>ιστορίες που εμπνέουν</strong>, καθώς και <strong>πολυδιάστατα "
+"workshops και παραστάσεις</strong>. Ξεκίνησε το 2015 και διοργανώνεται "
+"έκτοτε από εθελοντές φοιτητές που προέρχονται κυρίως από το ΕΜΠ.</p><p>Μάθε "
+"περισσότερα για την εκδήλωση, γνώρισε τη φετινή ομάδα και μάθε πώς μπορείς "
+"να συμμετέχεις στην επόμενη, κάνοντας κλικ παρακάτω.</p>"
+
+#: project/home/templates/home/about.html:17
+msgid "home.about.learn_more"
+msgstr "Μάθε περισσότερα για μας"
+
+#: project/home/templates/home/about.html:19
+msgid "home.about.cta_header"
+msgstr "Και μην ξεχάσεις:"
+
+#: project/home/templates/home/about.html:21
+#: project/home/templates/home/hero.html:14
+msgid "tickets.cta"
+msgstr "Κάνε κράτηση!"
+
+#: project/home/templates/home/hero.html:6
+msgid "home.dualism_logo"
+msgstr "Το λογότυπο του θέματός μας: Δυϊσμός"
+
+#: project/home/templates/home/hero.html:9
+msgid "home.dualism_summary"
+msgstr ""
+"<p><strong>ΔΥΪΣΜΟΣ</strong>: η προσπάθεια ερμηνείας του κόσμου με βάση "
+"<strong>δύο εξηγητικές αρχές</strong> που συνεργάζονται και συνενεργούν. Η "
+"αποδοχή του δυϊσμού ως <strong>βάση σύνδεσης και δημιουργίας</strong>, η "
+"κατάρριψη της σύνδεσής του με την αντίθεση.</p>"
+
+#: project/home/templates/home/hero.html:10
+msgid "home.dualism_full"
+msgstr ""
+"<details><summary>Διάβασε περισσότερα</summary><p>Στο φετινό μας συνέδριο "
+"προσεγγίζουμε θεματικές που άπτονται σύγχρονων κοινωνικών, ανθρωπιστικών, "
+"καλλιτεχνικών και επιστημονικών θεμάτων, τα οποία συνίστανται από δύο αρχές."
+"</p><p>Πρόκειται για δύο αρχές που φαινομενικά ασυσχέτιστες που "
+"ανταγωνίζονται η μία την άλλη, αλλά στην πραγματικότητα αλληλοσυμπληρώνονται "
+"και συνεργούν στην επίτευξη μιας αρμονικής ενότητας.</p><p>Τι είναι ο "
+"άνθρωπος, ψυχή και σώμα ή μόνο ύλη; Πώς από τον κυματοσωματιδιακό δυϊσμό "
+"οδηγούμαστε στην τεχνολογία αιχμής των κβαντικών υπολογιστών; Πώς από την "
+"ταυτόχρονη συνύπαρξη του ηλεκτρισμού και του μαγνητισμού και της συσχέτισης "
+"τους από τον Maxwell οδηγούμαστε στη σύγχρονη οικονομία και κοινωνία; Πώς ο "
+"ψηφιακός δυισμός καθορίζει την καθημερινή μας ζωή; Πώς η αντίθεση λευκού και "
+"μαύρου συνθέτουν την εσάνς μιας φωτογραφίας; Πώς το κενό και το πλήρες "
+"συνθέτουν τοπία στην αρχιτεκτονική;</p><p>Σε όλα τα παραπάνω γίνεται σαφής η "
+"σχέση εξάρτησης των εκάστοτε εννοιών. Χωρίς την ύπαρξη της μίας αναιρείται "
+"το νόημα ύπαρξης της άλλης.</p></details>"
+
+#: project/home/templates/home/hero.html:11
+msgid "home.date"
+msgstr "28 Μαρτίου"
+
+#: project/home/templates/home/hero.html:12
+msgid "home.location"
+msgstr "Hub Events, Κεραμεικός"
+
+#: project/home/templates/home/lineup.html:4
+msgid "home.lineup.title"
+msgstr "LINE UP"
+
+#: project/home/templates/home/lineup.html:11
+#: project/program/templates/program/_event-tabs.html:5
+#: project/templates/layouts/partials/nav.html:49
+msgid "Speakers"
+msgstr "Ομιλητές"
+
+#: project/home/templates/home/lineup.html:18
+#: project/program/templates/program/_event-tabs.html:8
+#: project/templates/layouts/partials/nav.html:57
+msgid "Performers"
+msgstr "Performers"
+
+#: project/home/templates/home/lineup.html:25
+#: project/program/templates/program/_event-tabs.html:11
+#: project/templates/layouts/partials/nav.html:63
+msgid "Side events"
+msgstr "Side events"
+
+#: project/home/templates/home/venue.html:5
+msgid "home.venue.title"
+msgstr "ΧΩΡΟΣ"
+
+#: project/home/templates/home/venue.html:9
+msgid "home.venue.name"
+msgstr "The HUB Events"
+
+#: project/home/templates/home/venue.html:10
+msgid "home.venue.address"
+msgstr "Αλκμήνης 5, Κεραμεικός"
+
+#: project/home/templates/home/venue.html:11
+msgid "home.venue.accessible"
+msgstr "Προσβάσιμο"
+
+#: project/home/templates/home/venue.html:18
+msgid "home.venue.photo_alt"
+msgstr "Φωτογραφία του κτιρίου του The HUB Events"
+
+#: project/home/templates/home/venue.html:21
+msgid "home.venue.access"
+msgstr ""
+"<h3>Οδηγίες πρόσβασης</h3><h4>Μέσα μαζικής μεταφοράς</h4><p>Ο χώρος "
+"βρίσκεται 7 λεπτά μακριά με τα πόδια από τον κοντινότερο σταθμό μετρό, "
+"<strong>Κεραμεικός</strong> (γραμμή M3).</p><p>Επίσης, μπορείς να έρθεις με "
+"λεωφορείο ή τρόλεϊ:</p><ul><li>Γραμμές λεωφορείων 049, 815, 838, 914, Β18, "
+"Γ18 (στάση Καμπά)</li><li>Γραμμή τρόλεϊ 21 (στάση Καμπά)</li></"
+"ul><p>Χρησιμοποίησε το εργαλείο <a class=\"underline-parent\" href=\"http://"
+"telematics.oasa.gr/\"><span class=\"underline\">Βέλτιστη Διαδρομή</span></a> "
+"της ιστοσελίδας του ΟΑΣΑ για αναλυτικές οδηγίες.</a>"
+
 #: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
 msgid "Link"
-msgstr "Λινκ"
+msgstr ""
 
 #: project/partners/models.py:51
 msgid "Platinum Sponsor"
@@ -57,11 +309,11 @@ msgstr ""
 #: project/partners/models.py:75 project/program/models.py:197
 #: project/program/models.py:315 project/team/models.py:81
 msgid "Published"
-msgstr "Δημοσιευμένα"
+msgstr "Δημόσιο"
 
 #: project/program/admin/activity_admin.py:26
 msgid "Presenter"
-msgstr "Παρουσιαστής"
+msgstr "Παρουσιαστής δραστηριότητας"
 
 #: project/program/admin/presenter_admin.py:30
 msgid "Activities"
@@ -69,25 +321,29 @@ msgstr "Δραστηριότητες"
 
 #: project/program/forms/activity_form.py:17
 msgid "Get image from presenter"
-msgstr ""
+msgstr "Λήψη εικόνας από τον παρουσιαστή δραστηριότητας"
 
 #: project/program/forms/activity_form.py:18
 msgid "If selected, the image will be overridden by that of the presenter"
 msgstr ""
+"Αν επιλεχθεί, η εικόνα θα αντικατασταθεί με την εικόνα του παρουσιαστή "
+"δραστηριότητας"
 
 #: project/program/forms/presenter_form.py:9
 msgid "No"
-msgstr ""
+msgstr "Όχι"
 
 #: project/program/forms/presenter_form.py:21
 msgid "Assign empty activity"
-msgstr ""
+msgstr "Ανάθεση κενής δραστηριότητας"
 
 #: project/program/forms/presenter_form.py:22
 msgid ""
 "This will create an empty and unpublished activity of the given type with "
 "the same photo as the presenter's"
 msgstr ""
+"Θα δημιουργηθεί μία κενή και μη δημόσια δραστηριότητα του δοθέντος τύπου που "
+"θα έχει την ίδια εικόνα με τον παρουσιαστή δραστηριότητας"
 
 #: project/program/models.py:44
 msgid "MAIN STAGE"
@@ -117,21 +373,6 @@ msgstr "Side event"
 msgid "Hosting"
 msgstr "Παρουσίαση"
 
-#: project/program/templates/program/_event-tabs.html:5
-#: project/templates/layouts/partials/nav.html:49
-msgid "Speakers"
-msgstr "Ομιλητές"
-
-#: project/program/templates/program/_event-tabs.html:8
-#: project/templates/layouts/partials/nav.html:57
-msgid "Performers"
-msgstr "Performers"
-
-#: project/program/templates/program/_event-tabs.html:11
-#: project/templates/layouts/partials/nav.html:63
-msgid "Side events"
-msgstr "Side events"
-
 #: project/program/templates/program/_event-tabs.html:14
 #: project/templates/layouts/partials/nav.html:69
 msgid "Schedule"
@@ -143,11 +384,11 @@ msgstr "ΩΡΑ"
 
 #: project/settings/base.py:177
 msgid "Greek"
-msgstr ""
+msgstr "Ελληνικά"
 
 #: project/settings/base.py:178
 msgid "English"
-msgstr ""
+msgstr "Αγγλικά"
 
 #: project/templates/layouts/partials/footer.html:9
 msgid "Find us"
@@ -208,12 +449,12 @@ msgstr "ΓΛΩΣΣΑ"
 
 #: project/urls.py:39
 msgid "TEDxNTUA 2020 administration"
-msgstr ""
+msgstr "Διαχείριση TEDxNTUA 2020"
 
 #: project/urls.py:40
 msgid "TEDxNTUA 2020 admin"
-msgstr ""
+msgstr "Διαχείριση TEDxNTUA 2020"
 
 #: project/utils/admin.py:20
 msgid "Translatable"
-msgstr ""
+msgstr "Προς μετάφραση"

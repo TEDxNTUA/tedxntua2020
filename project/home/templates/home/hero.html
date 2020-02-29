@@ -1,51 +1,17 @@
+{% load i18n %}
 {% load static %}
 <section id="hero">
     <div class="image-container">
-        <img src="{% static "images/dualism_logo.png" %}" />
+        <img src="{% static "images/dualism_logo.png" %}"
+            alt="{% trans "home.dualism_logo" %}" />
     </div>
     <div class="content">
-        <p>
-            <strong>DUALISM</strong> is the interpretation of the world based on
-            <strong>two principles</strong> that act jointly and collaborate
-            with each other.
-            It is proposed to be <strong>the basis of relationships and of
-            creation</strong>, rather than the foundation of opposition.
-        </p>
-        <details>
-            <summary>Read more</summary>
-            <p>
-                In this year's event, we approach subjects that touch upon
-                current social, humanitarian, artistic and scientific issues,
-                which consist of two principles.
-            </p>
-            <p>
-                The two principles seem to be unrelated and opposite to one
-                another, but in reality they complement each other and act
-                jointly to achieve a harmonious unity.
-            </p>
-            <p>
-                What are humans made of? Mind and body or just matter?
-                How does the wave&mdash;particle duality lead to the
-                cutting-edge technology of quantum computing?
-                How do the parallel existence of electricity and magnetism and
-                their relationship as identified by Maxwell, lead to our modern
-                economy and society?
-                How does digital dualism define our daily life?
-                How does the contrast between white and black compose the
-                essence of a picture?
-                How do emptiness and fullness compose landscapes in
-                architecture?
-            </p>
-            <p>
-                In all of the above, the dependence relationship between the two
-                principles is clear. Without the existence of the first, the
-                meaning of the other is negated.
-            </p>
-        </details>
-        <h2>March 28th</h2>
-        <h3>Hub Events, Kerameikos</h3>
+        {% trans 'home.dualism_summary' %}
+        {% trans 'home.dualism_full' %}
+        <h2>{% trans 'home.date' %}</h2>
+        <h3>{% trans 'home.location' %}</h3>
         <a href="/tickets" class="btn btn-lg btn-primary">
-            Get your tickets!
+            {% trans 'tickets.cta' %}
         </a>
     </div>
 </section>
