@@ -85,14 +85,20 @@ article.sponsors {
         justify-content: center;
     }
     .img-fluid{
-        max-height: 100%;
-        max-width: 100%;
-        display: block;
-        margin: 0 auto;
-        height: auto;
+        // max-height: 100%;
+        // max-width: 100%;
+        // display: block;
+        // margin: 0 auto;
+        // height: auto;
     }
     .img-fluid:hover{
-        transform: scale(1.2);
+        // transform: scale(1.2);
+    }
+    .iframe-div{
+        border: 2px solid yellow;
+        margin: 0 !important;
+        height: max-content;
+        width: max-content;
     }
     // .iframe-div{
     //     border: 2px solid yellow;
