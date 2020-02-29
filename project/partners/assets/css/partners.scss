@@ -100,12 +100,15 @@ article.sponsors {
         height: max-content;
         width: max-content;
     }
-    // .iframe-div{
-    //     border: 2px solid yellow;
-    //     margin: 0 !important;
-    //     height: max-content;
-    //     width: max-content;
-    // }
+    .iframe-div{
+        height: 100%;
+        width: 95vw;
+    }
+    @include media-breakpoint-up(lg){
+        .iframe-div{
+            width: 50vw;
+        }
+    }
     //https://codepen.io/ccrch/pen/yyaraz for zoom
 //////////////end of Modal image
 
