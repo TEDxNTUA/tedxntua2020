@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-29 19:41+0000\n"
+"POT-Creation-Date: 2020-02-29 23:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,27 +117,27 @@ msgstr ""
 msgid "Hosting"
 msgstr ""
 
-#: project/program/templates/program/_event-tabs.html:4
+#: project/program/templates/program/_event-tabs.html:5
 #: project/templates/layouts/partials/nav.html:49
 msgid "Speakers"
 msgstr ""
 
-#: project/program/templates/program/_event-tabs.html:7
+#: project/program/templates/program/_event-tabs.html:8
 #: project/templates/layouts/partials/nav.html:57
 msgid "Performers"
 msgstr ""
 
-#: project/program/templates/program/_event-tabs.html:10
+#: project/program/templates/program/_event-tabs.html:11
 #: project/templates/layouts/partials/nav.html:63
 msgid "Side events"
 msgstr ""
 
-#: project/program/templates/program/_event-tabs.html:13
+#: project/program/templates/program/_event-tabs.html:14
 #: project/templates/layouts/partials/nav.html:69
 msgid "Schedule"
 msgstr ""
 
-#: project/program/templates/program/schedule.html:8
+#: project/program/templates/program/schedule.html:9
 msgid "TIME"
 msgstr ""
 

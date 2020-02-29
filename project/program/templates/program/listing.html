@@ -7,7 +7,7 @@
         {% for item in items %}
             {% if listing_type == "side_events" %}
                 {% comment %}
-                    {% trans 'For side events, link to the presenter' %}
+                    For side events, link to the presenter
                 {% endcomment %}
             <a class="col col-6 col-md-4 col-lg-3 col-xl-2 underline-parent"
                     href="{% url "presenter" slug=item.presenter.slug %}">

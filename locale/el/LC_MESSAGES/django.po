@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-29 19:41+0000\n"
+"POT-Creation-Date: 2020-02-29 23:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,7 +76,6 @@ msgid "If selected, the image will be overridden by that of the presenter"
 msgstr ""
 
 #: project/program/forms/presenter_form.py:9
-#: venv/lib/python3.7/site-packages/django/forms/widgets.py:713
 msgid "No"
 msgstr ""
 
@@ -118,27 +117,27 @@ msgstr "Side event"
 msgid "Hosting"
 msgstr "Παρουσίαση"
 
-#: project/program/templates/program/_event-tabs.html:4
+#: project/program/templates/program/_event-tabs.html:5
 #: project/templates/layouts/partials/nav.html:49
 msgid "Speakers"
 msgstr "Ομιλητές"
 
-#: project/program/templates/program/_event-tabs.html:7
+#: project/program/templates/program/_event-tabs.html:8
 #: project/templates/layouts/partials/nav.html:57
 msgid "Performers"
 msgstr "Performers"
 
-#: project/program/templates/program/_event-tabs.html:10
+#: project/program/templates/program/_event-tabs.html:11
 #: project/templates/layouts/partials/nav.html:63
 msgid "Side events"
 msgstr "Side events"
 
-#: project/program/templates/program/_event-tabs.html:13
+#: project/program/templates/program/_event-tabs.html:14
 #: project/templates/layouts/partials/nav.html:69
 msgid "Schedule"
 msgstr "Πρόγραμμα"
 
-#: project/program/templates/program/schedule.html:8
+#: project/program/templates/program/schedule.html:9
 msgid "TIME"
 msgstr "ΩΡΑ"
 
@@ -168,7 +167,8 @@ msgstr "Όροι Χρήσης"
 
 #: project/templates/layouts/partials/footer.html:118
 msgid "This independent TEDx event is operated under license from TED."
-msgstr "Αυτή η ανεξάρτητα οργανωμένη εκδήλωση TEDx λειτουργεί με άδεια από το TED."
+msgstr ""
+"Αυτή η ανεξάρτητα οργανωμένη εκδήλωση TEDx λειτουργεί με άδεια από το TED."
 
 #: project/templates/layouts/partials/nav.html:19
 msgid "MENU"
