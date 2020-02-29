@@ -324,10 +324,19 @@ msgstr ""
 msgid "Community Partners"
 msgstr ""
 
-#: project/partners/models.py:75 project/program/models.py:206
-#: project/program/models.py:324 project/team/models.py:81
+#: project/partners/models.py:75 project/program/models.py:197
+#: project/program/models.py:315 project/team/models.py:81
 msgid "Published"
 msgstr ""
+
+#: project/partners/templates/partners/index.html:20
+#: project/partners/templates/partners/index.html:34
+msgid "website"
+msgstr "WEBSITE"
+
+#: project/partners/templates/partners/index.html:30
+msgid "leaflet"
+msgstr "LEAFLET"
 
 #: project/program/admin/activity_admin.py:26
 msgid "Presenter"

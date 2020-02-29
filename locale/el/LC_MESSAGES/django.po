@@ -301,42 +301,6 @@ msgstr ""
 "telematics.oasa.gr/\"><span class=\"underline\">Βέλτιστη Διαδρομή</span></a> "
 "της ιστοσελίδας του ΟΑΣΑ για αναλυτικές οδηγίες.</a>"
 
-#: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
-msgid "Link"
-msgstr ""
-
-#: project/partners/models.py:51
-msgid "Platinum Sponsor"
-msgstr ""
-
-#: project/partners/models.py:52
-msgid "Grand Sponsors"
-msgstr ""
-
-#: project/partners/models.py:53
-msgid "Grand Carrier Sponsors"
-msgstr ""
-
-#: project/partners/models.py:54
-msgid "Grand Hospitality Sponsors"
-msgstr ""
-
-#: project/partners/models.py:55
-msgid "Sponsors"
-msgstr ""
-
-#: project/partners/models.py:56
-msgid "Supporters"
-msgstr ""
-
-#: project/partners/models.py:57
-msgid "Media Partners"
-msgstr ""
-
-#: project/partners/models.py:58
-msgid "Community Partners"
-msgstr ""
-
 #: project/partners/models.py:75 project/program/models.py:206
 #: project/program/models.py:324 project/team/models.py:81
 msgid "Published"
@@ -353,6 +317,62 @@ msgstr "Δραστηριότητες"
 #: project/program/forms/activity_form.py:17
 msgid "Get image from presenter"
 msgstr "Λήψη εικόνας από τον παρουσιαστή δραστηριότητας"
+#: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
+msgid "Link"
+msgstr "Λινκ"
+
+#: project/partners/models.py:51
+msgid "Platinum Sponsor"
+msgstr "Platinum Χορηγός"
+
+#: project/partners/models.py:52
+msgid "Grand Sponsors"
+msgstr "Μεγάλοι Χορηγοί"
+
+#: project/partners/models.py:53
+msgid "Grand Carrier Sponsors"
+msgstr "Μεγάλοι Χορηγοί Μεταφορών"
+
+#: project/partners/models.py:54
+msgid "Grand Hospitality Sponsors"
+msgstr "Μεγάλοι Χορηγοί Φιλοξενίας"
+
+#: project/partners/models.py:55
+msgid "Sponsors"
+msgstr "Χορηγοί"
+
+#: project/partners/models.py:56
+msgid "Supporters"
+msgstr "Υποστηρικτές"
+
+#: project/partners/models.py:57
+msgid "Media Partners"
+msgstr "Χορηγοί Επικοινωνίας"
+
+#: project/partners/models.py:58
+msgid "Community Partners"
+msgstr "Συνεργάτες Κοινότητας"
+
+#: project/partners/templates/partners/index.html:20
+#: project/partners/templates/partners/index.html:34
+msgid "website"
+msgstr "ΣΕΛΙΔΑ"
+
+#: project/partners/templates/partners/index.html:30
+msgid "leaflet"
+msgstr "ΦΥΛΛΑΔΙΟ"
+
+#: project/program/admin/activity_admin.py:26
+msgid "Presenter"
+msgstr ""
+
+#: project/program/admin/presenter_admin.py:30
+msgid "Activities"
+msgstr ""
+
+#: project/program/forms/activity_form.py:17
+msgid "Get image from presenter"
+msgstr ""
 
 #: project/program/forms/activity_form.py:18
 msgid "If selected, the image will be overridden by that of the presenter"

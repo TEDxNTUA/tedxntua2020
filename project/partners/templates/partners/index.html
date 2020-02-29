@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block title %}Partners{% endblock %}
 {% block description %}This is the partners page (with leaflet){% endblock %}
 {% block content %}
@@ -16,7 +17,7 @@
                                 </a>
                                 {% if partner.leaflet %}
                                     <a href="{{ partner.link }}" class="title-right">
-                                        <button class="btn btn-partners btn-right"><h4>WEBSITE</h4></button>
+                                        <button class="btn btn-partners btn-right"><h4>{% trans 'website' %}</h4></button>
                                     </a>
                                 {% else %}
                                     <a href="{{ partner.link }}" class="title-right">
@@ -26,11 +27,11 @@
 
                                 {% if partner.leaflet %}
                                     <a href="#leaflet-modal" class="title-bottom" data-leaflet-url="{{ partner.leaflet.url }}" data-toggle="modal">
-                                        <button class="btn btn-partners btn-bottom"><h4>LEAFLET</h4></button>
+                                        <button class="btn btn-partners btn-bottom"><h4>{% trans 'leaflet' %}</h4></button>
                                     </a>
                                 {% else %}
                                     <a href="{{ partner.link }}" class="title-bottom">
-                                        <button class="btn btn-partners btn-bottom"><h4>WEBSITE</h4></button>
+                                        <button class="btn btn-partners btn-bottom"><h4>{% trans 'website' %}</h4></button>
                                     </a>
                                 {% endif %}
                             </div>
