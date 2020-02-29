@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# TEDxNTUA 2020
+# Copyright (C) 2020 TEDxNTUA
+# This file is distributed under the same license as the tedxntua2020 package.
+# Theodoros Diamantidis <diamaltho@gmail.com>, 2020.
 #
 #, fuzzy
 msgid ""
@@ -18,9 +18,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: project/home/templates/home/about.html:5
+msgid "home.about.title"
+msgstr "ΣΧΕΤΙΚΑ"
+
+#: project/home/templates/home/about.html:10
+msgid "home.about.pyrforos"
+msgstr "Πυρφόρος: Το έμβλημα του Εθνικού Μετσόβιου Πολυτεχνείου"
+
+#: project/home/templates/home/about.html:12
+msgid "home.about.auspices"
+msgstr "Υπό την αιγίδα του ΕΜΠ"
+
+#: project/home/templates/home/about.html:15
+msgid "home.about.content"
+msgstr ""
+"<h3>Τι είναι αυτή η εκδήλωση;</h3><p>Το TEDx είναι ένα πρόγραμμα "
+"<strong>τοπικών, αυτόνομα οργανωμένων εκδηλώσεων</strong> που φέρνουν τους "
+"ανθρώπους μαζί. Δημιουργήθηκε από το TED και υπόκειται στη γενική καθοδήγηση "
+"του συνεδρίου TED.</p><p>Το TEDxNTUA είναι ένα συνέδριο που περιλαμβάνει "
+"ομιλίες γύρω από την <strong>εκλαϊκευμένη επιστήμη</strong>, την "
+"<strong>τέχνη</strong> και τα <strong>κοινωνικά ζητήματα</strong>, "
+"<strong>ιστορίες που εμπνέουν</strong>, καθώς και <strong>πολυδιάστατα "
+"workshops και παραστάσεις</strong>. Ξεκίνησε το 2015 και διοργανώνεται "
+"έκτοτε από εθελοντές φοιτητές που προέρχονται κυρίως από το ΕΜΠ.</p><p>Μάθε "
+"περισσότερα για την εκδήλωση, γνώρισε τη φετινή ομάδα και μάθε πώς μπορείς "
+"να συμμετέχεις στην επόμενη, κάνοντας κλικ παρακάτω.</p>"
+
+#: project/home/templates/home/about.html:17
+msgid "home.about.learn_more"
+msgstr "Μάθε περισσότερα για μας"
+
+#: project/home/templates/home/about.html:19
+msgid "home.about.cta_header"
+msgstr "Και μην ξεχάσεις:"
+
+#: project/home/templates/home/about.html:21
+#: project/home/templates/home/hero.html:14
+msgid "tickets.cta"
+msgstr "Κάνε κράτηση!"
+
+#: project/home/templates/home/hero.html:6
+msgid "home.dualism_logo"
+msgstr "Το λογότυπο του θέματός μας: Δυϊσμός"
+
+#: project/home/templates/home/hero.html:9
+msgid "home.dualism_summary"
+msgstr ""
+"<p><strong>ΔΥΪΣΜΟΣ</strong>: η προσπάθεια ερμηνείας του κόσμου με βάση "
+"<strong>δύο εξηγητικές αρχές</strong> που συνεργάζονται και συνενεργούν. Η "
+"αποδοχή του δυϊσμού ως <strong>βάση σύνδεσης και δημιουργίας</strong>, η "
+"κατάρριψη της σύνδεσής του με την αντίθεση.</p>"
+
+#: project/home/templates/home/hero.html:10
+msgid "home.dualism_full"
+msgstr ""
+"<details><summary>Διάβασε περισσότερα</summary><p>Στο φετινό μας συνέδριο "
+"προσεγγίζουμε θεματικές που άπτονται σύγχρονων κοινωνικών, ανθρωπιστικών, "
+"καλλιτεχνικών και επιστημονικών θεμάτων, τα οποία συνίστανται από δύο αρχές."
+"</p><p>Πρόκειται για δύο αρχές που φαινομενικά ασυσχέτιστες που "
+"ανταγωνίζονται η μία την άλλη, αλλά στην πραγματικότητα αλληλοσυμπληρώνονται "
+"και συνεργούν στην επίτευξη μιας αρμονικής ενότητας.</p><p>Τι είναι ο "
+"άνθρωπος, ψυχή και σώμα ή μόνο ύλη; Πώς από τον κυματοσωματιδιακό δυϊσμό "
+"οδηγούμαστε στην τεχνολογία αιχμής των κβαντικών υπολογιστών; Πώς από την "
+"ταυτόχρονη συνύπαρξη του ηλεκτρισμού και του μαγνητισμού και της συσχέτισης "
+"τους από τον Maxwell οδηγούμαστε στη σύγχρονη οικονομία και κοινωνία; Πώς ο "
+"ψηφιακός δυισμός καθορίζει την καθημερινή μας ζωή; Πώς η αντίθεση λευκού και "
+"μαύρου συνθέτουν την εσάνς μιας φωτογραφίας; Πώς το κενό και το πλήρες "
+"συνθέτουν τοπία στην αρχιτεκτονική;</p><p>Σε όλα τα παραπάνω γίνεται σαφής η "
+"σχέση εξάρτησης των εκάστοτε εννοιών. Χωρίς την ύπαρξη της μίας αναιρείται "
+"το νόημα ύπαρξης της άλλης.</p></details>"
+
+#: project/home/templates/home/hero.html:11
+msgid "home.date"
+msgstr "28 Μαρτίου"
+
+#: project/home/templates/home/hero.html:12
+msgid "home.location"
+msgstr "Hub Events, Κεραμεικός"
+
 #: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
 msgid "Link"
-msgstr "Λινκ"
+msgstr ""
 
 #: project/partners/models.py:51
 msgid "Platinum Sponsor"
@@ -57,11 +136,11 @@ msgstr ""
 #: project/partners/models.py:75 project/program/models.py:197
 #: project/program/models.py:315 project/team/models.py:81
 msgid "Published"
-msgstr "Δημοσιευμένα"
+msgstr "Δημόσιο"
 
 #: project/program/admin/activity_admin.py:26
 msgid "Presenter"
-msgstr "Παρουσιαστής"
+msgstr "Παρουσιαστής δραστηριότητας"
 
 #: project/program/admin/presenter_admin.py:30
 msgid "Activities"
@@ -69,25 +148,29 @@ msgstr "Δραστηριότητες"
 
 #: project/program/forms/activity_form.py:17
 msgid "Get image from presenter"
-msgstr ""
+msgstr "Λήψη εικόνας από τον παρουσιαστή δραστηριότητας"
 
 #: project/program/forms/activity_form.py:18
 msgid "If selected, the image will be overridden by that of the presenter"
 msgstr ""
+"Αν επιλεχθεί, η εικόνα θα αντικατασταθεί με την εικόνα του "
+"παρουσιαστή δραστηριότητας"
 
 #: project/program/forms/presenter_form.py:9
 msgid "No"
-msgstr ""
+msgstr "Όχι"
 
 #: project/program/forms/presenter_form.py:21
 msgid "Assign empty activity"
-msgstr ""
+msgstr "Ανάθεση κενής δραστηριότητας"
 
 #: project/program/forms/presenter_form.py:22
 msgid ""
 "This will create an empty and unpublished activity of the given type with "
 "the same photo as the presenter's"
 msgstr ""
+"Θα δημιουργηθεί μία κενή και μη δημόσια δραστηριότητα του δοθέντος τύπου που "
+"θα έχει την ίδια εικόνα με τον παρουσιαστή δραστηριότητας"
 
 #: project/program/models.py:44
 msgid "MAIN STAGE"
@@ -143,11 +226,11 @@ msgstr "ΩΡΑ"
 
 #: project/settings/base.py:177
 msgid "Greek"
-msgstr ""
+msgstr "Ελληνικά"
 
 #: project/settings/base.py:178
 msgid "English"
-msgstr ""
+msgstr "Αγγλικά"
 
 #: project/templates/layouts/partials/footer.html:9
 msgid "Find us"
@@ -208,12 +291,12 @@ msgstr "ΓΛΩΣΣΑ"
 
 #: project/urls.py:39
 msgid "TEDxNTUA 2020 administration"
-msgstr ""
+msgstr "Διαχείριση TEDxNTUA 2020"
 
 #: project/urls.py:40
 msgid "TEDxNTUA 2020 admin"
-msgstr ""
+msgstr "Διαχείριση TEDxNTUA 2020"
 
 #: project/utils/admin.py:20
 msgid "Translatable"
-msgstr ""
+msgstr "Προς μετάφραση"

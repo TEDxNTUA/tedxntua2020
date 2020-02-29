@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# TEDxNTUA 2020
+# Copyright (C) 2020 TEDxNTUA
+# This file is distributed under the same license as the tedxntua2020 package.
+# Theodoros Diamantidis <diamaltho@gmail.com>, 2020.
 #
 #, fuzzy
 msgid ""
@@ -17,6 +17,84 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: project/home/templates/home/about.html:5
+msgid "home.about.title"
+msgstr "ABOUT"
+
+#: project/home/templates/home/about.html:10
+msgid "home.about.pyrforos"
+msgstr "Pyrforos: The emblem of the National Technical University of Athens"
+
+#: project/home/templates/home/about.html:12
+msgid "home.about.auspices"
+msgstr "Under the auspices of NTUA"
+
+#: project/home/templates/home/about.html:15
+msgid "home.about.content"
+msgstr ""
+"<h3>What is this event?</h3><p>TEDx is a program that consists of "
+"<strong>local, self-organized events</strong> that bring people together. It "
+"was created by TED and is under the general guidance of the TED Conference. "
+"</p><p>TEDxNTUA is a conference that features talks on the topics of "
+"<strong>popular science</strong>, <strong>art</strong>, and <strong>social "
+"issues</strong>, <strong>stories that can inspire</strong>, as well as "
+"<strong>intriguing workshops</strong> and <strong>performances</strong>. It "
+"started in 2015 and is since run by volunteer students, mainly from NTUA.</"
+"p><p>Learn more about the event, meet this year’s team and learn how to be a "
+"part of the next one, by clicking the button below.</p>"
+
+#: project/home/templates/home/about.html:17
+msgid "home.about.learn_more"
+msgstr "Learn more about us"
+
+#: project/home/templates/home/about.html:19
+msgid "home.about.cta_header"
+msgstr "Oh, and don't forget to:"
+
+#: project/home/templates/home/about.html:21
+#: project/home/templates/home/hero.html:14
+msgid "tickets.cta"
+msgstr "Get your tickets!"
+
+#: project/home/templates/home/hero.html:6
+msgid "home.dualism_logo"
+msgstr "Logo of our theme: Dualism"
+
+#: project/home/templates/home/hero.html:9
+msgid "home.dualism_summary"
+msgstr ""
+"<p><strong>DUALISM</strong> is the interpretation of the world based on "
+"<strong>two principles</strong> that act jointly and collaborate with each "
+"other. It is proposed to be <strong>the basis of relationships and of "
+"creation</strong>, rather than the foundation of opposition.</p>"
+
+#: project/home/templates/home/hero.html:10
+msgid "home.dualism_full"
+msgstr ""
+"<details><summary>Read more</summary><p>In this year's event, we approach "
+"subjects that touch upon current social, humanitarian, artistic and "
+"scientific issues, which consist of two principles.</p><p>The two principles "
+"seem to be unrelated and opposite to one another, but in reality they "
+"complement each other and act jointly to achieve a harmonious unity.</"
+"p><p>What are humans made of? Mind and body or just matter? How does the "
+"wave&mdash;particle duality lead to the cutting-edge technology of quantum "
+"computing? How do the parallel existence of electricity and magnetism and "
+"their relationship as identified by Maxwell, lead to our modern economy and "
+"society? How does digital dualism define our daily life? How does the "
+"contrast between white and black compose the essence of a picture? How do "
+"emptiness and fullness compose landscapes in architecture?</p><p>In all of "
+"the above, the dependence relationship between the two principles is clear. "
+"Without the existence of the first, the meaning of the other is negated.</"
+"p></details>"
+
+#: project/home/templates/home/hero.html:11
+msgid "home.date"
+msgstr "March 28th"
+
+#: project/home/templates/home/hero.html:12
+msgid "home.location"
+msgstr "Hub Events, Kerameikos"
 
 #: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
 msgid "Link"
