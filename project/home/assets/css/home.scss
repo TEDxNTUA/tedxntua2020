@@ -123,10 +123,13 @@ article.home-page {
             flex-grow: 1;
             border:3px solid $secondary;
         }
-        .content {
+        .access {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            h3, h4 {
+                line-height: 1.5;
+            }
         }
         .image-container {
             border: 3px solid $secondary;
@@ -323,10 +326,11 @@ article.home-page {
             iframe {
                 height: auto;
             }
-            .content {
+            .access {
                 flex-direction: row;
                 width: 80%;
-                margin: 4em 0 16% auto; // 20% * 80%
+                margin-top: 4em;
+                margin-left: auto;
             }
             .image-container {
                 order: 1;
