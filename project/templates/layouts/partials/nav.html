@@ -5,7 +5,8 @@
 {% get_current_language as CURR_LANG %}
 
 <nav id="nav" aria-label="Navigation header">
-    <a class="navbar-brand" href="/" aria-label="Go to homepage">
+    <a class="navbar-brand" href="{% url 'index' %}"
+        aria-label="Go to homepage">
         <img src="{% static "images/tedxntua_logo_blacktext.png" %}"
              alt="TEDxNTUA logo" />
     </a>
@@ -22,50 +23,57 @@
     <ul role="menu" id="navbar-nav" class="navbar-nav collapse"
         aria-label="Navigation menu">
         <li class="nav-item">
-            <a role="menuitem" class="nav-link" href="#">
+            <a role="menuitem" class="nav-link" href="{% url 'index' %}">
                 <div class="nav-link-icon squares-overlayed orange-blue"></div>
                 <span class="nav-item-text">Home</span>
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a role="menuitem" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
+            <a role="menuitem" class="nav-link dropdown-toggle"
+                href="{% url 'speakers' %}" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <div class="nav-link-icon triangles blue-black"></div>
-                <span class="nav-item-text">The event<span class="sr-only">(Toggle dropdown)</span></span>
+                <span class="nav-item-text">
+                    The event<span class="sr-only">(Toggle dropdown)</span>
+                </span>
             </a>
             <div role="menu" class="dropdown-menu">
-                <a role="menuitem" class="nav-link dropdown-item" href="#">
+                <a role="menuitem" class="nav-link dropdown-item"
+                    href="{% url 'speakers' %}">
                     <div class="nav-dropdown-item-icon circle-in-black"></div>
                     Speakers
                 </a>
-                <a role="menuitem" class="nav-link dropdown-item" href="#">
+                <a role="menuitem" class="nav-link dropdown-item"
+                    href="{% url 'performers' %}">
                     <div class="nav-dropdown-item-icon circle-in-black"></div>
                     Performers
                 </a>
-                <a role="menuitem" class="nav-link dropdown-item" href="#">
+                <a role="menuitem" class="nav-link dropdown-item"
+                    href="{% url 'side-events' %}">
                     <div class="nav-dropdown-item-icon white-rectangles-in-black"></div>
                     Side events
                 </a>
-                <a role="menuitem" class="nav-link dropdown-item" href="#">
+                <a role="menuitem" class="nav-link dropdown-item"
+                    href="{% url 'schedule' %}">
                     <div class="nav-dropdown-item-icon squares-overlayed orange-black"></div>
                     Schedule
                 </a>
             </div>
         </li>
         <li class="nav-item">
-            <a role="menuitem" class="nav-link" href="#">
+            <a role="menuitem" class="nav-link" href="{% url 'partners' %}">
                 <div class="nav-link-icon verticals orange-black"></div>
                 <span class="nav-item-text">Partners</span>
             </a>
         </li>
         <li class="nav-item">
-            <a role="menuitem" class="nav-link" href="#">
+            <a role="menuitem" class="nav-link" href="{% url 'about' %}">
                 <div class="nav-link-icon circle-in-black red bottom"></div>
                 <span class="nav-item-text">About us</span>
             </a>
         </li>
         <li class="nav-item">
-            <a role="menuitem" class="nav-link" href="#">
+            <a role="menuitem" class="nav-link" href="{% url 'tickets' %}">
                 <div class="nav-link-icon circle-in-black blue top"></div>
                 <span class="nav-item-text">Tickets</span>
             </a>

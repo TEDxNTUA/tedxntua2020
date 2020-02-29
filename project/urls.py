@@ -32,7 +32,8 @@ urlpatterns += i18n_patterns(
     path('', include('project.program.urls')),
     path('partners/', include('project.partners.urls')),
     path('about/', include('project.about.urls')),
-    path('tickets/', RedirectView.as_view(url='<VAR:TICKETS_URL>'))
+    path('tickets/', RedirectView.as_view(url='https://tickets.tedxntua.com'),
+            name='tickets')
 )
 
 admin.site.site_header = _('TEDxNTUA 2020 administration')
