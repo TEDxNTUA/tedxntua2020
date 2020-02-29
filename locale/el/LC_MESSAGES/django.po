@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-29 23:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
+msgid "Link"
+msgstr "Λινκ"
+
+#: project/partners/models.py:51
+msgid "Platinum Sponsor"
+msgstr ""
+
+#: project/partners/models.py:52
+msgid "Grand Sponsors"
+msgstr ""
+
+#: project/partners/models.py:53
+msgid "Grand Carrier Sponsors"
+msgstr ""
+
+#: project/partners/models.py:54
+msgid "Grand Hospitality Sponsors"
+msgstr ""
+
+#: project/partners/models.py:55
+msgid "Sponsors"
+msgstr ""
+
+#: project/partners/models.py:56
+msgid "Supporters"
+msgstr ""
+
+#: project/partners/models.py:57
+msgid "Media Partners"
+msgstr ""
+
+#: project/partners/models.py:58
+msgid "Community Partners"
+msgstr ""
+
+#: project/partners/models.py:75 project/program/models.py:197
+#: project/program/models.py:315 project/team/models.py:81
+msgid "Published"
+msgstr "Δημοσιευμένα"
+
+#: project/program/admin/activity_admin.py:26
+msgid "Presenter"
+msgstr "Παρουσιαστής"
+
+#: project/program/admin/presenter_admin.py:30
+msgid "Activities"
+msgstr "Δραστηριότητες"
+
+#: project/program/forms/activity_form.py:17
+msgid "Get image from presenter"
+msgstr ""
+
+#: project/program/forms/activity_form.py:18
+msgid "If selected, the image will be overridden by that of the presenter"
+msgstr ""
+
+#: project/program/forms/presenter_form.py:9
+msgid "No"
+msgstr ""
+
+#: project/program/forms/presenter_form.py:21
+msgid "Assign empty activity"
+msgstr ""
+
+#: project/program/forms/presenter_form.py:22
+msgid ""
+"This will create an empty and unpublished activity of the given type with "
+"the same photo as the presenter's"
+msgstr ""
+
+#: project/program/models.py:44
+msgid "MAIN STAGE"
+msgstr "ΚΥΡΙΑ ΣΚΗΝΗ"
+
+#: project/program/models.py:45
+msgid "SIDE EVENTS"
+msgstr "SIDE EVENTS"
+
+#: project/program/models.py:167
+msgid "General"
+msgstr "Γενικά"
+
+#: project/program/models.py:168
+msgid "Talk"
+msgstr "Ομιλία"
+
+#: project/program/models.py:169
+msgid "Performance"
+msgstr "Performance"
+
+#: project/program/models.py:170
+msgid "Side event"
+msgstr "Side event"
+
+#: project/program/models.py:171
+msgid "Hosting"
+msgstr "Παρουσίαση"
+
+#: project/program/templates/program/_event-tabs.html:5
+#: project/templates/layouts/partials/nav.html:49
+msgid "Speakers"
+msgstr "Ομιλητές"
+
+#: project/program/templates/program/_event-tabs.html:8
+#: project/templates/layouts/partials/nav.html:57
+msgid "Performers"
+msgstr "Performers"
+
+#: project/program/templates/program/_event-tabs.html:11
+#: project/templates/layouts/partials/nav.html:63
+msgid "Side events"
+msgstr "Side events"
+
+#: project/program/templates/program/_event-tabs.html:14
+#: project/templates/layouts/partials/nav.html:69
+msgid "Schedule"
+msgstr "Πρόγραμμα"
+
+#: project/program/templates/program/schedule.html:9
+msgid "TIME"
+msgstr "ΩΡΑ"
+
+#: project/settings/base.py:177
+msgid "Greek"
+msgstr ""
+
+#: project/settings/base.py:178
+msgid "English"
+msgstr ""
+
+#: project/templates/layouts/partials/footer.html:9
+msgid "Find us"
+msgstr "Βρείτε μας"
+
+#: project/templates/layouts/partials/footer.html:48
+msgid "More stuff from us"
+msgstr "Περισσότερα από εμάς"
+
+#: project/templates/layouts/partials/footer.html:111
+msgid "Privacy Policy"
+msgstr "Πολιτική Απορρήτου"
+
+#: project/templates/layouts/partials/footer.html:114
+msgid "Terms of Use"
+msgstr "Όροι Χρήσης"
+
+#: project/templates/layouts/partials/footer.html:118
+msgid "This independent TEDx event is operated under license from TED."
+msgstr ""
+"Αυτή η ανεξάρτητα οργανωμένη εκδήλωση TEDx λειτουργεί με άδεια από το TED."
+
+#: project/templates/layouts/partials/nav.html:19
+msgid "MENU"
+msgstr "ΜΕΝΟΥ"
+
+#: project/templates/layouts/partials/nav.html:20
+msgid "CLOSE"
+msgstr "ΚΛΕΙΣΕ"
+
+#: project/templates/layouts/partials/nav.html:29
+msgid "Home"
+msgstr "Αρχική"
+
+#: project/templates/layouts/partials/nav.html:39
+msgid "The event"
+msgstr "Η εκδήλωση"
+
+#: project/templates/layouts/partials/nav.html:39
+msgid "(Toggle dropdown)"
+msgstr "Εναλλαγή"
+
+#: project/templates/layouts/partials/nav.html:77
+msgid "Partners"
+msgstr "Συνεργάτες"
+
+#: project/templates/layouts/partials/nav.html:84
+msgid "About us"
+msgstr "Σχετικά"
+
+#: project/templates/layouts/partials/nav.html:91
+msgid "Tickets"
+msgstr "Εισιτήρια"
+
+#: project/templates/layouts/partials/nav.html:95
+msgid "LANGUAGE"
+msgstr "ΓΛΩΣΣΑ"
+
+#: project/urls.py:39
+msgid "TEDxNTUA 2020 administration"
+msgstr ""
+
+#: project/urls.py:40
+msgid "TEDxNTUA 2020 admin"
+msgstr ""
+
+#: project/utils/admin.py:20
+msgid "Translatable"
+msgstr ""

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block content %}
 <article class="event-page schedule-page">
     {% include "program/_event-tabs.html" %}
     <div id="schedule-table" role="table" data-activetab="main">
         <div role="rowgroup" class="table-heading">
             <div role="row">
-                <span role="columnheader">TIME</span>
+                <span role="columnheader">{% trans 'TIME' %}</span>
                 {% for id, stage in stages.items %}
                 <span role="columnheader" class="d-none d-lg-inline">{{ stage }}</span>
                 {% endfor %}
