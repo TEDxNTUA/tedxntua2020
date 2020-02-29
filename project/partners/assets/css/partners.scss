@@ -82,16 +82,23 @@ article.sponsors {
         padding: 0 !important;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
     .img-fluid{
-        max-height: 100%;
-        max-width: 100%;
-        display: block;
-        margin: 0 auto;
-        height: auto;
+        // max-height: 100%;
+        // max-width: 100%;
+        // display: block;
+        // margin: 0 auto;
+        // height: auto;
     }
     .img-fluid:hover{
-        transform: scale(1.2);
+        // transform: scale(1.2);
+    }
+    .iframe-div{
+        border: 2px solid yellow;
+        margin: 0 !important;
+        height: max-content;
+        width: max-content;
     }
     //https://codepen.io/ccrch/pen/yyaraz for zoom
 //////////////end of Modal image
@@ -165,7 +172,10 @@ article.sponsors {
             }
         }
     }
-    @include media-breakpoint-up(lg) {
+}
+
+@include media-breakpoint-up(lg) {
+    article.sponsors{
         .category#PS .title-right{
             .btn-right{
                 width: 3em;
@@ -205,6 +215,7 @@ article.sponsors {
         }
     }
 }
+
 @include media-breakpoint-up(md) {
     article.sponsors .category{
         font-size: 1.5rem;
@@ -215,11 +226,9 @@ article.sponsors {
         margin-bottom: 0;
     }
     article.sponsors .category .child:nth-child(5n+4){
-        @include make-col(4);
         margin-left: 0.1vw;
     }
     article.sponsors .category .child:nth-child(5n+5){
-        @include make-col(4);
         margin-right: 0.1vw;
     }
     article.sponsors .category#GS .child{
