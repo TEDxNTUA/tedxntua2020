@@ -16,8 +16,8 @@
         <div class="navbar-toggler-icon" aria-hidden="true">
             <span></span><span></span><span></span>
         </div>
-        <span class="unexpanded">MENU</span>
-        <span class="expanded">CLOSE</span>
+        <span class="unexpanded">{% trans 'MENU' %}</span>
+        <span class="expanded">{% trans 'CLOSE' %}</span>
     </button>
     <hr></hr>
     <ul role="menu" id="navbar-nav" class="navbar-nav collapse"
@@ -26,7 +26,7 @@
             <a role="menuitem" class="nav-link" href="{% url 'index' %}">
                 <div class="nav-link-icon squares-overlayed orange-blue"
                     aria-hidden="true"></div>
-                <span class="nav-item-text">Home</span>
+                <span class="nav-item-text">{% trans 'Home' %}</span>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -36,7 +36,7 @@
                 <div class="nav-link-icon triangles blue-black"
                     aria-hidden="true"></div>
                 <span class="nav-item-text">
-                    The event<span class="sr-only">(Toggle dropdown)</span>
+                    {% trans 'The event' %}<span class="sr-only">{% trans '(Toggle dropdown)' %}</span>
                 </span>
             </a>
             <div role="menu" class="dropdown-menu">
@@ -46,7 +46,7 @@
                         <img src="{% static 'images/speakers_icon.png' %}"
                             alt="" />
                     </div>
-                    Speakers
+                    {% trans 'Speakers' %}
                 </a>
                 <a role="menuitem" class="nav-link dropdown-item"
                     href="{% url 'performers' %}">
@@ -54,19 +54,19 @@
                         <img src="{% static 'images/performers_icon.png' %}"
                             alt="" />
                     </div>
-                    Performers
+                    {% trans 'Performers' %}
                 </a>
                 <a role="menuitem" class="nav-link dropdown-item"
                     href="{% url 'side-events' %}">
                     <div class="nav-dropdown-item-icon white-rectangles-in-black"
                         aria-hidden="true"></div>
-                    Side events
+                    {% trans 'Side events' %}
                 </a>
                 <a role="menuitem" class="nav-link dropdown-item"
                     href="{% url 'schedule' %}">
                     <div class="nav-dropdown-item-icon squares-overlayed orange-black"
                         aria-hidden="true"></div>
-                    Schedule
+                    {% trans 'Schedule' %}
                 </a>
             </div>
         </li>
@@ -74,25 +74,25 @@
             <a role="menuitem" class="nav-link" href="{% url 'partners' %}">
                 <div class="nav-link-icon verticals orange-black"
                     aria-hidden="true"></div>
-                <span class="nav-item-text">Partners</span>
+                <span class="nav-item-text">{% trans 'Partners' %}</span>
             </a>
         </li>
         <li class="nav-item">
             <a role="menuitem" class="nav-link" href="{% url 'about' %}">
                 <div class="nav-link-icon circle-in-black red bottom"
                     aria-hidden="true"></div>
-                <span class="nav-item-text">About us</span>
+                <span class="nav-item-text">{% trans 'About us' %}</span>
             </a>
         </li>
         <li class="nav-item">
             <a role="menuitem" class="nav-link" href="{% url 'tickets' %}">
                 <div class="nav-link-icon circle-in-black blue top"
                     aria-hidden="true"></div>
-                <span class="nav-item-text">Tickets</span>
+                <span class="nav-item-text">{% trans 'Tickets' %}</span>
             </a>
         </li>
         <li class="nav-item language-switch-container">
-            <h6>LANGUAGE</h6>
+            <h6>{% trans 'LANGUAGE' %}</h6>
             <div role="group" class="btn-group language-switch"
                 aria-label="Select website language">
                 {% for code, lang_name in LANGUAGES %}
