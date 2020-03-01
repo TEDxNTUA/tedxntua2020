@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-01 20:20+0000\n"
+"POT-Creation-Date: 2020-03-01 21:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,24 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: project/about/templates/about/index.html:9
+#: project/about/templates/about/index.html:4
+msgid "about.title"
+msgstr "Σχετικά με μας"
+
+#: project/about/templates/about/index.html:5
+msgid "about.description"
+msgstr ""
+"Ποιοι είμαστε; Τι είναι το TED; Τι είναι το TEDx; Γνωρίστε τους θεσμούς που "
+"εμπλέκονται σε αυτήν την προσπάθεια και την ιστορία που κρύβεται πίσω από "
+"την ομάδα του TEDxNTUA."
+
+#: project/about/templates/about/index.html:12
 msgid "about.meet_the_team"
 msgstr "ΓΝΩΡΙΣΕ ΤΗΝ ΟΜΑΔΑ"
 
-#: project/about/templates/about/index.html:22
+#: project/about/templates/about/index.html:25
 msgid "Picture #1 of"
 msgstr "Φωτογραφία #1 του/της"
 
-#: project/about/templates/about/index.html:38
+#: project/about/templates/about/index.html:41
 msgid "Picture #2 of"
 msgstr "Φωτογραφία #2 του/της"
 
-#: project/about/templates/about/index.html:41
+#: project/about/templates/about/index.html:44
 #, python-format
 msgid "%(team_name)s TEAM"
 msgstr "ΟΜΑΔΑ %(team_name)s"
 
-#: project/about/templates/about/index.html:61
+#: project/about/templates/about/index.html:64
 msgid "about.tedxntua"
 msgstr ""
 "<h3>Τι είναι το TEDxNTUA;</h3><p>Το TEDxNTUA είναι ένα συνέδριο που "
@@ -68,7 +79,7 @@ msgstr ""
 "Ινστιτούτο Συστημάτων Επικοινωνιών και Υπολογιστών (<a href=\"https://www."
 "iccs.gr\" target=\"_blank\">ΕΠΙΣΕΥ</a>) του ΕΜΠ.</p>"
 
-#: project/about/templates/about/index.html:62
+#: project/about/templates/about/index.html:65
 msgid "about.join"
 msgstr ""
 "<details><summary><strong>Θέλω να συμμετέχω στην ομάδα!</strong></"
@@ -90,7 +101,7 @@ msgstr ""
 "<strong>Συντονίσου</strong> στις σελίδες μας στα social media ώστε να "
 "παραμένεις ενημερωμένος/η.</p></details>"
 
-#: project/about/templates/about/index.html:67
+#: project/about/templates/about/index.html:70
 msgid "about.ted"
 msgstr ""
 "<h3>Τι είναι το TED;</h3><p>Το TED είναι ένας μη κερδοσκοπικός οργανισμός "
@@ -123,7 +134,7 @@ msgstr ""
 "που θέλουν να αλλάξουν τον κόσμο να ενισχύσουν τον αντίκτυπο των "
 "αξιοσημείωτων έργων τους, όπως και των δραστηριοτήτων τους.</p>"
 
-#: project/about/templates/about/index.html:70
+#: project/about/templates/about/index.html:73
 msgid "about.tedx"
 msgstr ""
 "<h3>Τι είναι το TEDx;</h3><p>Στο πνεύμα των Ιδεών που Αξίζει να Διαδοθούν, "
@@ -173,15 +184,15 @@ msgid "home.about.cta_header"
 msgstr "Και μην ξεχάσεις:"
 
 #: project/home/templates/home/about.html:21
-#: project/home/templates/home/hero.html:14
+#: project/home/templates/home/hero.html:21
 msgid "tickets.cta"
 msgstr "Κάνε κράτηση!"
 
-#: project/home/templates/home/hero.html:6
+#: project/home/templates/home/hero.html:13
 msgid "home.dualism_logo"
 msgstr "Το λογότυπο του θέματός μας: Δυϊσμός"
 
-#: project/home/templates/home/hero.html:9
+#: project/home/templates/home/hero.html:16
 msgid "home.dualism_summary"
 msgstr ""
 "<p><strong>ΔΥΪΣΜΟΣ</strong>: η προσπάθεια ερμηνείας του κόσμου με βάση "
@@ -189,7 +200,7 @@ msgstr ""
 "αποδοχή του δυϊσμού ως <strong>βάση σύνδεσης και δημιουργίας</strong>, η "
 "κατάρριψη της σύνδεσής του με την αντίθεση.</p>"
 
-#: project/home/templates/home/hero.html:10
+#: project/home/templates/home/hero.html:17
 msgid "home.dualism_full"
 msgstr ""
 "<details><summary>Διάβασε περισσότερα</summary><p>Στο φετινό μας συνέδριο "
@@ -208,13 +219,25 @@ msgstr ""
 "σχέση εξάρτησης των εκάστοτε εννοιών. Χωρίς την ύπαρξη της μίας αναιρείται "
 "το νόημα ύπαρξης της άλλης.</p></details>"
 
-#: project/home/templates/home/hero.html:11
+#: project/home/templates/home/hero.html:18
 msgid "home.date"
 msgstr "28 Μαρτίου"
 
-#: project/home/templates/home/hero.html:12
+#: project/home/templates/home/hero.html:19
 msgid "home.location"
 msgstr "Hub Events, Κεραμεικός"
+
+#: project/home/templates/home/index.html:4
+msgid "home.title"
+msgstr "Αρχική"
+
+#: project/home/templates/home/index.html:5
+msgid "home.description"
+msgstr ""
+"Το TEDxNTUA 2020 διεξάγεται φέτος, το Σάββατο 28 Μαρτίου, στο Hub Events. Το "
+"θέμα της εκδήλωσης είναι ο Δυϊσμός. Ακολουθήστε μας σε αυτό το ταξίδι, "
+"γεμάτο από ομιλίες που θα σας κινήσουν την περιέργεια, παραστάσεις που θα "
+"σας γοητεύσουν και πολυδιάστατα workshops."
 
 #: project/home/templates/home/lineup.html:4
 msgid "home.lineup.title"
@@ -222,18 +245,21 @@ msgstr "LINE UP"
 
 #: project/home/templates/home/lineup.html:11
 #: project/program/templates/program/_event-tabs.html:5
+#: project/program/templates/program/listing.html:5
 #: project/templates/layouts/partials/nav.html:49
 msgid "Speakers"
 msgstr "Ομιλητές"
 
 #: project/home/templates/home/lineup.html:18
 #: project/program/templates/program/_event-tabs.html:8
+#: project/program/templates/program/listing.html:7
 #: project/templates/layouts/partials/nav.html:57
 msgid "Performers"
 msgstr "Performers"
 
 #: project/home/templates/home/lineup.html:25
 #: project/program/templates/program/_event-tabs.html:11
+#: project/program/templates/program/listing.html:9
 #: project/templates/layouts/partials/nav.html:63
 msgid "Side events"
 msgstr "Side events"
@@ -378,15 +404,38 @@ msgstr "Παρουσίαση"
 msgid "Schedule"
 msgstr "Πρόγραμμα"
 
-#: project/program/templates/program/presenter.html:7
+#: project/program/templates/program/listing.html:14
+msgid "speakers.description"
+msgstr "Γνώρισε τους ομιλητές του φετινού TEDxNTUA 2020!"
+
+#: project/program/templates/program/listing.html:16
+msgid "performers.description"
+msgstr "Γνώρισε τους performers του φετινού TEDxNTUA 2020!"
+
+#: project/program/templates/program/listing.html:18
+msgid "side_events.description"
+msgstr "Μάθε περισσότερα για τα side events του φετινού TEDxNTUA 2020!"
+
+#: project/program/templates/program/presenter.html:9
 msgid "back"
 msgstr "Πίσω"
 
-#: project/program/templates/program/presenter.html:28
+#: project/program/templates/program/presenter.html:30
 msgid "presenter.read_full"
 msgstr "Διάβασε την πλήρη περιγραφή"
 
-#: project/program/templates/program/schedule.html:9
+#: project/program/templates/program/schedule.html:3
+msgid "schedule.title"
+msgstr "Πρόγραμμα"
+
+#: project/program/templates/program/schedule.html:4
+msgid "schedule.description"
+msgstr ""
+"Όλη η ουσία μίας εκδήλωσης TEDx κρύβεται στο μίγμα των ομιλιών, των "
+"παραστάσεων και των workshops που περιλαμβάνει. Ανακαλύψτε τους τομείς που "
+"θα εξερευνήσουμε και ελάτε μαζί μας σε ένα ταξίδι γεμάτο Δυϊσμό."
+
+#: project/program/templates/program/schedule.html:11
 msgid "TIME"
 msgstr "ΩΡΑ"
 

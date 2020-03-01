@@ -2,7 +2,14 @@
 {% load static %}
 <section id="hero">
     <div class="image-container">
-        <img src="{% static "images/dualism_logo.png" %}"
+        <img class="image"
+            srcset="{% static 'images/dualism_logo_512.png' %} 512w,
+                    {% static 'images/dualism_logo_1024.png' %} 1024w,
+                    {% static 'images/dualism_logo.png' %} 1585w"
+            sizes="(max-width: 768px) 512px,
+                    (max-width: 1366px) 1024px,
+                    1585px"
+            src="{% static 'images/dualism_logo_512.png' %}"
             alt="{% trans "home.dualism_logo" %}" />
     </div>
     <div class="content">

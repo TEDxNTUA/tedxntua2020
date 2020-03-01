@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,700&display=swap&subset=greek" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=greek" rel="stylesheet">
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{% static "images/tedxntua-black-600.png" %}" />
+    <meta property="og:image" content="{% block image %}{% static 'images/dualism_logo_1024.png' %}{% endblock %}" />
+    <meta property="og:site_name" content="TEDxNTUA 2020" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% block description %}{% endblock %}">

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-01 20:20+0000\n"
+"POT-Creation-Date: 2020-03-01 21:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,24 +18,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: project/about/templates/about/index.html:9
+#: project/about/templates/about/index.html:4
+msgid "about.title"
+msgstr "About us"
+
+#: project/about/templates/about/index.html:5
+msgid "about.description"
+msgstr ""
+"Who are we? What is TED? What is TEDx? Meet the institutions that are "
+"involved in this project and the story behind the team of TEDxNTUA."
+
+#: project/about/templates/about/index.html:12
 msgid "about.meet_the_team"
 msgstr "MEET THE TEAM"
 
-#: project/about/templates/about/index.html:22
+#: project/about/templates/about/index.html:25
 msgid "Picture #1 of"
 msgstr ""
 
-#: project/about/templates/about/index.html:38
+#: project/about/templates/about/index.html:41
 msgid "Picture #2 of"
 msgstr ""
 
-#: project/about/templates/about/index.html:41
+#: project/about/templates/about/index.html:44
 #, python-format
 msgid "%(team_name)s TEAM"
 msgstr ""
 
-#: project/about/templates/about/index.html:61
+#: project/about/templates/about/index.html:64
 msgid "about.tedxntua"
 msgstr ""
 "<h3>What is TEDxNTUA?</h3><p>TEDxNTUA is a conference that features "
@@ -65,7 +75,7 @@ msgstr ""
 "Institute of Communication and Computer Systems (<a href=\"https://www.iccs."
 "gr\" target=\"_blank\">ICCS</a>) of NTUA.</p>"
 
-#: project/about/templates/about/index.html:62
+#: project/about/templates/about/index.html:65
 msgid "about.join"
 msgstr ""
 "<details><summary><strong>I want to join the team!</strong></summary><p>The "
@@ -84,7 +94,7 @@ msgstr ""
 "weeks before the event for the event-day volunteers. <strong>Stay tuned</"
 "strong> to our social media pages to be updated.</p></details>"
 
-#: project/about/templates/about/index.html:67
+#: project/about/templates/about/index.html:70
 msgid "about.ted"
 msgstr ""
 "<h3>What is TED?</h3><p>TED is a nonprofit organization devoted to "
@@ -115,7 +125,7 @@ msgstr ""
 "innovators from around the globe to amplify the impact of their remarkable "
 "projects and activities.</p>"
 
-#: project/about/templates/about/index.html:70
+#: project/about/templates/about/index.html:73
 msgid "about.tedx"
 msgstr ""
 "<h3>What is TEDx?</h3><p>In the spirit of ideas worth spreading, TEDx is a "
@@ -162,15 +172,15 @@ msgid "home.about.cta_header"
 msgstr "Oh, and don't forget to:"
 
 #: project/home/templates/home/about.html:21
-#: project/home/templates/home/hero.html:14
+#: project/home/templates/home/hero.html:21
 msgid "tickets.cta"
 msgstr "Get your tickets!"
 
-#: project/home/templates/home/hero.html:6
+#: project/home/templates/home/hero.html:13
 msgid "home.dualism_logo"
 msgstr "Logo of our theme: Dualism"
 
-#: project/home/templates/home/hero.html:9
+#: project/home/templates/home/hero.html:16
 msgid "home.dualism_summary"
 msgstr ""
 "<p><strong>DUALISM</strong> is the interpretation of the world based on "
@@ -178,7 +188,7 @@ msgstr ""
 "other. It is proposed to be <strong>the basis of relationships and of "
 "creation</strong>, rather than the foundation of opposition.</p>"
 
-#: project/home/templates/home/hero.html:10
+#: project/home/templates/home/hero.html:17
 msgid "home.dualism_full"
 msgstr ""
 "<details><summary>Read more</summary><p>In this year's event, we approach "
@@ -197,13 +207,25 @@ msgstr ""
 "Without the existence of the first, the meaning of the other is negated.</"
 "p></details>"
 
-#: project/home/templates/home/hero.html:11
+#: project/home/templates/home/hero.html:18
 msgid "home.date"
 msgstr "March 28th"
 
-#: project/home/templates/home/hero.html:12
+#: project/home/templates/home/hero.html:19
 msgid "home.location"
 msgstr "Hub Events, Kerameikos"
+
+#: project/home/templates/home/index.html:4
+msgid "home.title"
+msgstr "Home"
+
+#: project/home/templates/home/index.html:5
+msgid "home.description"
+msgstr ""
+"TEDxNTUA 2020 is held this year, on Saturday, March 28th, at The Hub Events. "
+"The theme of the event is Dualism. Join us in this journey, full of "
+"intriguing scientific talks, engaging performances and multifaceted "
+"workshops."
 
 #: project/home/templates/home/lineup.html:4
 msgid "home.lineup.title"
@@ -211,18 +233,21 @@ msgstr "LINE UP"
 
 #: project/home/templates/home/lineup.html:11
 #: project/program/templates/program/_event-tabs.html:5
+#: project/program/templates/program/listing.html:5
 #: project/templates/layouts/partials/nav.html:49
 msgid "Speakers"
 msgstr ""
 
 #: project/home/templates/home/lineup.html:18
 #: project/program/templates/program/_event-tabs.html:8
+#: project/program/templates/program/listing.html:7
 #: project/templates/layouts/partials/nav.html:57
 msgid "Performers"
 msgstr ""
 
 #: project/home/templates/home/lineup.html:25
 #: project/program/templates/program/_event-tabs.html:11
+#: project/program/templates/program/listing.html:9
 #: project/templates/layouts/partials/nav.html:63
 msgid "Side events"
 msgstr ""
@@ -362,15 +387,38 @@ msgstr ""
 msgid "Schedule"
 msgstr ""
 
-#: project/program/templates/program/presenter.html:7
+#: project/program/templates/program/listing.html:14
+msgid "speakers.description"
+msgstr "Meet the speakers of the TEDxNTUA 2020 event!"
+
+#: project/program/templates/program/listing.html:16
+msgid "performers.description"
+msgstr "Meet the performers of the TEDxNTUA 2020 event!"
+
+#: project/program/templates/program/listing.html:18
+msgid "side_events.description"
+msgstr "Learn more about the side events of the TEDxNTUA 2020 event!"
+
+#: project/program/templates/program/presenter.html:9
 msgid "back"
 msgstr "Back"
 
-#: project/program/templates/program/presenter.html:28
+#: project/program/templates/program/presenter.html:30
 msgid "presenter.read_full"
 msgstr "Read full description"
 
-#: project/program/templates/program/schedule.html:9
+#: project/program/templates/program/schedule.html:3
+msgid "schedule.title"
+msgstr "Schedule"
+
+#: project/program/templates/program/schedule.html:4
+msgid "schedule.description"
+msgstr ""
+"The very essence of a TEDx event is its medley of talks, performances and "
+"workshops. Discover the topics that will be explored and join us in a "
+"journey of Dualism."
+
+#: project/program/templates/program/schedule.html:11
 msgid "TIME"
 msgstr ""
 
@@ -449,3 +497,12 @@ msgstr ""
 #: project/utils/admin.py:20
 msgid "Translatable"
 msgstr ""
+
+#~ msgid "performers.title"
+#~ msgstr "Performers"
+
+#~ msgid "side_events.title"
+#~ msgstr "Side events"
+
+#~ msgid "speakers.title"
+#~ msgstr "Speakers"

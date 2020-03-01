@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% block title %}{{ presenter.name }}{% endblock %}
+{% block description %}{{ presenter.name }}: {{ presenter.occupation }}{% endblock %}
 {% block content %}
 <article class="presenter-page">
     {% if go_back_url %}
