@@ -25,4 +25,16 @@ setup(
         'django-parler',
         'django-extensions',
     ],
+    extras_require={
+        'dev': [
+            'fabric',
+            'colorama',
+            'decorator',
+        ],
+    },
+    entry_points={
+        'console_scripts': [
+            'fub = fub.main:program.run',
+        ],
+    },
 )
