@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load static %}
+{% block title %}{% trans 'about.title' %}{% endblock %}
+{% block description %}{% trans 'about.description' %}{% endblock %}
+{% block image %}{% static "images/tedxntua_photo_1200.jpg" %}{% endblock %}
 {% block content %}
 <article class="about-page">
     <section id="team">

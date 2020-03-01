@@ -1,5 +1,23 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% block title %}{% spaceless %}
+    {% if listing_type == 'speakers' %}
+        {% trans 'Speakers' %}
+    {% elif listing_type == 'performers' %}
+        {% trans 'Performers' %}
+    {% elif listing_type == 'side_events' %}
+        {% trans 'Side events' %}
+    {% endif %}
+{% endspaceless %}{% endblock %}
+{% block description %}{% spaceless %}
+    {% if listing_type == 'speakers' %}
+        {% trans 'speakers.description' %}
+    {% elif listing_type == 'performers' %}
+        {% trans 'performers.description' %}
+    {% elif listing_type == 'side_events' %}
+        {% trans 'side_events.description' %}
+    {% endif %}
+{% endspaceless %}{% endblock %}
 {% block content %}
 <article class="event-page listing-page {{ listing_type }}-page">
     {% include "program/_event-tabs.html" %}
