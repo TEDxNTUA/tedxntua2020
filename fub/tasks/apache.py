@@ -32,12 +32,3 @@ def set_public(c):
     with c.cd(c.subdomain_root):
         c.run('cp public.htaccess .htaccess', hide='out')
     console.done('Disabled password protection')
-
-@task(hosts=hosts.DEFAULT_HOSTS)
-@check_for_stage
-def restart_django(c):
-    """Restart Django instance."""
-    console.status('Restarting Django application')
-    with c.cd(c.subdomain_root):
-        c.run(f'{c.venv_bin_path}/python passenger_wsgi.py', hide='out')
-    console.done('Restarted')

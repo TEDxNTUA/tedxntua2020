@@ -1,6 +1,6 @@
 from fabric import task
 
-from . import apache, console, django, git, npm, hosts
+from . import apache, cloudlinux, console, django, git, npm, hosts
 from .utils import check_for_stage
 
 
@@ -40,5 +40,7 @@ def deploy(c, pull=False):
             django.migrate(c)
 
         # Restart Django
-        apache.restart_django(c)
+        # subdomain_root starts with '~/'
+        app_root = c.subdomain_root[2:]
+        cloudlinux.restart_application(c, app_root)
         console.success('Completed deployment')
