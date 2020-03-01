@@ -1,8 +1,11 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block content %}
 <article class="presenter-page">
     {% if go_back_url %}
-        <a href="{{ go_back_url }}" class="btn btn-secondary">&lt; Back</a>
+        <a href="{{ go_back_url }}" class="btn btn-secondary">
+            &lt; {% trans 'back' %}
+        </a>
     {% endif %}
     <div class="presenter">
         <img class="image"
@@ -22,7 +25,7 @@
             </div>
             <a href="#description" class="btn btn-primary" data-toggle="collapse"
                 aria-expanded="false" aria-controls="description">
-                Read full description
+                {% trans 'presenter.read_full' %}
             </a>
         </div>
     </div>

@@ -39,7 +39,7 @@ article.presenter-page {
     }
 
     #description {
-        margin-bottom: 0;
+        margin-bottom: 1em;
         text-align: justify;
     }
 
@@ -69,6 +69,7 @@ article.presenter-page {
     article.presenter-page {
         .presenter {
             flex-direction: row;
+            align-items: flex-start;
             img {
                 width: 30em;
                 max-width: 50%;
@@ -79,16 +80,26 @@ article.presenter-page {
             margin-top: 0;
             margin-left: 2em;
             .btn {
-                width: auto;
+                align-self: flex-start;
             }
         }
 
         #description {
+            position: relative;
             overflow: hidden;
-            margin-bottom: 1em;
             &:not(.show) {
                 display: block;
-                height: 5em;
+                height: auto;
+                max-height: 5em;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    box-shadow: inset 0 -1em 1em 0 rgba(255, 255, 255, .75);
+                }
             }
         }
 
