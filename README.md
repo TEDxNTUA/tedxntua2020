@@ -14,6 +14,7 @@ Listed alphabetically:
 * [Usage](docs/usage.md)
 * Subsystems:
     * [Webpack](docs/webpack/index.md)
+    * [Deployment: Fub](fub/README.md)
 
 ## Code license
 The code in this repository is licensed under the [MIT license](LICENSE).
