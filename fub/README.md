@@ -1,7 +1,12 @@
-# Fub: Remote execution and deployment tool
+# Fub
 
-Fub is essentially a wrapper for [Fabric](https://www.fabfile.org/) that
+Fub is a **remote execution and deployment tool**.
+
+It is essentially a wrapper for [Fabric](https://www.fabfile.org/) that
 overrides some settings.
+
+## Usage
+
 
 ## How it works
 Fabric by default adds a [console script](https://python-packaging.readthedocs.io/en/latest/command-line-scripts.html)

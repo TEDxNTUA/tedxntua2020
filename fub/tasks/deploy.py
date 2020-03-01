@@ -1,7 +1,8 @@
 from fabric import task
 
-from . import apache, cloudlinux, console, django, git, npm, hosts
-from .utils import check_for_stage
+import hosts
+from utils import console, check_for_stage
+from . import apache, cloudlinux, django, git, npm
 
 
 @task(
@@ -15,32 +16,40 @@ def deploy(c, pull=False):
     """
     Run deploy pipeline.
     """
-    with c.cd(c.code_path):
-        old_head, new_head = git.pull(c, force=not pull)
-        if False and old_head == new_head:
-            console.info('No updates found')
+    console.info(f'Deploying to {c._stage}')
+    if c._stage == 'production':
+        # Confirm that user wants to deploy to production
+        msg = 'Please make sure that you have tested this version in staging ' \
+            'to avoid hiccups.\n' \
+            'Are you sure you want to continue? [Y/n] '
+        if not console.continue_prompt(msg):
             return
 
-        # Check for updated dependencies
-        if git.check_python_deps_changed(c, old_head, new_head):
-            console.status('Python dependencies changed')
-            django.install_python_deps(c)
-        if git.check_npm_deps_changed(c, old_head, new_head):
-            console.status('npm dependencies changed')
-            npm.install_npm_deps(c)
+    old_head, new_head = git.pull(c, force=not pull)
+    if False and old_head == new_head:
+        console.info('No updates found')
+        return
 
-        npm.build_production(c)
-        django.collect_static(c)
+    # Check for updated dependencies
+    if git.check_python_deps_changed(c, old_head, new_head):
+        console.status('Python dependencies changed')
+        django.install_python_deps(c)
+    if git.check_npm_deps_changed(c, old_head, new_head):
+        console.status('npm dependencies changed')
+        npm.install_npm_deps(c)
 
-        if git.check_translations_changed(c, old_head, new_head):
-            console.status('Django translations changed')
-            django.compile_translations(c)
-        if git.check_migrations_changed(c, old_head, new_head):
-            console.status('New Django migrations detected')
-            django.migrate(c)
+    npm.build_production(c)
+    django.collect_static(c)
 
-        # Restart Django
-        # subdomain_root starts with '~/'
-        app_root = c.subdomain_root[2:]
-        cloudlinux.restart_application(c, app_root)
-        console.success('Completed deployment')
+    if git.check_translations_changed(c, old_head, new_head):
+        console.status('Django translations changed')
+        django.compile_translations(c)
+    if git.check_migrations_changed(c, old_head, new_head):
+        console.status('New Django migrations detected')
+        django.migrate(c)
+
+    # Restart Django
+    # subdomain_root starts with '~/'
+    app_root = c.subdomain_root[2:]
+    cloudlinux.restart_application(c, app_root)
+    console.success('Completed deployment')

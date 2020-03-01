@@ -1,7 +1,6 @@
 from fabric import task
 
-from . import console
-from .utils import task_factory
+from utils import console, task_factory
 
 
 @task(help={
@@ -19,24 +18,27 @@ def pull(c, force=False):
         Hash of new HEAD after syncing.
     """
     console.status('Pulling from origin/master')
-    old_head = c.run('git rev-parse HEAD', hide=True).stdout.strip()
-    if force:
-        c.run(
-            'git fetch && git checkout master && git reset --hard origin/master',
-            hide=True,
-        )
-    else:
-        c.run('git checkout master && git pull origin master', hide=True)
+    with c.cd(c.code_path):
+        old_head = c.run('git rev-parse HEAD', hide=True).stdout.strip()
+        if force:
+            c.run(
+                'git fetch && git checkout master && '
+                'git reset --hard origin/master',
+                hide=True,
+            )
+        else:
+            c.run('git checkout master && git pull origin master', hide=True)
 
-    new_head = c.run('git rev-parse HEAD', hide=True).stdout.strip()
+        new_head = c.run('git rev-parse HEAD', hide=True).stdout.strip()
     return old_head, new_head
 
 def check_files_changed_factory(path):
     def func(c, old_head, new_head):
-        out = c.run(
-            f'git diff --name-only {old_head} {new_head} -- {path}',
-            hide='out',
-        ).stdout.strip()
+        with c.cd(c.code_path):
+            out = c.run(
+                f'git diff --name-only {old_head} {new_head} -- {path}',
+                hide='out',
+            ).stdout.strip()
         return bool(out)
 
     return func

@@ -3,7 +3,8 @@ from functools import wraps, update_wrapper
 from decorator import decorator
 from fabric import task
 
-from . import stages
+from tasks import stages
+from . import console
 
 
 def source_profile(c):
@@ -46,11 +47,11 @@ def check_for_stage(which=True, use_default=None):
             return _func(c, *args, **kwargs)
         except AttributeError:
             if use_default is None:
-                print('This command requires a stage to be active')
+                console.error('This command requires a stage to be active')
             # If use_default is set, activate the respective stage
             stage_task = getattr(stages, use_default)
             stage_task(c)
             return _func(c, *args, **kwargs)
         except RuntimeError as e:
-            print(e)
+            console.error(e)
     return decorator(wrapper)

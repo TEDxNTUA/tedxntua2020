@@ -1,6 +1,6 @@
 from fabric import task
 
-from .utils import check_for_stage
+from utils import check_for_stage
 
 
 @task

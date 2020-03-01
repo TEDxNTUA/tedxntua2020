@@ -1,7 +1,6 @@
 from fabric import task
 
-from . import console
-from .utils import source_profile, check_for_stage
+from utils import console, source_profile, check_for_stage
 
 
 TRANSLATIONS = ['el', 'en']
@@ -35,14 +34,15 @@ def collect_static(c):
 @check_for_stage()
 def install_python_deps(c):
     """Install Python dependencies from requirements.txt."""
-    with source_profile(c), c.cd(c.code_path):
-        c.run(f'{c.venv_bin_path}/pip install -r requirements.txt', hide='out')
+    with source_profile(c):
+        c.run(f'{c.venv_bin_path}/pip install -r '
+              f'{c.code_path}/requirements.txt', hide='out')
     console.done('Installed Python dependencies from requirements.txt')
 
 @task
 @check_for_stage()
 def install_python_deps_from_setup(c):
     """Install Python dependencies from setup.py."""
-    with source_profile(c), c.cd(c.code_path):
-        c.run(f'{c.venv_bin_path}/pip install -e .', hide='out')
+    with source_profile(c):
+        c.run(f'{c.venv_bin_path}/pip install -e {c.code_path}', hide='out')
     console.done('Installed Python dependencies from setup.py')

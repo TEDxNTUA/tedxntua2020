@@ -1,7 +1,6 @@
 from fabric import task
 
-from . import console
-from .utils import source_profile, check_for_stage
+from utils import console, source_profile, check_for_stage
 
 
 @task

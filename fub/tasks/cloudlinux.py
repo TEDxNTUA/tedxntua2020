@@ -1,7 +1,7 @@
 from fabric import task
 
-from . import console, hosts
-from .utils import check_for_stage
+import hosts
+from utils import check_for_stage, console
 
 
 CLOUDLINUX_SELECTOR_PATH = '/usr/sbin/cloudlinux-selector'
