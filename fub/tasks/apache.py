@@ -5,7 +5,7 @@ from .utils import source_profile, check_for_stage
 
 
 @task(hosts=hosts.DEFAULT_HOSTS)
-@check_for_stage
+@check_for_stage()
 def set_private(c):
     """Add password protection to active stage."""
     with c.cd(c.subdomain_root):
@@ -13,7 +13,7 @@ def set_private(c):
     console.done('Enabled password protection')
 
 @task(hosts=hosts.DEFAULT_HOSTS)
-@check_for_stage
+@check_for_stage()
 def set_public(c):
     """Remove password protection from active stage."""
     with c.cd(c.subdomain_root):

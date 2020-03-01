@@ -5,7 +5,7 @@ from .utils import source_profile, check_for_stage
 
 
 @task
-@check_for_stage
+@check_for_stage()
 def build_production(c):
     """Run `npm run build` in bundles directory."""
     with source_profile(c), c.cd(f'{c.code_path}/bundles'):
@@ -13,7 +13,7 @@ def build_production(c):
     console.done('Created production build')
 
 @task
-@check_for_stage
+@check_for_stage()
 def install_npm_deps(c):
     """Install npm dependencies from package.json."""
     with source_profile(c), c.cd(f'{c.code_path}/bundles'):

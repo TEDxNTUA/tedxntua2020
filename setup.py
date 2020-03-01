@@ -29,6 +29,7 @@ setup(
         'dev': [
             'fabric',
             'colorama',
+            'decorator',
         ],
     },
     entry_points={

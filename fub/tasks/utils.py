@@ -1,5 +1,6 @@
 from functools import wraps, update_wrapper
 
+from decorator import decorator
 from fabric import task
 
 from . import stages
@@ -18,7 +19,7 @@ def task_factory(factory, *args, **kwargs):
         return task(task_func)
     return wrapper
 
-def check_for_stage(_func=None, *, which=True, use_default=None):
+def check_for_stage(which=True, use_default=None):
     """
     Check if task function runs in the context of an allowed stage.
 
@@ -31,31 +32,25 @@ def check_for_stage(_func=None, *, which=True, use_default=None):
         If not None and no stage is active, it activates the stage with the
         given name before running the task.
     """
-    def decorator(func):
-        @wraps(func)
-        def wrapper(c, *args, **kwargs):
-            try:
-                if which is True: # If True, check for any stage.
-                    c._stage
-                elif which:
-                    # If False, skip check. Otherwise, use as whitelist.
-                    if c._stage not in which:
-                        raise RuntimeError(
-                            f'This command requires one of the following '
-                            f'stages to be active: {which}'
-                        )
-                return func(c, *args, **kwargs)
-            except AttributeError:
-                if use_default is None:
-                    print('This command requires a stage to be active')
-                # If use_default is set, activate the respective stage
-                stage_task = getattr(stages, use_default)
-                stage_task(c)
-                return func(c, *args, **kwargs)
-            except RuntimeError as e:
-                print(e)
-        return wrapper
-
-    if _func is None:
-        return decorator
-    return decorator(_func)
+    def wrapper(_func, c, *args, **kwargs):
+        try:
+            if which is True: # If True, check for any stage.
+                c._stage
+            elif which:
+                # If False, skip check. Otherwise, use as whitelist.
+                if c._stage not in which:
+                    raise RuntimeError(
+                        f'This command requires one of the following '
+                        f'stages to be active: {which}'
+                    )
+            return _func(c, *args, **kwargs)
+        except AttributeError:
+            if use_default is None:
+                print('This command requires a stage to be active')
+            # If use_default is set, activate the respective stage
+            stage_task = getattr(stages, use_default)
+            stage_task(c)
+            return _func(c, *args, **kwargs)
+        except RuntimeError as e:
+            print(e)
+    return decorator(wrapper)
