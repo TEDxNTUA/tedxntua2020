@@ -136,6 +136,15 @@ class ActivityManager(TranslatableManager):
                 setattr(a, field, '-')
         return a
 
+    def published(self):
+        '''
+        Fetches only published activities.
+
+        Becomes handy in templates where we can write for example:
+        `for act in presenter.activity_set.published`.
+        '''
+        return self.get_queryset().filter(is_published=True)
+
 
 class ActivityTypeManager(TranslatableManager):
     '''

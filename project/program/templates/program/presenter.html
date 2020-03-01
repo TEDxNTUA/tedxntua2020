@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<article class="presenter-page">
+    {% if go_back_url %}
+        <a href="{{ go_back_url }}" class="btn btn-secondary">
+            &lt; {% trans 'back' %}
+        </a>
+    {% endif %}
+    <div class="presenter">
+        <img class="image"
+            srcset="{{ presenter.image.thumbnail.320x320.url }} 320w,
+                    {{ presenter.image.thumbnail.720x720.url }} 720w,
+                    {{ presenter.image.thumbnail.1024x1024.url }} 1024w"
+            sizes="(max-width: 576px) 320px,
+                    (max-width: 992px) 720px,
+                    1024px"
+            src="{{ presenter.image.thumbnail.320x320.url }}"
+            alt="" />
+        <div class="info">
+            <h1>{{presenter.name}}</h1>
+            <h2>{{presenter.occupation}}</h2>
+            <div class="collapse content" id="description">
+                {{presenter.short_bio|safe}}
+            </div>
+            <a href="#description" class="btn btn-primary" data-toggle="collapse"
+                aria-expanded="false" aria-controls="description">
+                {% trans 'presenter.read_full' %}
+            </a>
+        </div>
+    </div>
+    <div class="activities">
+        {% for activity in presenter.activity_set.published %}
+        <div class="activity">
+            <header>
+                <h5>{{ activity.title }}</h5>
+                <h6 class="h5">
+                    <span>{{activity.get_activity_type_display | upper}}</span> |
+                    <time>{{activity.start_time}}</time>&mdash;<time>{{activity.end_time}}</time>
+                </h6>
+            </header>
+            <div class="content">
+                {{activity.description|safe}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</article>
+{% endblock %}
