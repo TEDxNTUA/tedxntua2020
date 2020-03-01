@@ -25,4 +25,9 @@ setup(
         'django-parler',
         'django-extensions',
     ],
+    extras_require={
+        'dev': [
+            'fabric',
+        ],
+    },
 )
