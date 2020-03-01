@@ -4,6 +4,19 @@ from . import console, hosts
 from .utils import source_profile, check_for_stage
 
 
+@task(
+    help={'user': 'Username'},
+    hosts=hosts.DEFAULT_HOSTS,
+)
+@check_for_stage()
+def add_auth(c, user):
+    """
+    Create user for passwd authentication.
+    """
+    c.run(f'mkdir -p $(dirname {c.passwd_path})')
+    c.run(f'htpasswd -c {c.passwd_path} {user}')
+    console.done(f'Added user {user}')
+
 @task(hosts=hosts.DEFAULT_HOSTS)
 @check_for_stage()
 def set_private(c):
