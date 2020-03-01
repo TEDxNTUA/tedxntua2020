@@ -28,6 +28,7 @@ setup(
     extras_require={
         'dev': [
             'fabric',
+            'colorama',
         ],
     },
     entry_points={
