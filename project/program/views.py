@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import View
 
 from .models import Presenter, Activity, Stage
+from project.utils.url import is_url_same_domain
 
 
 class SpeakersView(View):
@@ -38,12 +39,18 @@ class SideEventsView(View):
 
 
 class PresenterView(View):
-    template_name = 'program/speaker.html'
+    template_name = 'program/presenter.html'
 
     def get(self, request, slug):
+        # Add link to previous page if it was on the same domain
+        go_back_url = request.META.get('HTTP_REFERER')
+        if not is_url_same_domain(request, go_back_url):
+            go_back_url = ''
+
         presenter = get_object_or_404(Presenter, slug=slug)
         return render(request, self.template_name, {
             'presenter': presenter,
+            'go_back_url': go_back_url,
         })
 
 class ScheduleView(View):
