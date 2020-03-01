@@ -30,4 +30,9 @@ setup(
             'fabric',
         ],
     },
+    entry_points={
+        'console_scripts': [
+            'fub = fub.main:program.run',
+        ],
+    },
 )
