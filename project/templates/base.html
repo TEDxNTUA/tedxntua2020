@@ -1,7 +1,9 @@
+{% load i18n %}
 {% load static %}
 {% load render_bundle from webpack_loader %}
+{% get_current_language as CURR_LANG %}
 <!DOCTYPE html>
-<html>
+<html lang="{{ CURR_LANG }}">
 
 <head>
     <title>{% block title %}{% endblock %} | TEDxNTUA 2020</title>
