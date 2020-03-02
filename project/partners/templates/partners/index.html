@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}Partners{% endblock %}
+{% block description %}This is the partners page (with leaflet){% endblock %}
+{% block content %}
+<article class="sponsors">
+    {% for id, category in partners.items %}
+        <h2 class="page-heading {{ id }}-heading">{{ category.title }}</h2>
+        <div class="category container-fluid p-0" id="{{ id }}">
+            {% for partner in category.items %}
+                <div class="child">
+                    {% load static %}
+                    <div class="card-container">
+                            <div class="container-image">
+                                <a href="{{ partner.link }}">
+                                    {% if partner.image %}
+                                    <img class="logo"
+                                        srcset="{{ partner.image.thumbnail.320x320.url }} 320w,
+                                            {{ partner.image.thumbnail.720x720.url }} 720w,
+                                            {{ partner.image.thumbnail.1024x1024.url }} 1024w"
+                                        sizes="(max-width: 576px) 320px,
+                                            (max-width: 992px) 720px,
+                                            1024px"
+                                        src="{{ partner.image.thumbnail.320x320.url }}"
+                                        alt="" />
+                                    {% else %}
+                                    <div class="logo no-image">
+                                        <h3>{{ partner.name }}</h3>
+                                    </div>
+                                    {% endif %}
+                                </a>
+                                {% if partner.leaflet %}
+                                    <a href="{{ partner.link }}" class="title-right">
+                                        <button class="btn btn-partners btn-right"><h4>{% trans 'website' %}</h4></button>
+                                    </a>
+                                {% else %}
+                                    <a href="{{ partner.link }}" class="title-right">
+                                        <button class="btn btn-partners btn-right"></button>
+                                    </a>
+                                {% endif %}
+
+                                {% if partner.leaflet %}
+                                    <a href="#leaflet-modal" class="title-bottom" data-leaflet-url="{{ partner.leaflet.url }}" data-toggle="modal">
+                                        <button class="btn btn-partners btn-bottom"><h4>{% trans 'leaflet' %}</h4></button>
+                                    </a>
+                                {% else %}
+                                    <a href="{{ partner.link }}" class="title-bottom">
+                                        <button class="btn btn-partners btn-bottom"><h4>{% trans 'website' %}</h4></button>
+                                    </a>
+                                {% endif %}
+                            </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <!-- Modal Image -->
+    <div class="modal fade bd-example-modal-lg show" id="leaflet-modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" data-dismiss="modal">
+                    <iframe class="iframe-div" id="leaflet-iframe" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}

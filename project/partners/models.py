@@ -76,6 +76,8 @@ class Partner(TranslatableModel):
 
     leaflet = models.FileField(
         upload_to='partners/leaflet/',
+        null=True,
+        blank=True,
     )
 
     objects = PartnerManager()
