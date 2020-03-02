@@ -5,10 +5,18 @@
 {% block description %}{% trans 'home.description' %}{% endblock %}
 {% block content %}
 <article class="home-page">
-    {% include "home/hero.html" %}
-    {% include "home/lineup.html" %}
-    {% include "home/venue.html" %}
-    {% include "home/about.html" %}
+    <div class="section-container">
+        {% include "home/hero.html" %}
+    </div>
+    <div class="section-container">
+        {% include "home/lineup.html" %}
+    </div>
+    <div class="section-container">
+        {% include "home/venue.html" %}
+    </div>
+    <div class="section-container">
+        {% include "home/about.html" %}
+    </div>
 </article>
 {% endblock %}
 {% block scripts %}
@@ -81,7 +89,7 @@
     const obsIdToIdx = {}
 
     // Add all sections to observables
-    const sxs = document.querySelectorAll('article.home-page > section')
+    const sxs = document.querySelectorAll('article.home-page .section-container > section')
     sxs.forEach(sx => {
         observables.push({
             el: sx,

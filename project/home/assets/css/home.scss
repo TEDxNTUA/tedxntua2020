@@ -49,7 +49,7 @@ article.home-page {
     .checkerboard-view {
         display: none;
     }
-    > section {
+    .section-container > section {
         padding: 2rem 0;
         line-height: 1.5;
         &:first-child {
@@ -366,15 +366,21 @@ article.home-page {
                 }
             }
         }
-        > section {
-            @if $scroll-snap-enabled {
-                scroll-snap-align: start;
-                padding-top: $page-padding-y-lg;
-            } @else {
-                padding-top: 4rem;
+        .section-container {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            min-height: 80vh;
+            > section {
+                @if $scroll-snap-enabled {
+                    scroll-snap-align: start;
+                    padding-top: $page-padding-y-lg;
+                } @else {
+                    padding-top: 4rem;
+                }
+                padding-bottom: $box-size;
+                font-size: 1.25rem;
             }
-            padding-bottom: $box-size;
-            font-size: 1.25rem;
         }
         section#hero {
             display: flex;
