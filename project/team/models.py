@@ -9,14 +9,23 @@ from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 
 
 class TeamMemberManager(TranslatableManager):
-    def get_teams(self):
-        '''Table-level method to get all team members grouped by team.
+    def get_teams(self, unpublished=False):
+        '''
+        Table-level method to get all team members grouped by team.
 
-        Returns a dictionary where team IDs from TeamMember.TEAM_CHOICES
-        are the keys and the value is a dictionary with the `title` of
-        the team and a `members` array.
+        Parameters
+        ----------
+        unpublished : bool (default False)
+            Controls if unpublished team members are included.
 
-        The order of teams is the same as in TEAM_CHOICES.
+        Returns
+        -------
+        directory : dict
+            A dictionary where team IDs from TeamMember.TEAM_CHOICES
+            are the keys and the value is a dictionary with the `title` of
+            the team and a `members` array.
+
+            The order of teams is the same as in TEAM_CHOICES.
         '''
         teams = {}
         for team_id, title in TeamMember.TEAM_CHOICES:
@@ -25,9 +34,16 @@ class TeamMemberManager(TranslatableManager):
                 'members': [],
             }
 
-        for member in self.get_queryset().filter(is_published=True):
+        qs = self.get_queryset()
+        if not unpublished:
+            qs = qs.filter(is_published=True)
+
+        for member in qs:
             teams[member.team]['members'].append(member)
         return teams
+
+    def published(self):
+        return self.get_queryset().filter(is_published=True)
 
 
 class TeamMember(TranslatableModel):

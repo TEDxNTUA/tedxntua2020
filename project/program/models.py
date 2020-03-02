@@ -64,7 +64,7 @@ class ActivityManager(TranslatableManager):
     '''
     The main manager of the Activity model providing class-level functionality.
     '''
-    def get_schedule(self):
+    def get_schedule(self, unpublished=False):
         '''
         Get the schedule of the event organized by time and stages.
 
@@ -90,6 +90,11 @@ class ActivityManager(TranslatableManager):
             },
             ...
         }
+
+        Parameters
+        ----------
+        unpublished : bool (default False)
+            Controls if unpublished activities are included.
         '''
 
         slots = {}
@@ -98,10 +103,11 @@ class ActivityManager(TranslatableManager):
 
         # TODO prefetch presenter
         activities = Activity.objects.filter(
-            is_published=True,
             start__isnull=False,
             end__isnull=False,
         )
+        if not unpublished:
+            activities = activities.filter(is_published=True)
 
         for activity in activities:
             # Get time slot
@@ -158,8 +164,10 @@ class ActivityTypeManager(TranslatableManager):
     def get_queryset(self):
         return super().get_queryset().filter(
             activity_type=self.type_,
-            is_published=True,
         )
+
+    def published(self):
+        return self.get_queryset().filter(is_published=True)
 
 
 class Activity(TranslatableModel):
@@ -289,8 +297,11 @@ class PresenterTypeManager(TranslatableManager):
     def get_queryset(self):
         return super().get_queryset().filter(
             activity__activity_type=self.type_,
-            is_published=True,
         ).distinct()
+
+    def published(self):
+        return self.get_queryset().filter(is_published=True)
+
 
 class Presenter(TranslatableModel):
     '''

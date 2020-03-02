@@ -2,7 +2,10 @@ from django.conf import settings as dj_settings
 
 
 ALLOWED_SETTINGS = [
-    'TEDXNTUA_DATE', 'SCHEDULE_ENABLED', 'TICKETS_ENABLED',
+    'TEDXNTUA_DATE',
+    'TEDXNTUA_SHOW_UNPUBLISHED',
+    'TEDXNTUA_SCHEDULE_ENABLED',
+    'TEDXNTUA_TICKETS_ENABLED',
 ]
 
 def settings(req):
