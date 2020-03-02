@@ -14,7 +14,7 @@ urlpatterns = [
     path('event/<slug:slug>', PresenterView.as_view(), name='presenter'),
 ]
 
-if settings.SCHEDULE_ENABLED:
+if settings.TEDXNTUA_SCHEDULE_ENABLED:
     urlpatterns += [
         path('schedule/', ScheduleView.as_view(), name='schedule'),
     ]

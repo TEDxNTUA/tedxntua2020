@@ -10,7 +10,7 @@
     <li class="nav-item">
         <a href="{% url 'side-events' %}" class="btn {% if url_name == 'side-events' %}btn-secondary{% else %}btn-white{% endif %}">{% trans 'Side events' %}</a>
     </li>
-    {% if settings.SCHEDULE_ENABLED %}
+    {% if settings.TEDXNTUA_SCHEDULE_ENABLED %}
     <li class="nav-item">
         <a href="{% url 'schedule' %}" class="btn {% if url_name == 'schedule' %}btn-secondary{% else %}btn-white{% endif %}">{% trans 'Schedule' %}</a>
     </li>
