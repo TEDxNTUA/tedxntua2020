@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-02 05:42+0000\n"
+"POT-Creation-Date: 2020-03-02 15:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,35 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: project/about/templates/about/index.html:4
+#: project/about/templates/about/index.html:5
 msgid "about.title"
 msgstr "Σχετικά με μας"
 
-#: project/about/templates/about/index.html:5
+#: project/about/templates/about/index.html:6
 msgid "about.description"
 msgstr ""
 "Ποιοι είμαστε; Τι είναι το TED; Τι είναι το TEDx; Γνωρίστε τους θεσμούς που "
 "εμπλέκονται σε αυτήν την προσπάθεια και την ιστορία που κρύβεται πίσω από "
 "την ομάδα του TEDxNTUA."
 
-#: project/about/templates/about/index.html:12
+#: project/about/templates/about/index.html:13
 msgid "about.meet_the_team"
 msgstr "ΓΝΩΡΙΣΕ ΤΗΝ ΟΜΑΔΑ"
 
-#: project/about/templates/about/index.html:25
-msgid "Picture #1 of"
-msgstr "Φωτογραφία #1 του/της"
-
-#: project/about/templates/about/index.html:41
-msgid "Picture #2 of"
-msgstr "Φωτογραφία #2 του/της"
-
-#: project/about/templates/about/index.html:44
+#: project/about/templates/about/index.html:42
 #, python-format
 msgid "%(team_name)s TEAM"
 msgstr "ΟΜΑΔΑ %(team_name)s"
 
-#: project/about/templates/about/index.html:64
+#: project/about/templates/about/index.html:62
 msgid "about.tedxntua"
 msgstr ""
 "<h3>Τι είναι το TEDxNTUA;</h3><p>Το TEDxNTUA είναι ένα συνέδριο που "
@@ -79,7 +71,7 @@ msgstr ""
 "Ινστιτούτο Συστημάτων Επικοινωνιών και Υπολογιστών (<a href=\"https://www."
 "iccs.gr\" target=\"_blank\">ΕΠΙΣΕΥ</a>) του ΕΜΠ.</p>"
 
-#: project/about/templates/about/index.html:65
+#: project/about/templates/about/index.html:63
 msgid "about.join"
 msgstr ""
 "<details><summary><strong>Θέλω να συμμετέχω στην ομάδα!</strong></"
@@ -101,7 +93,7 @@ msgstr ""
 "<strong>Συντονίσου</strong> στις σελίδες μας στα social media ώστε να "
 "παραμένεις ενημερωμένος/η.</p></details>"
 
-#: project/about/templates/about/index.html:70
+#: project/about/templates/about/index.html:68
 msgid "about.ted"
 msgstr ""
 "<h3>Τι είναι το TED;</h3><p>Το TED είναι ένας μη κερδοσκοπικός οργανισμός "
@@ -134,7 +126,7 @@ msgstr ""
 "που θέλουν να αλλάξουν τον κόσμο να ενισχύσουν τον αντίκτυπο των "
 "αξιοσημείωτων έργων τους, όπως και των δραστηριοτήτων τους.</p>"
 
-#: project/about/templates/about/index.html:73
+#: project/about/templates/about/index.html:71
 msgid "about.tedx"
 msgstr ""
 "<h3>Τι είναι το TEDx;</h3><p>Στο πνεύμα των Ιδεών που Αξίζει να Διαδοθούν, "
@@ -179,12 +171,12 @@ msgstr ""
 msgid "home.about.learn_more"
 msgstr "Μάθε περισσότερα για μας"
 
-#: project/home/templates/home/about.html:19
+#: project/home/templates/home/about.html:20
 msgid "home.about.cta_header"
 msgstr "Και μην ξεχάσεις:"
 
-#: project/home/templates/home/about.html:21
-#: project/home/templates/home/hero.html:35
+#: project/home/templates/home/about.html:22
+#: project/home/templates/home/hero.html:36
 msgid "tickets.cta"
 msgstr "Κάνε κράτηση!"
 
@@ -223,11 +215,11 @@ msgstr ""
 msgid "home.date"
 msgstr "28 Μαρτίου"
 
-#: project/home/templates/home/index.html:4
+#: project/home/templates/home/index.html:5
 msgid "home.title"
 msgstr "Αρχική"
 
-#: project/home/templates/home/index.html:5
+#: project/home/templates/home/index.html:6
 msgid "home.description"
 msgstr ""
 "Το TEDxNTUA 2020 διεξάγεται φέτος, το Σάββατο 28 Μαρτίου, στο Hub Events. Το "
@@ -301,25 +293,9 @@ msgstr ""
 "telematics.oasa.gr/\"><span class=\"underline\">Βέλτιστη Διαδρομή</span></a> "
 "της ιστοσελίδας του ΟΑΣΑ για αναλυτικές οδηγίες.</a>"
 
-#: project/partners/models.py:75 project/program/models.py:206
-#: project/program/models.py:324 project/team/models.py:81
-msgid "Published"
-msgstr "Δημόσιο"
-
-#: project/program/admin/activity_admin.py:26
-msgid "Presenter"
-msgstr "Παρουσιαστής δραστηριότητας"
-
-#: project/program/admin/presenter_admin.py:30
-msgid "Activities"
-msgstr "Δραστηριότητες"
-
-#: project/program/forms/activity_form.py:17
-msgid "Get image from presenter"
-msgstr "Λήψη εικόνας από τον παρουσιαστή δραστηριότητας"
 #: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
 msgid "Link"
-msgstr "Λινκ"
+msgstr "Σύνδεσμος"
 
 #: project/partners/models.py:51
 msgid "Platinum Sponsor"
@@ -353,14 +329,43 @@ msgstr "Χορηγοί Επικοινωνίας"
 msgid "Community Partners"
 msgstr "Συνεργάτες Κοινότητας"
 
-#: project/partners/templates/partners/index.html:20
+#: project/partners/models.py:75 project/program/models.py:206
+#: project/program/models.py:324 project/team/models.py:85
+msgid "Published"
+msgstr "Δημόσιο"
+
+#: project/partners/templates/partners/index.html:3
+#: project/templates/layouts/partials/nav.html:75
+msgid "Partners"
+msgstr "Συνεργάτες"
+
+#: project/partners/templates/partners/index.html:4
+msgid "partners.description"
+msgstr ""
+"Η εκδήλωσή μας δεν θα ήταν εφικτή χωρίς τη στήριξη από οργανισμούς που "
+"συμμερίζονται τις αξίες και τα οράματά μας. Επισκεφθείτε τις ιστοσελίδες τους "
+"και μάθετε περισσότερα για αυτούς."
+
 #: project/partners/templates/partners/index.html:34
+#: project/partners/templates/partners/index.html:48
 msgid "website"
 msgstr "ΣΕΛΙΔΑ"
 
-#: project/partners/templates/partners/index.html:30
+#: project/partners/templates/partners/index.html:44
 msgid "leaflet"
 msgstr "ΦΥΛΛΑΔΙΟ"
+
+#: project/program/admin/activity_admin.py:26
+msgid "Presenter"
+msgstr "Παρουσιαστής δραστηριότητας"
+
+#: project/program/admin/presenter_admin.py:30
+msgid "Activities"
+msgstr "Δραστηριότητες"
+
+#: project/program/forms/activity_form.py:17
+msgid "Get image from presenter"
+msgstr "Λήψη εικόνας από τον παρουσιαστή δραστηριότητας"
 
 #: project/program/forms/activity_form.py:18
 msgid "If selected, the image will be overridden by that of the presenter"
@@ -412,8 +417,8 @@ msgstr "Side event"
 msgid "Hosting"
 msgstr "Παρουσίαση"
 
-#: project/program/templates/program/_event-tabs.html:14
-#: project/templates/layouts/partials/nav.html:65
+#: project/program/templates/program/_event-tabs.html:15
+#: project/templates/layouts/partials/nav.html:66
 msgid "Schedule"
 msgstr "Πρόγραμμα"
 
@@ -437,26 +442,26 @@ msgstr "Πίσω"
 msgid "presenter.read_full"
 msgstr "Διάβασε την πλήρη περιγραφή"
 
-#: project/program/templates/program/schedule.html:3
+#: project/program/templates/program/schedule.html:4
 msgid "schedule.title"
 msgstr "Πρόγραμμα"
 
-#: project/program/templates/program/schedule.html:4
+#: project/program/templates/program/schedule.html:5
 msgid "schedule.description"
 msgstr ""
 "Όλη η ουσία μίας εκδήλωσης TEDx κρύβεται στο μίγμα των ομιλιών, των "
 "παραστάσεων και των workshops που περιλαμβάνει. Ανακαλύψτε τους τομείς που "
 "θα εξερευνήσουμε και ελάτε μαζί μας σε ένα ταξίδι γεμάτο Δυϊσμό."
 
-#: project/program/templates/program/schedule.html:11
+#: project/program/templates/program/schedule.html:12
 msgid "TIME"
 msgstr "ΩΡΑ"
 
-#: project/settings/base.py:177
+#: project/settings/base.py:178
 msgid "Greek"
 msgstr "Ελληνικά"
 
-#: project/settings/base.py:178
+#: project/settings/base.py:179
 msgid "English"
 msgstr "Αγγλικά"
 
@@ -501,19 +506,15 @@ msgstr "Η εκδήλωση"
 msgid "(Toggle dropdown)"
 msgstr "Εναλλαγή"
 
-#: project/templates/layouts/partials/nav.html:73
-msgid "Partners"
-msgstr "Συνεργάτες"
-
-#: project/templates/layouts/partials/nav.html:80
+#: project/templates/layouts/partials/nav.html:82
 msgid "About us"
 msgstr "Σχετικά"
 
-#: project/templates/layouts/partials/nav.html:87
+#: project/templates/layouts/partials/nav.html:90
 msgid "Tickets"
 msgstr "Εισιτήρια"
 
-#: project/templates/layouts/partials/nav.html:91
+#: project/templates/layouts/partials/nav.html:95
 msgid "LANGUAGE"
 msgstr "ΓΛΩΣΣΑ"
 
@@ -528,6 +529,12 @@ msgstr "Διαχείριση TEDxNTUA 2020"
 #: project/utils/admin.py:20
 msgid "Translatable"
 msgstr "Προς μετάφραση"
+
+#~ msgid "Picture #1 of"
+#~ msgstr "Φωτογραφία #1 του/της"
+
+#~ msgid "Picture #2 of"
+#~ msgstr "Φωτογραφία #2 του/της"
 
 #~ msgid "home.location"
 #~ msgstr "Hub Events, Κεραμεικός"

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load render_bundle from webpack_loader %}
 {% block title %}{% trans 'schedule.title' %}{% endblock %}
 {% block description %}{% trans 'schedule.description' %}{% endblock %}
 {% block content %}
@@ -63,11 +64,5 @@
 </article>
 {% endblock %}
 {% block scripts %}
-<script>
-    const scheduleTable = document.getElementById("schedule-table")
-    const stageSelector = document.getElementById("stage-selector")
-    stageSelector.addEventListener("change", evt => {
-        scheduleTable.setAttribute("data-activetab", evt.target.value)
-    })
-</script>
+    {% render_bundle 'schedule' 'js' %}
 {% endblock %}

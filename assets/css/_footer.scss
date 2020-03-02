@@ -58,11 +58,15 @@ $social-icon-size: 3em;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: $body-color;
         }
         img {
             width: 16em;
             max-width: 100%;
             height: auto;
+            &[data-loaded="false"] {
+                height: 16em / 21 * 9;
+            }
         }
         .overlay {
             position: absolute;
@@ -142,6 +146,9 @@ $social-icon-size: 3em;
         ul.scrollable-cards {
             img {
                 width: 20em;
+                &[data-loaded="false"] {
+                    height: 20em / 21 * 9;
+                }
             }
         }
     }
