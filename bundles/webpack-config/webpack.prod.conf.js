@@ -13,7 +13,11 @@ module.exports = merge(base, {
     path: path.resolve('./dist/'),
     filename: '[name]-[hash].js',
   },
-
+  module: {
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+    ],
+  },
   plugins: [
     new MiniCssExtractPlugin({ filename: '[name]-[hash].css' }),
     // Don't keep old bundles
