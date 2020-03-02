@@ -27,23 +27,13 @@ main {
     padding: 0 $page-padding-x $page-padding-y;
 }
 
-::selection {
-	background: $primary;
-	color: $body-color;
-}
-
-
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-serif;
     font-weight: bold;
 }
 
-@mixin underline($in: 1px, $out: 5px) {
-    box-shadow: inset 0 (-$out) $primary, 0 $in $primary;
-}
-
-@mixin underline() {
-    box-shadow: inset 0 -5px $primary, 0 1px $primary;
+@mixin underline($in: 5px, $out: 1px) {
+    box-shadow: inset 0 (-$in) $primary, 0 $out $primary;
 }
 
 .underline,

@@ -56,6 +56,17 @@
                 {% endif %}
             </a>
         {% endfor %}
+        {% for p in placeholders reversed %}
+            {% if items|length <= p %}
+                <a class="col col-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="placeholder">
+                        <div class="image {% if p|divisibleby:"2" %}woman{% else %}man{% endif %}-icon"
+                            aria-hidden="true"></div>
+                        <h5>{% trans 'more_soon' %}</h5>
+                    </div>
+                </a>
+            {% endif %}
+        {% endfor %}
     </div>
 </article>
 {% endblock %}

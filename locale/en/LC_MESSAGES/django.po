@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-01 21:43+0000\n"
+"POT-Creation-Date: 2020-03-02 05:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -172,15 +172,15 @@ msgid "home.about.cta_header"
 msgstr "Oh, and don't forget to:"
 
 #: project/home/templates/home/about.html:21
-#: project/home/templates/home/hero.html:21
+#: project/home/templates/home/hero.html:35
 msgid "tickets.cta"
 msgstr "Get your tickets!"
 
-#: project/home/templates/home/hero.html:13
+#: project/home/templates/home/hero.html:14
 msgid "home.dualism_logo"
 msgstr "Logo of our theme: Dualism"
 
-#: project/home/templates/home/hero.html:16
+#: project/home/templates/home/hero.html:18
 msgid "home.dualism_summary"
 msgstr ""
 "<p><strong>DUALISM</strong> is the interpretation of the world based on "
@@ -188,7 +188,7 @@ msgstr ""
 "other. It is proposed to be <strong>the basis of relationships and of "
 "creation</strong>, rather than the foundation of opposition.</p>"
 
-#: project/home/templates/home/hero.html:17
+#: project/home/templates/home/hero.html:19
 msgid "home.dualism_full"
 msgstr ""
 "<details><summary>Read more</summary><p>In this year's event, we approach "
@@ -207,13 +207,9 @@ msgstr ""
 "Without the existence of the first, the meaning of the other is negated.</"
 "p></details>"
 
-#: project/home/templates/home/hero.html:18
+#: project/home/templates/home/hero.html:23
 msgid "home.date"
 msgstr "March 28th"
-
-#: project/home/templates/home/hero.html:19
-msgid "home.location"
-msgstr "Hub Events, Kerameikos"
 
 #: project/home/templates/home/index.html:4
 msgid "home.title"
@@ -234,23 +230,28 @@ msgstr "LINE UP"
 #: project/home/templates/home/lineup.html:11
 #: project/program/templates/program/_event-tabs.html:5
 #: project/program/templates/program/listing.html:5
-#: project/templates/layouts/partials/nav.html:49
+#: project/templates/layouts/partials/nav.html:47
 msgid "Speakers"
 msgstr ""
 
 #: project/home/templates/home/lineup.html:18
 #: project/program/templates/program/_event-tabs.html:8
 #: project/program/templates/program/listing.html:7
-#: project/templates/layouts/partials/nav.html:57
+#: project/templates/layouts/partials/nav.html:53
 msgid "Performers"
 msgstr ""
 
 #: project/home/templates/home/lineup.html:25
 #: project/program/templates/program/_event-tabs.html:11
 #: project/program/templates/program/listing.html:9
-#: project/templates/layouts/partials/nav.html:63
+#: project/templates/layouts/partials/nav.html:59
 msgid "Side events"
 msgstr ""
+
+#: project/home/templates/home/lineup.html:86
+#: project/program/templates/program/listing.html:66
+msgid "more_soon"
+msgstr "More soon"
 
 #: project/home/templates/home/venue.html:5
 msgid "home.venue.title"
@@ -264,15 +265,19 @@ msgstr "The HUB Events"
 msgid "home.venue.address"
 msgstr "Alkminis 5, Kerameikos"
 
-#: project/home/templates/home/venue.html:11
+#: project/home/templates/home/venue.html:15
+msgid "home.venue.accessible_icon"
+msgstr "For persons with reduced mobility"
+
+#: project/home/templates/home/venue.html:16
 msgid "home.venue.accessible"
 msgstr "Accessible"
 
-#: project/home/templates/home/venue.html:18
+#: project/home/templates/home/venue.html:26
 msgid "home.venue.photo_alt"
 msgstr "Photo of The HUB Events' building"
 
-#: project/home/templates/home/venue.html:21
+#: project/home/templates/home/venue.html:30
 msgid "home.venue.access"
 msgstr ""
 "<h3>How to get to The HUB Events?</h3><h4>Public transport</h4><p>The venue "
@@ -383,7 +388,7 @@ msgid "Hosting"
 msgstr ""
 
 #: project/program/templates/program/_event-tabs.html:14
-#: project/templates/layouts/partials/nav.html:69
+#: project/templates/layouts/partials/nav.html:65
 msgid "Schedule"
 msgstr ""
 
@@ -470,19 +475,19 @@ msgstr ""
 msgid "(Toggle dropdown)"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:77
+#: project/templates/layouts/partials/nav.html:73
 msgid "Partners"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:84
+#: project/templates/layouts/partials/nav.html:80
 msgid "About us"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:91
+#: project/templates/layouts/partials/nav.html:87
 msgid "Tickets"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:95
+#: project/templates/layouts/partials/nav.html:91
 msgid "LANGUAGE"
 msgstr ""
 
@@ -497,6 +502,9 @@ msgstr ""
 #: project/utils/admin.py:20
 msgid "Translatable"
 msgstr ""
+
+#~ msgid "home.location"
+#~ msgstr "Hub Events, Kerameikos"
 
 #~ msgid "performers.title"
 #~ msgstr "Performers"

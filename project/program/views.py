@@ -13,6 +13,7 @@ class SpeakersView(View):
         return render(request, self.template_name, {
             'listing_type': 'speakers',
             'items': items,
+            'placeholders': list(range(4)),
         })
 
 class PerformersView(View):
@@ -23,6 +24,7 @@ class PerformersView(View):
         return render(request, self.template_name, {
             'listing_type': 'performers',
             'items': items,
+            'placeholders': list(range(4)),
         })
 
 class SideEventsView(View):
@@ -35,6 +37,7 @@ class SideEventsView(View):
         return render(request, self.template_name, {
             'listing_type': 'side_events',
             'items': items,
+            'placeholders': list(range(4)),
         })
 
 

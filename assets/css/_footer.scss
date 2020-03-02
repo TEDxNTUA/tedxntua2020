@@ -1,7 +1,7 @@
 $social-icon-size: 3em;
 
 #footer {
-    padding: 1.5em $page-padding-y $page-padding-y;
+    padding: 2em $page-padding-y $page-padding-y;
     section {
         display: flex;
         flex-direction: column;
@@ -138,7 +138,7 @@ $social-icon-size: 3em;
 
 @include media-breakpoint-up(lg) {
     #footer {
-        padding: $page-padding-y-lg $page-padding-x-lg;
+        padding: 4em $page-padding-x-lg $page-padding-y-lg;
         ul.scrollable-cards {
             img {
                 width: 20em;
