@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-01 21:43+0000\n"
+"POT-Creation-Date: 2020-03-02 03:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -184,15 +184,15 @@ msgid "home.about.cta_header"
 msgstr "Και μην ξεχάσεις:"
 
 #: project/home/templates/home/about.html:21
-#: project/home/templates/home/hero.html:21
+#: project/home/templates/home/hero.html:35
 msgid "tickets.cta"
 msgstr "Κάνε κράτηση!"
 
-#: project/home/templates/home/hero.html:13
+#: project/home/templates/home/hero.html:14
 msgid "home.dualism_logo"
 msgstr "Το λογότυπο του θέματός μας: Δυϊσμός"
 
-#: project/home/templates/home/hero.html:16
+#: project/home/templates/home/hero.html:18
 msgid "home.dualism_summary"
 msgstr ""
 "<p><strong>ΔΥΪΣΜΟΣ</strong>: η προσπάθεια ερμηνείας του κόσμου με βάση "
@@ -200,7 +200,7 @@ msgstr ""
 "αποδοχή του δυϊσμού ως <strong>βάση σύνδεσης και δημιουργίας</strong>, η "
 "κατάρριψη της σύνδεσής του με την αντίθεση.</p>"
 
-#: project/home/templates/home/hero.html:17
+#: project/home/templates/home/hero.html:19
 msgid "home.dualism_full"
 msgstr ""
 "<details><summary>Διάβασε περισσότερα</summary><p>Στο φετινό μας συνέδριο "
@@ -219,13 +219,9 @@ msgstr ""
 "σχέση εξάρτησης των εκάστοτε εννοιών. Χωρίς την ύπαρξη της μίας αναιρείται "
 "το νόημα ύπαρξης της άλλης.</p></details>"
 
-#: project/home/templates/home/hero.html:18
+#: project/home/templates/home/hero.html:23
 msgid "home.date"
 msgstr "28 Μαρτίου"
-
-#: project/home/templates/home/hero.html:19
-msgid "home.location"
-msgstr "Hub Events, Κεραμεικός"
 
 #: project/home/templates/home/index.html:4
 msgid "home.title"
@@ -276,15 +272,19 @@ msgstr "The HUB Events"
 msgid "home.venue.address"
 msgstr "Αλκμήνης 5, Κεραμεικός"
 
-#: project/home/templates/home/venue.html:11
+#: project/home/templates/home/venue.html:15
+msgid "home.venue.accessible_icon"
+msgstr "Για άτομα περιορισμένης κινητικότητας"
+
+#: project/home/templates/home/venue.html:16
 msgid "home.venue.accessible"
 msgstr "Προσβάσιμο"
 
-#: project/home/templates/home/venue.html:18
+#: project/home/templates/home/venue.html:26
 msgid "home.venue.photo_alt"
 msgstr "Φωτογραφία του κτιρίου του The HUB Events"
 
-#: project/home/templates/home/venue.html:21
+#: project/home/templates/home/venue.html:30
 msgid "home.venue.access"
 msgstr ""
 "<h3>Οδηγίες πρόσβασης</h3><h4>Μέσα μαζικής μεταφοράς</h4><p>Ο χώρος "
@@ -515,3 +515,6 @@ msgstr "Διαχείριση TEDxNTUA 2020"
 #: project/utils/admin.py:20
 msgid "Translatable"
 msgstr "Προς μετάφραση"
+
+#~ msgid "home.location"
+#~ msgstr "Hub Events, Κεραμεικός"

@@ -169,6 +169,17 @@ article.home-page {
             }
         }
 
+        .accessible {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 1em;
+                height: auto;
+                margin-right: .25em;
+            }
+        }
+
         iframe{
             height: 16em;
             flex-grow: 1;
