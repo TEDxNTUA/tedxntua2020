@@ -22,10 +22,7 @@
                             (max-width: 992px) 720px,
                             1024px"
                         src="{{ member.image.thumbnail.320x320.url }}"
-                        alt="{% trans 'Picture #1 of' %} {{ member.name }}" />
-                    {% else %}
-                    <img class="placeholder"
-                        src="{% static "images/member_no_photo.svg" %}" />
+                        alt="" />
                     {% endif %}
                     <p>{{ member.name }}</p>
                 </div>
@@ -38,7 +35,7 @@
                             (max-width: 992px) 720px,
                             1024px"
                         src="{{ member.image_alt.thumbnail.320x320.url }}"
-                        alt="{% trans 'Picture #2 of' %} {{ member.name }}" />
+                        alt="" />
                     {% endif %}
                     <p>
                         {% blocktrans trimmed with team_name=member.get_team_display|upper %}

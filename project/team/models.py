@@ -61,19 +61,23 @@ class TeamMember(TranslatableModel):
     team = models.CharField(max_length=16, choices=TEAM_CHOICES)
 
     image = VersatileImageField(
-        'Image',
+        'Image 1',
         upload_to='team/',
         width_field='image_width',
         height_field='image_height',
+        null=True,
+        blank=True,
     )
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
 
     image_alt = VersatileImageField(
-        'Image',
+        'Image 2',
         upload_to='team/',
         width_field='image_alt_width',
         height_field='image_alt_height',
+        null=True,
+        blank=True,
     )
     image_alt_height = models.PositiveIntegerField(editable=False, null=True)
     image_alt_width = models.PositiveIntegerField(editable=False, null=True)
