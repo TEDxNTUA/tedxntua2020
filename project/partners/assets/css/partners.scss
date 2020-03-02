@@ -111,6 +111,8 @@ article.sponsors {
             .logo{
                 margin: 0 auto;
                 width: 10em;
+                max-height: 10em;
+                object-fit: contain;
             }
             .no-image {
                 padding: 2em .25em;
@@ -131,6 +133,7 @@ article.sponsors {
                 .logo{
                     height: auto;
                     width: 14em;
+                    max-height: 14em;
                 }
             }
         }
@@ -143,6 +146,7 @@ article.sponsors {
                 padding: 2rem 0;
                 .logo{
                     width: 12em;
+                    max-height: 12em;
                     position: relative;
                 }
             }
