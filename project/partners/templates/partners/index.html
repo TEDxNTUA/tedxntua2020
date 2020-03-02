@@ -5,15 +5,17 @@
 {% block content %}
 <article class="sponsors">
     {% for id, category in partners.items %}
-        <h2 class="page-heading">{{ category.title }}</h2>
-        <div class="category container-fluid p-0" id="{{ id }}">
+        {% if category.items %}
+            <h2 class="page-heading">{{ category.title }}</h2>
+            <div class="category container-fluid p-0" id="{{ id }}">
+        {% endif %}
             {% for partner in category.items %}
                 <div class="child">
                     {% load static %}
                     <div class="card-container">
                             <div class="container-image">
                                 <a href="{{ partner.link }}">
-                                    <img src="{% static "images/tedxntua-black-600.png" %}" alt="random" class="logo">                           
+                                    <img src="{% static "images/deree.png" %}" alt="random" class="logo">                           
                                 </a>
                                 {% if partner.leaflet %}
                                     <a href="{{ partner.link }}" class="title-right">

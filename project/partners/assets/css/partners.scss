@@ -124,6 +124,8 @@ article.sponsors {
             .logo{
                 margin: 0 auto;
                 width: 10em;
+                max-height: 10em;
+                object-fit: contain;
             }
         }
     }
@@ -137,8 +139,10 @@ article.sponsors {
                 margin: 0 auto;
                 padding: 1rem 0;
                 .logo{
-                    height: auto;
+                    // height: auto;
                     width: 14em;
+                    max-height: 14em;
+                    background-color: black;
                 }
             }
         }
@@ -151,6 +155,7 @@ article.sponsors {
                 padding: 2rem 0;
                 .logo{
                     width: 12em;
+                    max-height: 12em;
                     position: relative;	
                 }
             }
