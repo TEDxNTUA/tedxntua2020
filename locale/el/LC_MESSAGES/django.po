@@ -362,18 +362,6 @@ msgstr "ΣΕΛΙΔΑ"
 msgid "leaflet"
 msgstr "ΦΥΛΛΑΔΙΟ"
 
-#: project/program/admin/activity_admin.py:26
-msgid "Presenter"
-msgstr ""
-
-#: project/program/admin/presenter_admin.py:30
-msgid "Activities"
-msgstr ""
-
-#: project/program/forms/activity_form.py:17
-msgid "Get image from presenter"
-msgstr ""
-
 #: project/program/forms/activity_form.py:18
 msgid "If selected, the image will be overridden by that of the presenter"
 msgstr ""
