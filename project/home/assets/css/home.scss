@@ -1,5 +1,6 @@
 $scroll-snap-enabled: false;
 $box-size: 16vmin;
+$semicircle-size: 3em;
 
 article.home-page {
     .tab-pane {
@@ -71,17 +72,67 @@ article.home-page {
             details {
                 margin-bottom: 2em;
             }
-            h2, h3 {
-                font-weight: normal;
-                line-height: 1;
+        }
+        .infobox {
+            margin-bottom: 2em;
+            font-family: $font-family-serif;
+            font-size: 1.5em;
+        }
+        .date, .location {
+            margin-top: 1.5em;
+        }
+        .date, .location h2 {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: space-between;
+            line-height: 1;
+        }
+        .monthday {
+            font-size: 1.325em;
+            font-weight: bold;
+        }
+        .year {
+            font-size: 3.45em;
+            :nth-child(1) {
+                color: $primary;
             }
+            :nth-child(2) {
+                color: $secondary;
+            }
+        }
+        .location {
+            position: relative;
             h2 {
-                color: black;
-                font-size: 2em;
+                height: 100%;
+                margin-bottom: 0;
+                font-size: 1.35em;
+                :nth-child(1) {
+                    letter-spacing: .25em;
+                    margin-right: -.25em;
+                }
+                :nth-child(2) {
+                    letter-spacing: .49em;
+                    margin-right: -.49em;
+                }
             }
-            h3 {
-                margin-bottom: 1em;
-                font-size: 1.2em;
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                height: 3 * 1.35em;
+                width: 1.5 * 1.35em;
+            }
+            &::before {
+                left: 0;
+                background: $primary;
+                // Use a large value instead of changing it for @media
+                border-radius: 5em 0 0 5em;
+            }
+            &::after {
+                right: 0;
+                background: $red;
+                border-radius: 0 5em 5em 0;
             }
         }
     }
@@ -142,6 +193,9 @@ article.home-page {
         }
     }
     section#about {
+        header h2 {
+            margin-bottom: 1em;
+        }
         .auspices {
             a {
                 display: block;
@@ -160,7 +214,35 @@ article.home-page {
         }
         .content {
             h3 {
-                margin: 2em 0 .5em;
+                margin: 1em 0 .5em;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    article.home-page {
+        section#hero {
+            .infobox {
+                // Make semicircles relative to infobox now (step 1)
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+            }
+            .location {
+                // (step 2)
+                position: static;
+                padding-right: (4.775em + 1.5em);
+                &::before, &::after {
+                    top: auto;
+                    bottom: 0;
+                    height: 4.775em; // height of .monthday + .year
+                    width: (4.775em / 2);
+                }
+                &::before {
+                    left: auto;
+                    right: (4.775em / 2) + .5em;
+                }
             }
         }
     }
@@ -286,26 +368,34 @@ article.home-page {
         section#hero {
             display: flex;
             .image-container {
-                max-width: 80vmin;
-                max-height: 80vmin;
+                width: 40vw;
+                max-width: 80vh;
                 flex-shrink: 0;
-                img {
+                div {
+                    position: relative;
                     width: 100%;
-                    height: 100%;
-                    object-fit: contain;
+                    padding-bottom: 100%;
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
                 }
             }
             .content {
                 align-self: center;
                 margin-left: 2em;
                 margin-top: 0;
-                > p {
-                    font-size: 1.5em;
-                }
                 a.btn {
                     padding: .75rem 1.5rem;
                     font-size: 1.5rem;
                 }
+            }
+            .infobox {
+                font-size: 1em;
             }
         }
         section#lineup {
@@ -328,19 +418,31 @@ article.home-page {
             }
             .access {
                 flex-direction: row;
-                width: 80%;
                 margin-top: 4em;
-                margin-left: auto;
+            }
+            .left {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 40vw;
+                max-width: 80vh;
             }
             .image-container {
-                order: 1;
-                width: 18em; // 12em * 1.5rem
-                height: 18em;
+                width: 100%;
+                height: 100%;
+                margin-bottom: 0;
                 border-top-width: 3px;
                 img {
                     height: 100%;
                     object-fit: cover;
                 }
+            }
+            .content {
+                flex-grow: 1;
+                align-self: center;
+                margin-left: 2em;
             }
         }
         section#about {
@@ -351,9 +453,11 @@ article.home-page {
                 align-items: center;
                 justify-content: center;
                 flex-shrink: 0;
-                width: 80vmin;
+                width: 40vw;
+                max-width: 80vh;
             }
             .content {
+                margin-left: 2em;
                 h3:first-child {
                     margin-top: 0;
                 }
@@ -366,6 +470,24 @@ article.home-page {
     article.home-page {
         .checkerboard-view {
             font-size: 1rem;
+        }
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    article.home-page {
+        section#hero, section#venue, section#about {
+            .content {
+                margin-left: 3em;
+            }
+        }
+        section#hero {
+            .content > p {
+                font-size: 1.5em;
+            }
+            .infobox {
+                font-size: 1.25em;
+            }
         }
     }
 }

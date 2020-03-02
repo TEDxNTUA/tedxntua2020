@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.views.generic import TemplateView
 from django.shortcuts import render
 
@@ -16,4 +17,7 @@ class HomeView(TemplateView):
             'performers': performers,
             'side_events': side_events,
         }
-        return render(request, self.template_name, {'lineup': lineup})
+        return render(request, self.template_name, {
+            'lineup': lineup,
+            'event_date': settings.TEDXNTUA_DATE,
+        })

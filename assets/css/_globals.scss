@@ -27,12 +27,6 @@ main {
     padding: 0 $page-padding-x $page-padding-y;
 }
 
-::selection {
-	background: $primary;
-	color: $body-color;
-}
-
-
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-serif;
     font-weight: bold;

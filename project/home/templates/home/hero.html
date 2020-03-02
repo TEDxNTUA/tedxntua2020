@@ -2,6 +2,7 @@
 {% load static %}
 <section id="hero">
     <div class="image-container">
+        <div>
         <img class="image"
             srcset="{% static 'images/dualism_logo_512.png' %} 512w,
                     {% static 'images/dualism_logo_1024.png' %} 1024w,
@@ -11,12 +12,25 @@
                     1585px"
             src="{% static 'images/dualism_logo_512.png' %}"
             alt="{% trans "home.dualism_logo" %}" />
+        </div>
     </div>
     <div class="content">
         {% trans 'home.dualism_summary' %}
         {% trans 'home.dualism_full' %}
-        <h2>{% trans 'home.date' %}</h2>
-        <h3>{% trans 'home.location' %}</h3>
+        <div class="infobox">
+            <time class="date" datetime="{{ event_date }}"
+                aria-label="{{ event_date }}">
+                <div class="monthday">{% trans 'home.date' %}</div>
+                <div class="year">
+                    <span>20</span><span>20</span>
+                </div>
+            </time>
+            <div class="location">
+                <h2>
+                    <span>The Hub</span><span>Events</span><span>Kerameikos</span>
+                </h2>
+            </div>
+        </div>
         <a href="/tickets" class="btn btn-lg btn-primary">
             {% trans 'tickets.cta' %}
         </a>
