@@ -12,7 +12,7 @@
                     {% load static %}
                     <div class="card-container">
                             <div class="container-image">
-                                <a href="{{ partner.link }}">
+                                <a href="{{ partner.link }}" rel="noopener">
                                     {% if partner.image %}
                                     <img class="logo lazy lazy-on-view"
                                         src="{{ partner.image.thumbnail.320x320.url }}"
@@ -30,11 +30,11 @@
                                     {% endif %}
                                 </a>
                                 {% if partner.leaflet %}
-                                    <a href="{{ partner.link }}" class="title-right">
+                                    <a href="{{ partner.link }}" rel="noopener" class="title-right">
                                         <button class="btn btn-partners btn-right"><h4>{% trans 'website' %}</h4></button>
                                     </a>
                                 {% else %}
-                                    <a href="{{ partner.link }}" class="title-right">
+                                    <a href="{{ partner.link }}" rel="noopener" class="title-right">
                                         <button class="btn btn-partners btn-right"></button>
                                     </a>
                                 {% endif %}
@@ -44,7 +44,7 @@
                                         <button class="btn btn-partners btn-bottom"><h4>{% trans 'leaflet' %}</h4></button>
                                     </a>
                                 {% else %}
-                                    <a href="{{ partner.link }}" class="title-bottom">
+                                    <a href="{{ partner.link }}" rel="noopener" class="title-bottom">
                                         <button class="btn btn-partners btn-bottom"><h4>{% trans 'website' %}</h4></button>
                                     </a>
                                 {% endif %}
