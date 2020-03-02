@@ -9,11 +9,12 @@ from . import apache, cloudlinux, django, git, npm
     help={
         'pull': 'Use `pull` instead of `reset --hard` for syncing with origin.',
         'force': 'Force-run all deploy steps without checking for changes.',
+        'build': 'Create new production build.',
     },
     hosts=hosts.DEFAULT_HOSTS,
 )
 @check_for_stage(use_default='staging')
-def deploy(c, pull=False, force=False):
+def deploy(c, pull=False, force=False, build=False):
     """
     Run deploy pipeline.
     """
@@ -39,7 +40,13 @@ def deploy(c, pull=False, force=False):
         console.status('npm dependencies changed')
         npm.install_npm_deps(c)
 
-    npm.build_production(c)
+    if not build:
+        console.status('[npm] Skipped creation of production build. Make sure '
+            'that you have a current version in the repository. If you need to '
+            'let the host handle this, rerun this command with --build. '
+            'Use sparingly to avoid exhausting the host resources.')
+    else:
+        npm.build_production(c)
     django.collect_static(c)
 
     if force or git.check_translations_changed(c, old_head, new_head):
