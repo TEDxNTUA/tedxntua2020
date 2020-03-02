@@ -22,7 +22,21 @@ article.listing-page {
     .image {
         width: 7.5em;
         height: 7.5em;
+        margin: 0 auto;
         object-fit: contain;
+    }
+    .placeholder {
+        position: relative;
+        .image {
+            opacity: .6;
+        }
+        h5 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: 0;
+            transform: translate(-50%, -50%);
+        }
     }
 }
 
