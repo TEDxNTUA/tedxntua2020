@@ -72,11 +72,17 @@ nav#nav {
 }
 
 .navbar-nav {
-    position: relative;
+    position: absolute;
+    top: calc(#{$page-padding-y} + 3.25em);
+    left: 0;
+    right: 0;
+    z-index: 50;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    padding: 0 $page-padding-x $page-padding-y;
     margin-top: .75em;
+    background: $body-bg;
+    border-bottom: 4px solid black;
     &.collapsing {
         transition: none;
     }
@@ -89,6 +95,11 @@ nav#nav {
         font-family: $font-family-serif;
         font-size: 1.5em;
         font-weight: 500;
+        &:hover, &:active {
+            .nav-item-text {
+                @include underline(3px, 3px);
+            }
+        }
         &.dropdown-toggle {
             &::after {
                 content: none;
@@ -113,12 +124,15 @@ nav#nav {
         border: none;
         font-size: 1em;
     }
+    .dropdown-item:active {
+        background: none;
+    }
 }
 
 .language-switch-container {
     position: absolute;
     top: 0;
-    right: 0;
+    right: $page-padding-x;
     z-index: 1;
     text-align: right;
 }
@@ -135,7 +149,7 @@ Enforce that dropdown becomes static for small screens.
 
 @include media-breakpoint-up(md) {
     nav#nav {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         hr {
             display: none;
         }
@@ -144,11 +158,15 @@ Enforce that dropdown becomes static for small screens.
         display: none;
     }
     .navbar-nav {
-        margin-left: auto;
+        position: relative;
+        top: auto;
         flex-direction: row;
         align-items: center;
         width: auto;
         margin-top: 0;
+        margin-left: auto;
+        padding: 0;
+        border: none;
         &.collapse:not(.show) {
             display: flex;
         }
@@ -171,6 +189,13 @@ Enforce that dropdown becomes static for small screens.
                 }
             }
         }
+        .nav-item > .nav-link {
+            &:hover, &:active {
+                .nav-item-text {
+                    box-shadow: none;
+                }
+            }
+        }
         .nav-link-icon {
             width: 1.5em;
             height: 1.5em;
@@ -180,8 +205,7 @@ Enforce that dropdown becomes static for small screens.
         .dropdown-menu {
             display: none;
             flex-direction: column;
-            font-size: .75em;
-            min-width: 10em;
+            min-width: 8em;
             &.show {
                 display: flex;
             }
@@ -195,9 +219,6 @@ Enforce that dropdown becomes static for small screens.
             padding: .4em 1em;
             border: none;
             line-height: 1;
-            &:hover {
-                font-weight: bold;
-            }
         }
         .nav-dropdown-item-icon {
             width: 1em;
@@ -210,7 +231,7 @@ Enforce that dropdown becomes static for small screens.
 @include media-breakpoint-up(lg) {
     nav#nav {
         padding: $page-padding-y-lg $page-padding-x-lg;
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
     .navbar-nav {
         .nav-link-icon {
