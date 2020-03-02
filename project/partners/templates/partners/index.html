@@ -5,7 +5,7 @@
 {% block content %}
 <article class="sponsors">
     {% for id, category in partners.items %}
-        <h2 class="page-heading">{{ category.title }}</h2>
+        <h2 class="page-heading {{ id }}-heading">{{ category.title }}</h2>
         <div class="category container-fluid p-0" id="{{ id }}">
             {% for partner in category.items %}
                 <div class="child">
@@ -13,7 +13,21 @@
                     <div class="card-container">
                             <div class="container-image">
                                 <a href="{{ partner.link }}">
-                                    <img src="{% static "images/tedxntua-black-600.png" %}" alt="random" class="logo">
+                                    {% if partner.image %}
+                                    <img class="logo"
+                                        srcset="{{ partner.image.thumbnail.320x320.url }} 320w,
+                                            {{ partner.image.thumbnail.720x720.url }} 720w,
+                                            {{ partner.image.thumbnail.1024x1024.url }} 1024w"
+                                        sizes="(max-width: 576px) 320px,
+                                            (max-width: 992px) 720px,
+                                            1024px"
+                                        src="{{ partner.image.thumbnail.320x320.url }}"
+                                        alt="" />
+                                    {% else %}
+                                    <div class="logo no-image">
+                                        <h3>{{ partner.name }}</h3>
+                                    </div>
+                                    {% endif %}
                                 </a>
                                 {% if partner.leaflet %}
                                     <a href="{{ partner.link }}" class="title-right">
@@ -46,7 +60,6 @@
             <div class="modal-content">
                 <div class="modal-body" data-dismiss="modal">
                     <iframe class="iframe-div" id="leaflet-iframe" frameborder="0"></iframe>
-                    <!-- <img src="{% static "images/leaflet-cover-2019-web-dac3663699cbb7d1.jpg" %}" alt="" class="img-fluid">  -->
                 </div>
             </div>
         </div>

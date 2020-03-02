@@ -1,9 +1,14 @@
-
 article.sponsors {
-    h2{
+    h2 {
         text-align: center;
         margin-top: 2rem;
-        font-size: 6vh;
+        font-size: 2rem;
+        &.PS-heading {
+            font-size: 2.5rem;
+        }
+        &.GS-heading {
+            font-size: 2.25rem;
+        }
     }
     .container-image{
         position: relative;
@@ -84,34 +89,10 @@ article.sponsors {
         align-items: center;
         justify-content: center;
     }
-    .img-fluid{
-        max-height: 100%;
-        max-width: 100%;
-        display: block;
-        margin: 0 auto;
-        height: auto;
-    }
-    .img-fluid:hover{
-        // transform: scale(1.2);
-    }
-    .iframe-div{
-        border: 2px solid yellow;
-        margin: 0 !important;
-        height: max-content;
-        width: max-content;
-    }
     .iframe-div{
         height: 100%;
         width: 95vw;
     }
-    @include media-breakpoint-up(lg){
-        .iframe-div{
-            width: 50vw;
-        }
-    }
-    //https://codepen.io/ccrch/pen/yyaraz for zoom
-//////////////end of Modal image
-
     .category {
         display: flex;
         flex-wrap: wrap;
@@ -130,6 +111,11 @@ article.sponsors {
             .logo{
                 margin: 0 auto;
                 width: 10em;
+            }
+            .no-image {
+                padding: 2em .25em;
+                text-align: center;
+                overflow-wrap: break-word;
             }
         }
     }
@@ -183,8 +169,37 @@ article.sponsors {
     }
 }
 
+@include media-breakpoint-up(md) {
+    article.sponsors .category{
+        font-size: 1.5rem;
+    }
+    article.sponsors .category .child{
+        @include make-col(4);
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    article.sponsors .category .child:nth-child(5n+4){
+        margin-left: 0.1vw;
+    }
+    article.sponsors .category .child:nth-child(5n+5){
+        margin-right: 0.1vw;
+    }
+    article.sponsors .category#GS .child{
+        @include make-col(5);
+    }
+}
+
 @include media-breakpoint-up(lg) {
     article.sponsors{
+        h2 {
+            font-size: 2.75rem;
+            &.PS-heading {
+                font-size: 3.5rem;
+            }
+            &.GS-heading {
+                font-size: 3.25rem;
+            }
+        }
         .category#PS .title-right{
             .btn-right{
                 width: 3em;
@@ -222,25 +237,8 @@ article.sponsors {
                 }
             }
         }
-    }
-}
-
-@include media-breakpoint-up(md) {
-    article.sponsors .category{
-        font-size: 1.5rem;
-    }
-    article.sponsors .category .child{
-        @include make-col(4);
-        margin-right: 0;
-        margin-bottom: 0;
-    }
-    article.sponsors .category .child:nth-child(5n+4){
-        margin-left: 0.1vw;
-    }
-    article.sponsors .category .child:nth-child(5n+5){
-        margin-right: 0.1vw;
-    }
-    article.sponsors .category#GS .child{
-        @include make-col(5);
+        .iframe-div{
+            width: 50vw;
+        }
     }
 }
