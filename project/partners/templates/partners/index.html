@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block title %}Partners{% endblock %}
-{% block description %}This is the partners page (with leaflet){% endblock %}
+{% block title %}{% trans 'Partners' %}{% endblock %}
+{% block description %}{% trans 'partners.description' %}{% endblock %}
 {% block content %}
 <article class="sponsors">
     {% for id, category in partners.items %}

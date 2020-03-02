@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-02 05:42+0000\n"
+"POT-Creation-Date: 2020-03-02 15:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,34 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: project/about/templates/about/index.html:4
+#: project/about/templates/about/index.html:5
 msgid "about.title"
 msgstr "About us"
 
-#: project/about/templates/about/index.html:5
+#: project/about/templates/about/index.html:6
 msgid "about.description"
 msgstr ""
 "Who are we? What is TED? What is TEDx? Meet the institutions that are "
 "involved in this project and the story behind the team of TEDxNTUA."
 
-#: project/about/templates/about/index.html:12
+#: project/about/templates/about/index.html:13
 msgid "about.meet_the_team"
 msgstr "MEET THE TEAM"
 
-#: project/about/templates/about/index.html:25
-msgid "Picture #1 of"
-msgstr ""
-
-#: project/about/templates/about/index.html:41
-msgid "Picture #2 of"
-msgstr ""
-
-#: project/about/templates/about/index.html:44
+#: project/about/templates/about/index.html:42
 #, python-format
 msgid "%(team_name)s TEAM"
 msgstr ""
 
-#: project/about/templates/about/index.html:64
+#: project/about/templates/about/index.html:62
 msgid "about.tedxntua"
 msgstr ""
 "<h3>What is TEDxNTUA?</h3><p>TEDxNTUA is a conference that features "
@@ -75,7 +67,7 @@ msgstr ""
 "Institute of Communication and Computer Systems (<a href=\"https://www.iccs."
 "gr\" target=\"_blank\">ICCS</a>) of NTUA.</p>"
 
-#: project/about/templates/about/index.html:65
+#: project/about/templates/about/index.html:63
 msgid "about.join"
 msgstr ""
 "<details><summary><strong>I want to join the team!</strong></summary><p>The "
@@ -94,7 +86,7 @@ msgstr ""
 "weeks before the event for the event-day volunteers. <strong>Stay tuned</"
 "strong> to our social media pages to be updated.</p></details>"
 
-#: project/about/templates/about/index.html:70
+#: project/about/templates/about/index.html:68
 msgid "about.ted"
 msgstr ""
 "<h3>What is TED?</h3><p>TED is a nonprofit organization devoted to "
@@ -125,7 +117,7 @@ msgstr ""
 "innovators from around the globe to amplify the impact of their remarkable "
 "projects and activities.</p>"
 
-#: project/about/templates/about/index.html:73
+#: project/about/templates/about/index.html:71
 msgid "about.tedx"
 msgstr ""
 "<h3>What is TEDx?</h3><p>In the spirit of ideas worth spreading, TEDx is a "
@@ -167,12 +159,12 @@ msgstr ""
 msgid "home.about.learn_more"
 msgstr "Learn more about us"
 
-#: project/home/templates/home/about.html:19
+#: project/home/templates/home/about.html:20
 msgid "home.about.cta_header"
 msgstr "Oh, and don't forget to:"
 
-#: project/home/templates/home/about.html:21
-#: project/home/templates/home/hero.html:35
+#: project/home/templates/home/about.html:22
+#: project/home/templates/home/hero.html:36
 msgid "tickets.cta"
 msgstr "Get your tickets!"
 
@@ -211,11 +203,11 @@ msgstr ""
 msgid "home.date"
 msgstr "March 28th"
 
-#: project/home/templates/home/index.html:4
+#: project/home/templates/home/index.html:5
 msgid "home.title"
 msgstr "Home"
 
-#: project/home/templates/home/index.html:5
+#: project/home/templates/home/index.html:6
 msgid "home.description"
 msgstr ""
 "TEDxNTUA 2020 is held this year, on Saturday, March 28th, at The Hub Events. "
@@ -324,17 +316,29 @@ msgstr ""
 msgid "Community Partners"
 msgstr ""
 
-#: project/partners/models.py:75 project/program/models.py:197
-#: project/program/models.py:315 project/team/models.py:81
+#: project/partners/models.py:75 project/program/models.py:206
+#: project/program/models.py:324 project/team/models.py:85
 msgid "Published"
 msgstr ""
 
-#: project/partners/templates/partners/index.html:20
+#: project/partners/templates/partners/index.html:3
+#: project/templates/layouts/partials/nav.html:75
+msgid "Partners"
+msgstr ""
+
+#: project/partners/templates/partners/index.html:4
+msgid "partners.description"
+msgstr ""
+"Our event would not have been possible without the support from organizations "
+"that share our values and visions. Visit their websites and learn more about "
+"them."
+
 #: project/partners/templates/partners/index.html:34
+#: project/partners/templates/partners/index.html:48
 msgid "website"
 msgstr "WEBSITE"
 
-#: project/partners/templates/partners/index.html:30
+#: project/partners/templates/partners/index.html:44
 msgid "leaflet"
 msgstr "LEAFLET"
 
@@ -396,8 +400,8 @@ msgstr ""
 msgid "Hosting"
 msgstr ""
 
-#: project/program/templates/program/_event-tabs.html:14
-#: project/templates/layouts/partials/nav.html:65
+#: project/program/templates/program/_event-tabs.html:15
+#: project/templates/layouts/partials/nav.html:66
 msgid "Schedule"
 msgstr ""
 
@@ -421,26 +425,26 @@ msgstr "Back"
 msgid "presenter.read_full"
 msgstr "Read full description"
 
-#: project/program/templates/program/schedule.html:3
+#: project/program/templates/program/schedule.html:4
 msgid "schedule.title"
 msgstr "Schedule"
 
-#: project/program/templates/program/schedule.html:4
+#: project/program/templates/program/schedule.html:5
 msgid "schedule.description"
 msgstr ""
 "The very essence of a TEDx event is its medley of talks, performances and "
 "workshops. Discover the topics that will be explored and join us in a "
 "journey of Dualism."
 
-#: project/program/templates/program/schedule.html:11
+#: project/program/templates/program/schedule.html:12
 msgid "TIME"
 msgstr ""
 
-#: project/settings/base.py:177
+#: project/settings/base.py:178
 msgid "Greek"
 msgstr ""
 
-#: project/settings/base.py:178
+#: project/settings/base.py:179
 msgid "English"
 msgstr ""
 
@@ -484,19 +488,15 @@ msgstr ""
 msgid "(Toggle dropdown)"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:73
-msgid "Partners"
-msgstr ""
-
-#: project/templates/layouts/partials/nav.html:80
+#: project/templates/layouts/partials/nav.html:82
 msgid "About us"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:87
+#: project/templates/layouts/partials/nav.html:90
 msgid "Tickets"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:91
+#: project/templates/layouts/partials/nav.html:95
 msgid "LANGUAGE"
 msgstr ""
 
