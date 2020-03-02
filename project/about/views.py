@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import render
 from django.views import View
 
@@ -8,7 +9,11 @@ class AboutView(View):
     template_name = 'about/index.html'
 
     def get(self, request):
-        members = TeamMember.objects.all()
+        if settings.TEDXNTUA_SHOW_UNPUBLISHED:
+            members = TeamMember.objects.all()
+        else:
+            members = TeamMember.objects.published()
+
         return render(request, self.template_name, {
             'members': members,
         })

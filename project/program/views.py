@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 
@@ -9,7 +10,11 @@ class SpeakersView(View):
     template_name = 'program/listing.html'
 
     def get(self, request):
-        items = Presenter.speakers.all()
+        if settings.TEDXNTUA_SHOW_UNPUBLISHED:
+            items = Presenter.speakers.all()
+        else:
+            items = Presenter.speakers.published()
+
         return render(request, self.template_name, {
             'listing_type': 'speakers',
             'items': items,
@@ -20,7 +25,11 @@ class PerformersView(View):
     template_name = 'program/listing.html'
 
     def get(self, request):
-        items = Presenter.performers.all()
+        if settings.TEDXNTUA_SHOW_UNPUBLISHED:
+            items = Presenter.performers.all()
+        else:
+            items = Presenter.speakers.published()
+
         return render(request, self.template_name, {
             'listing_type': 'performers',
             'items': items,
@@ -33,7 +42,11 @@ class SideEventsView(View):
     def get(self, request):
         # Side events view is special in that the listing shows the *activities*
         # instead of their presenters
-        items = Activity.side_events.select_related('presenter').all()
+        if settings.TEDXNTUA_SHOW_UNPUBLISHED:
+            items = Activity.side_events.select_related('presenter')
+        else:
+            items = Activity.side_events.published().select_related('presenter')
+
         return render(request, self.template_name, {
             'listing_type': 'side_events',
             'items': items,
@@ -50,7 +63,11 @@ class PresenterView(View):
         if not is_url_same_domain(request, go_back_url):
             go_back_url = ''
 
-        presenter = get_object_or_404(Presenter, slug=slug)
+        filter_dict = {}
+        if not settings.TEDXNTUA_SHOW_UNPUBLISHED:
+            filter_dict = {'is_published': True}
+
+        presenter = get_object_or_404(Presenter, slug=slug, **filter_dict)
         return render(request, self.template_name, {
             'presenter': presenter,
             'go_back_url': go_back_url,
@@ -60,7 +77,9 @@ class ScheduleView(View):
     template_name = 'program/schedule.html'
 
     def get(self, request):
-        schedule = Activity.objects.get_schedule()
+        schedule = Activity.objects.get_schedule(
+            unpublished=settings.TEDXNTUA_SHOW_UNPUBLISHED,
+        )
         stages = Stage.get_verbose_names()
         return render(request, self.template_name, {
             'schedule': schedule,

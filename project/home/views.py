@@ -9,16 +9,21 @@ class HomeView(TemplateView):
     template_name = 'home/index.html'
 
     def get(self, request, *args, **kwargs):
-        speakers = Presenter.speakers.all()
-        performers = Presenter.performers.all()
-        side_events = Activity.side_events.select_related('presenter').all()
-        lineup = {
-            'speakers': speakers,
-            'performers': performers,
-            'side_events': side_events,
+        qs = {
+            'speakers': Presenter.speakers,
+            'performers': Presenter.performers,
+            'side_events': Activity.side_events,
         }
+        for key in qs:
+            if settings.TEDXNTUA_SHOW_UNPUBLISHED:
+                qs[key] = qs[key].all()
+            else:
+                qs[key] = qs[key].published()
+
+        qs['side_events'] = qs['side_events'].select_related('presenter')
+
         return render(request, self.template_name, {
-            'lineup': lineup,
+            'lineup': qs,
             'placeholders': list(range(4)),
             'event_date': settings.TEDXNTUA_DATE,
         })
