@@ -5,8 +5,10 @@
 {% block content %}
 <article class="sponsors">
     {% for id, category in partners.items %}
-        <h2 class="page-heading {{ id }}-heading">{{ category.title }}</h2>
-        <div class="category container-fluid p-0" id="{{ id }}">
+        {% if category.items %}
+            <h2 class="page-heading {{ id }}-heading">{{ category.title }}</h2>
+            <div class="category container-fluid p-0" id="{{ id }}">
+        {% endif %}
             {% for partner in category.items %}
                 <div class="child">
                     {% load static %}
