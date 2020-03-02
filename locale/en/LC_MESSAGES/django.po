@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-02 03:07+0000\n"
+"POT-Creation-Date: 2020-03-02 05:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -230,23 +230,27 @@ msgstr "LINE UP"
 #: project/home/templates/home/lineup.html:11
 #: project/program/templates/program/_event-tabs.html:5
 #: project/program/templates/program/listing.html:5
-#: project/templates/layouts/partials/nav.html:49
+#: project/templates/layouts/partials/nav.html:47
 msgid "Speakers"
 msgstr ""
 
 #: project/home/templates/home/lineup.html:18
 #: project/program/templates/program/_event-tabs.html:8
 #: project/program/templates/program/listing.html:7
-#: project/templates/layouts/partials/nav.html:57
+#: project/templates/layouts/partials/nav.html:53
 msgid "Performers"
 msgstr ""
 
 #: project/home/templates/home/lineup.html:25
 #: project/program/templates/program/_event-tabs.html:11
 #: project/program/templates/program/listing.html:9
-#: project/templates/layouts/partials/nav.html:63
+#: project/templates/layouts/partials/nav.html:59
 msgid "Side events"
 msgstr ""
+
+#: project/home/templates/home/lineup.html:86
+msgid "home.lineup.more_soon"
+msgstr "More soon"
 
 #: project/home/templates/home/venue.html:5
 msgid "home.venue.title"
@@ -383,7 +387,7 @@ msgid "Hosting"
 msgstr ""
 
 #: project/program/templates/program/_event-tabs.html:14
-#: project/templates/layouts/partials/nav.html:69
+#: project/templates/layouts/partials/nav.html:65
 msgid "Schedule"
 msgstr ""
 
@@ -470,19 +474,19 @@ msgstr ""
 msgid "(Toggle dropdown)"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:77
+#: project/templates/layouts/partials/nav.html:73
 msgid "Partners"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:84
+#: project/templates/layouts/partials/nav.html:80
 msgid "About us"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:91
+#: project/templates/layouts/partials/nav.html:87
 msgid "Tickets"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:95
+#: project/templates/layouts/partials/nav.html:91
 msgid "LANGUAGE"
 msgstr ""
 

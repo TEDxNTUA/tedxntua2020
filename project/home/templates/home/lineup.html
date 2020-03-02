@@ -71,6 +71,22 @@
                         </a>
                     {% endif %}
                 {% endfor %}
+                {% comment %}
+                    Generate placeholders.
+                {% endcomment %}
+                {% for p in placeholders reversed %}
+                    {% if items|length <= p %}
+                        <a class="col-6 col-md-4 placeholder">
+                            <div class="media">
+                                <div class="{% if p|divisibleby:"2" %}woman{% else %}man{% endif %}-icon"
+                                    aria-hidden="true"></div>
+                            </div>
+                            <div class="info">
+                                <h5>{% trans 'home.lineup.more_soon' %}</h5>
+                            </div>
+                        </a>
+                    {% endif %}
+                {% endfor %}
             </div>
             <div class="checkerboard-view"></div>
         </div>

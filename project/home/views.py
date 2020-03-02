@@ -19,5 +19,6 @@ class HomeView(TemplateView):
         }
         return render(request, self.template_name, {
             'lineup': lineup,
+            'placeholders': list(range(4)),
             'event_date': settings.TEDXNTUA_DATE,
         })

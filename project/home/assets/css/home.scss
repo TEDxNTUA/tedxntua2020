@@ -137,8 +137,28 @@ article.home-page {
             }
         }
     }
-    section#lineup .tab-content {
-        font-size: .85rem;
+    section#lineup {
+        .tab-content {
+            font-size: .85rem;
+        }
+        .placeholder {
+            align-self: flex-start;
+            .media {
+                padding-bottom: 0;
+            }
+            .media div {
+                width: 100%;
+                padding-bottom: 100%;
+                opacity: .6;
+                border: 1px solid #777;
+            }
+            .info {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
     }
     section#venue{
         .map{

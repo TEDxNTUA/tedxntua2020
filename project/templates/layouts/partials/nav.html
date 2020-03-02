@@ -23,70 +23,66 @@
     <ul role="menu" id="navbar-nav" class="navbar-nav collapse"
         aria-label="Navigation menu">
         <li class="nav-item">
-            <a role="menuitem" class="nav-link" href="{% url 'index' %}">
-                <div class="nav-link-icon squares-overlayed orange-blue"
+            <a role="menuitem" class="nav-link animated-parent" href="{% url 'index' %}">
+                <div class="nav-link-icon animated-hover squares-overlayed orange-blue"
                     aria-hidden="true"></div>
                 <span class="nav-item-text">{% trans 'Home' %}</span>
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a role="menuitem" class="nav-link dropdown-toggle"
+            <a role="menuitem" class="nav-link animated-parent dropdown-toggle"
                 href="{% url 'speakers' %}" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link-icon triangles blue-black"
+                <div class="nav-link-icon animated-hover triangles blue-black"
                     aria-hidden="true"></div>
                 <span class="nav-item-text">
                     {% trans 'The event' %}<span class="sr-only">{% trans '(Toggle dropdown)' %}</span>
                 </span>
             </a>
             <div role="menu" class="dropdown-menu">
-                <a role="menuitem" class="nav-link dropdown-item"
+                <a role="menuitem" class="nav-link animated-parent dropdown-item"
                     href="{% url 'speakers' %}">
-                    <div class="nav-dropdown-item-icon" aria-hidden="true">
-                        <img src="{% static 'images/speakers_icon.png' %}"
-                            alt="" />
-                    </div>
+                    <div class="nav-dropdown-item-icon animated-hover black-bg woman-icon"
+                        aria-hidden="true"></div>
                     <span class="nav-item-text">{% trans 'Speakers' %}</span>
                 </a>
-                <a role="menuitem" class="nav-link dropdown-item"
+                <a role="menuitem" class="nav-link animated-parent dropdown-item"
                     href="{% url 'performers' %}">
-                    <div class="nav-dropdown-item-icon" aria-hidden="true">
-                        <img src="{% static 'images/performers_icon.png' %}"
-                            alt="" />
-                    </div>
+                    <div class="nav-dropdown-item-icon animated-hover bordered man-icon"
+                        aria-hidden="true"></div>
                     <span class="nav-item-text">{% trans 'Performers' %}</span>
                 </a>
-                <a role="menuitem" class="nav-link dropdown-item"
+                <a role="menuitem" class="nav-link animated-parent dropdown-item"
                     href="{% url 'side-events' %}">
-                    <div class="nav-dropdown-item-icon white-rectangles-in-black"
+                    <div class="nav-dropdown-item-icon animated-hover white-rectangles-in-black"
                         aria-hidden="true"></div>
                     <span class="nav-item-text">{% trans 'Side events' %}</span>
                 </a>
-                <a role="menuitem" class="nav-link dropdown-item"
+                <a role="menuitem" class="nav-link animated-parent dropdown-item"
                     href="{% url 'schedule' %}">
-                    <div class="nav-dropdown-item-icon squares-overlayed orange-black"
+                    <div class="nav-dropdown-item-icon animated-hover squares-overlayed orange-black"
                         aria-hidden="true"></div>
                     <span class="nav-item-text">{% trans 'Schedule' %}</span>
                 </a>
             </div>
         </li>
         <li class="nav-item">
-            <a role="menuitem" class="nav-link" href="{% url 'partners' %}">
-                <div class="nav-link-icon verticals orange-black"
+            <a role="menuitem" class="nav-link animated-parent" href="{% url 'partners' %}">
+                <div class="nav-link-icon animated-hover verticals orange-black"
                     aria-hidden="true"></div>
                 <span class="nav-item-text">{% trans 'Partners' %}</span>
             </a>
         </li>
         <li class="nav-item">
-            <a role="menuitem" class="nav-link" href="{% url 'about' %}">
-                <div class="nav-link-icon circle-in-black red bottom"
+            <a role="menuitem" class="nav-link animated-parent" href="{% url 'about' %}">
+                <div class="nav-link-icon animated-hover circle-in-black red bottom"
                     aria-hidden="true"></div>
                 <span class="nav-item-text">{% trans 'About us' %}</span>
             </a>
         </li>
         <li class="nav-item">
-            <a role="menuitem" class="nav-link" href="{% url 'tickets' %}">
-                <div class="nav-link-icon circle-in-black blue top"
+            <a role="menuitem" class="nav-link animated-parent" href="{% url 'tickets' %}">
+                <div class="nav-link-icon animated-hover circle-in-black blue top"
                     aria-hidden="true"></div>
                 <span class="nav-item-text">{% trans 'Tickets' %}</span>
             </a>
