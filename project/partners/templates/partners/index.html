@@ -14,14 +14,14 @@
                             <div class="container-image">
                                 <a href="{{ partner.link }}">
                                     {% if partner.image %}
-                                    <img class="logo"
-                                        srcset="{{ partner.image.thumbnail.320x320.url }} 320w,
+                                    <img class="logo lazy lazy-on-view"
+                                        src="{{ partner.image.thumbnail.320x320.url }}"
+                                        data-srcset="{{ partner.image.thumbnail.320x320.url }} 320w,
                                             {{ partner.image.thumbnail.720x720.url }} 720w,
                                             {{ partner.image.thumbnail.1024x1024.url }} 1024w"
                                         sizes="(max-width: 576px) 320px,
                                             (max-width: 992px) 720px,
                                             1024px"
-                                        src="{{ partner.image.thumbnail.320x320.url }}"
                                         alt="" />
                                     {% else %}
                                     <div class="logo no-image">
