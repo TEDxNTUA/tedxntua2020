@@ -61,6 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'project.utils.contextprocessors.settings',
             ],
             'libraries': {
                 'iter_extras': 'project.templatetags.iter_extras',
@@ -191,3 +192,5 @@ PARLER_LANGUAGES = {
 PARLER_DEFAULT_LANGUAGE_CODE = 'en'
 
 TEDXNTUA_DATE = '2020-03-28'
+TICKETS_ENABLED = False
+SCHEDULE_ENABLED = False

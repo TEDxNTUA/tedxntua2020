@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.urls import path
 
 from .views import (
@@ -11,5 +12,9 @@ urlpatterns = [
     path('performers/', PerformersView.as_view(), name='performers'),
     path('side-events/', SideEventsView.as_view(), name='side-events'),
     path('event/<slug:slug>', PresenterView.as_view(), name='presenter'),
-    path('schedule/', ScheduleView.as_view(), name='schedule'),
 ]
+
+if settings.SCHEDULE_ENABLED:
+    urlpatterns += [
+        path('schedule/', ScheduleView.as_view(), name='schedule'),
+    ]

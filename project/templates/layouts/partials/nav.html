@@ -58,12 +58,14 @@
                         aria-hidden="true"></div>
                     <span class="nav-item-text">{% trans 'Side events' %}</span>
                 </a>
+                {% if settings.SCHEDULE_ENABLED %}
                 <a role="menuitem" class="nav-link animated-parent dropdown-item"
                     href="{% url 'schedule' %}">
                     <div class="nav-dropdown-item-icon animated-hover squares-overlayed orange-black"
                         aria-hidden="true"></div>
                     <span class="nav-item-text">{% trans 'Schedule' %}</span>
                 </a>
+                {% endif %}
             </div>
         </li>
         <li class="nav-item">
@@ -80,6 +82,7 @@
                 <span class="nav-item-text">{% trans 'About us' %}</span>
             </a>
         </li>
+        {% if settings.TICKETS_ENABLED %}
         <li class="nav-item">
             <a role="menuitem" class="nav-link animated-parent" href="{% url 'tickets' %}">
                 <div class="nav-link-icon animated-hover circle-in-black blue top"
@@ -87,6 +90,7 @@
                 <span class="nav-item-text">{% trans 'Tickets' %}</span>
             </a>
         </li>
+        {% endif %}
         <li class="nav-item language-switch-container">
             <h6>{% trans 'LANGUAGE' %}</h6>
             <div role="group" class="btn-group language-switch"

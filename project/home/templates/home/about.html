@@ -16,9 +16,11 @@
         <a href="{% url "about" %}" class="btn btn-lg btn-secondary">
             {% trans 'home.about.learn_more' %} &gt;
         </a>
+        {% if settings.TICKETS_ENABLED %}
         <h3>{% trans 'home.about.cta_header' %}</h3>
         <a href="{% url 'tickets' %}" class="btn btn-lg btn-primary">
             {% trans 'tickets.cta' %}
         </a>
+        {% endif %}
     </div>
 </section>
