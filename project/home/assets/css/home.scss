@@ -60,6 +60,7 @@ article.home-page {
         margin-bottom: .35em;
     }
     section#hero {
+        margin-bottom: 3em;
         img {
             width: 100%;
             height: auto;
@@ -384,6 +385,7 @@ article.home-page {
         }
         section#hero {
             display: flex;
+            margin-bottom: 0;
             .image-container {
                 width: 40vw;
                 max-width: 80vh;
@@ -504,6 +506,14 @@ article.home-page {
             }
             .infobox {
                 font-size: 1.25em;
+            }
+        }
+        section#venue {
+            .map {
+                height: 16em;
+            }
+            .location {
+                width: 16em;
             }
         }
     }
