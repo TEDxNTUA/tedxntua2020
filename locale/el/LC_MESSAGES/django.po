@@ -505,7 +505,7 @@ msgstr "Η εκδήλωση"
 
 #: project/templates/layouts/partials/nav.html:39
 msgid "(Toggle dropdown)"
-msgstr "Εναλλαγή"
+msgstr "(Εμφάνιση/Απόκρυψη υπομενού)"
 
 #: project/templates/layouts/partials/nav.html:82
 msgid "About us"
