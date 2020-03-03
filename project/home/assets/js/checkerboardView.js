@@ -39,6 +39,10 @@ function createCheckerboardView(tabEl, layout) {
       let elIdx = layout[i][j]
       if (elIdx >= 0 && elIdx < simpleView.children.length) {
         let clone = simpleView.children[elIdx].cloneNode(true)
+        // Attach pjax listeners
+        if (window.pjax) {
+          window.pjax.attachLink(clone)
+        }
         checkerboardView.appendChild(clone)
       } else {
         checkerboardView.appendChild(createSpacer())
