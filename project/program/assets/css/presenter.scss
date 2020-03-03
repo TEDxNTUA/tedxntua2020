@@ -41,6 +41,9 @@ article.presenter-page {
     #description {
         margin-bottom: 1em;
         text-align: justify;
+        a {
+            @include underline();
+        }
     }
 
     .activities {
@@ -61,6 +64,9 @@ article.presenter-page {
             font-family: $font-family-sans-serif;
             font-weight: lighter;
             margin-bottom: 1rem;
+        }
+        .content a {
+            @include underline();
         }
     }
 }
