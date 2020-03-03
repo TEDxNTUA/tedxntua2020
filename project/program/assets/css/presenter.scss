@@ -9,6 +9,11 @@ article.presenter-page {
             height: auto;
             flex-shrink: 0;
         }
+        .image-placeholder div {
+            width: 50vw;
+            height: 50vw;
+            margin: 0 auto;
+        }
     }
 
     .info {
@@ -79,6 +84,12 @@ article.presenter-page {
             img {
                 width: 30em;
                 max-width: 50%;
+            }
+            .image-placeholder div {
+                width: 30em;
+                max-width: 50vw;
+                height: 30em;
+                max-height: 50vw;
             }
         }
 
