@@ -116,4 +116,9 @@ window.pjax = new Pjax({
     '#main',
   ],
   cacheBust: false,
+  analytics: function () {
+    if (window._paq) {
+      window._paq.push(['trackPageView'])
+    }
+  }
 })
