@@ -101,13 +101,16 @@ class ActivityManager(TranslatableManager):
         # Initialize each line to contain None for each stage
         blank_line = {stage.value: None for stage in Stage}
 
-        # TODO prefetch presenter
-        activities = Activity.objects.filter(
+        activities = Activity.objects.select_related('presenter').filter(
             start__isnull=False,
             end__isnull=False,
         )
         if not unpublished:
-            activities = activities.filter(is_published=True)
+            # Hide activities when their presenter is unpublished
+            activities = activities.filter(
+                presenter__is_published=True,
+                is_published=True,
+            )
 
         for activity in activities:
             # Get time slot
@@ -149,7 +152,10 @@ class ActivityManager(TranslatableManager):
         Becomes handy in templates where we can write for example:
         `for act in presenter.activity_set.published`.
         '''
-        return self.get_queryset().filter(is_published=True)
+        return self.get_queryset().filter(
+            presenter__is_published=True,
+            is_published=True,
+        )
 
 
 class ActivityTypeManager(TranslatableManager):
@@ -167,7 +173,10 @@ class ActivityTypeManager(TranslatableManager):
         )
 
     def published(self):
-        return self.get_queryset().filter(is_published=True)
+        return self.get_queryset().filter(
+            presenter__is_published=True,
+            is_published=True,
+        )
 
 
 class Activity(TranslatableModel):
