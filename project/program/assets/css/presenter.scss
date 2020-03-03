@@ -115,7 +115,8 @@ article.presenter-page {
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    box-shadow: inset 0 -1em 1em 0 rgba(255, 255, 255, .75);
+                    pointer-events: none;
+                    background: linear-gradient(to top, $body-bg 0, transparent 1.5em);
                 }
             }
         }
