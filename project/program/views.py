@@ -28,7 +28,7 @@ class PerformersView(View):
         if settings.TEDXNTUA_SHOW_UNPUBLISHED:
             items = Presenter.performers.all()
         else:
-            items = Presenter.speakers.published()
+            items = Presenter.performers.published()
 
         return render(request, self.template_name, {
             'listing_type': 'performers',
