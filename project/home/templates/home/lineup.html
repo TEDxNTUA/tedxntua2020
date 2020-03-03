@@ -37,14 +37,20 @@
                         <a class="col-6 col-md-4"
                             href="{% url "presenter" slug=item.presenter.slug %}">
                             <div class="media">
-                                <img srcset="{{ item.image.thumbnail.320x320.url }} 320w,
-                                            {{ item.image.thumbnail.720x720.url }} 720w,
-                                            {{ item.image.thumbnail.1024x1024.url }} 1024w"
-                                    sizes="(max-width: 576px) 320px,
-                                            (max-width: 992px) 720px,
-                                            1024px"
-                                    src="{{ item.image.thumbnail.320x320.url }}"
-                                    alt="" />
+                                {% if item.image %}
+                                    <img srcset="{{ item.image.thumbnail.320x320.url }} 320w,
+                                                {{ item.image.thumbnail.720x720.url }} 720w,
+                                                {{ item.image.thumbnail.1024x1024.url }} 1024w"
+                                        sizes="(max-width: 576px) 320px,
+                                                (max-width: 992px) 720px,
+                                                1024px"
+                                        src="{{ item.image.thumbnail.320x320.url }}"
+                                        alt="" />
+                                {% else %}
+                                    <div class="image image-placeholder">
+                                        <div class="squares-overlayed blue-black"></div>
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="info">
                                 <h5>{{ item.title }}</h5>
@@ -54,16 +60,21 @@
                     {% else %}
                         <a class="col-6 col-md-4"
                             href="{% url "presenter" slug=item.slug %}">
-                            <div class="media">
-                                <img srcset="{{ item.image.thumbnail.320x320.url }} 320w,
-                                            {{ item.image.thumbnail.720x720.url }} 720w,
-                                            {{ item.image.thumbnail.1024x1024.url }} 1024w"
-                                    sizes="(max-width: 576px) 320px,
-                                            (max-width: 992px) 720px,
-                                            1024px"
-                                    src="{{ item.image.thumbnail.320x320.url }}"
-                                    alt="" />
-                            </div>
+                            {% if item.image %}
+                                <div class="media">
+                                    <img class="image"
+                                        srcset="{{ item.image.thumbnail.320x320.url }} 320w,
+                                                {{ item.image.thumbnail.720x720.url }} 720w,
+                                                {{ item.image.thumbnail.1024x1024.url }} 1024w"
+                                        sizes="(max-width: 576px) 320px,
+                                                (max-width: 992px) 720px,
+                                                1024px"
+                                        src="{{ item.image.thumbnail.320x320.url }}"
+                                        alt="" />
+                                </div>
+                            {% else %}
+                                <div class="media image image-placeholder squares-overlayed blue-black"></div>
+                            {% endif %}
                             <div class="info">
                                 <h5>{{ item.name }}</h5>
                                 <p>{{ item.occupation }}</p>

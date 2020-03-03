@@ -366,7 +366,7 @@ article.home-page {
                 top: 0;
                 left: 0;
             }
-            img {
+            .image {
                 transition: transform .1s ease-in-out;
             }
             .info {
@@ -379,7 +379,7 @@ article.home-page {
                 transition: top .1s ease-in-out;
             }
             a:hover {
-                img {
+                .image {
                     transform: scale(1.05);
                 }
                 .info {
