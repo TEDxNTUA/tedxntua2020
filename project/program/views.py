@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 
 from .models import Presenter, Activity, Stage
@@ -57,7 +57,10 @@ class SideEventsView(View):
 class PresenterView(View):
     template_name = 'program/presenter.html'
 
-    def get(self, request, slug):
+    def get(self, request, slug=None):
+        if slug is None:
+            return redirect('index')
+
         # Add link to previous page if it was on the same domain
         go_back_url = request.META.get('HTTP_REFERER')
         if not is_url_same_domain(request, go_back_url):

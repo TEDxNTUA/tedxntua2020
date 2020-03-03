@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webpack_loader',
-    'django_extensions'
+    'django_extensions',
+    'active_link',
 ]
 
 MIDDLEWARE = [

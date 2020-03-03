@@ -11,6 +11,7 @@ urlpatterns = [
     path('speakers/', SpeakersView.as_view(), name='speakers'),
     path('performers/', PerformersView.as_view(), name='performers'),
     path('side-events/', SideEventsView.as_view(), name='side-events'),
+    path('event/', PresenterView.as_view(), name='presenter'),
     path('event/<slug:slug>', PresenterView.as_view(), name='presenter'),
 ]
 
