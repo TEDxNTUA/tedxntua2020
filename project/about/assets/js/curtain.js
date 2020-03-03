@@ -1,10 +1,4 @@
 function slideMember(el, normalOv, hoverOv, hoverWidth) {
-  const altImg = null//hoverOv.querySelector("img")
-  // Load alternative image
-  if (altImg && altImg.dataset.loaded === "false") {
-    altImg.srcset = altImg.dataset.srcset
-    altImg.dataset.loaded = "true"
-  }
   normalOv.style.width = el.clientWidth - hoverWidth + "px"
   hoverOv.style.width = hoverWidth + "px"
   hoverOv.classList.add("hover")

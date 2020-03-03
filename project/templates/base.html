@@ -49,8 +49,10 @@
     </footer>
 
     {% render_bundle "main" "js" %}
-    {% block scripts %}
-    {% endblock %}
+    <div class="is-pjax">
+        {% block scripts %}
+        {% endblock %}
+    </div>
 
 </body>
 

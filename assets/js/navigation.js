@@ -116,6 +116,7 @@ window.pjax = new Pjax({
     '#nav .language-switch',
     '#main',
     '#footer .language-switch',
+    '.is-pjax',
   ],
   cacheBust: false,
   analytics: function () {
@@ -124,3 +125,5 @@ window.pjax = new Pjax({
     }
   }
 })
+
+document.addEventListener("DOMContentLoaded", console.log)

@@ -10,7 +10,7 @@ function loadLazyImage(lazyImage) {
   lazyImage.dataset.loaded = "true"
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+function attachObserver() {
   const lazyImagesOnView = [].slice.call(
     document.querySelectorAll("img.lazy-on-view")
   )
@@ -43,4 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
       loadLazyImage(lazyImage)
     })
   })
-})
+}
+
+document.addEventListener("DOMContentLoaded", attachObserver)
+document.addEventListener("pjax:complete", attachObserver)
