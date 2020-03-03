@@ -37,8 +37,13 @@
             <header>
                 <h5>{{ activity.title }}</h5>
                 <h6 class="h5">
-                    <span>{{activity.get_activity_type_display | upper}}</span> |
-                    <time>{{activity.start_time}}</time>&mdash;<time>{{activity.end_time}}</time>
+                    <span class="type">
+                        {{activity.get_activity_type_display | upper}}
+                    </span>
+                    {% if activity.start and activity.end %}
+                        <span class="sep">|</span>
+                        <time>{{activity.start_time}}</time>&mdash;<time>{{activity.end_time}}</time>
+                    {% endif %}
                 </h6>
             </header>
             <div class="content">
