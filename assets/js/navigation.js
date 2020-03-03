@@ -113,7 +113,9 @@ window.pjax = new Pjax({
     'title',
     'meta[name=description]',
     'meta[property="og:image"]',
+    '#nav .language-switch',
     '#main',
+    '#footer .language-switch',
   ],
   cacheBust: false,
   analytics: function () {
