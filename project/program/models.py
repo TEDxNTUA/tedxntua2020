@@ -256,6 +256,9 @@ class Activity(TranslatableModel):
 
     def clean(self):
         '''Ensures that only one activity starts at a certain time and stage'''
+        # Skip if start time has not been set
+        if self.start is None:
+            return
         same_time_activities = Activity.objects.filter(start=self.start)
         for other in same_time_activities:
             if (self.id != other.id
