@@ -24,6 +24,7 @@ setup(
         'django-webpack-loader',
         'django-parler',
         'django-extensions',
+        'django-active-link',
     ],
     extras_require={
         'dev': [

@@ -113,7 +113,7 @@ window.pjax = new Pjax({
     'title',
     'meta[name=description]',
     'meta[property="og:image"]',
-    '#nav .language-switch',
+    '#nav',
     '#main',
     '#footer .language-switch',
     '.is-pjax',
@@ -125,5 +125,3 @@ window.pjax = new Pjax({
     }
   }
 })
-
-document.addEventListener("DOMContentLoaded", console.log)

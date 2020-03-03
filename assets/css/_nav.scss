@@ -95,7 +95,7 @@ nav#nav {
         font-family: $font-family-serif;
         font-size: 1.5em;
         font-weight: 500;
-        &:hover, &:active {
+        &:hover, &:active, &.active {
             .nav-item-text {
                 @include underline(3px, 3px);
             }
@@ -124,8 +124,10 @@ nav#nav {
         border: none;
         font-size: 1em;
     }
-    .dropdown-item:active {
-        background: none;
+    .dropdown-item {
+        &:active, &.active {
+            background: none;
+        }
     }
 }
 
@@ -177,7 +179,7 @@ Enforce that dropdown becomes static for small screens.
             margin-bottom: 0;
             border-bottom: $nav-hover-border-width solid transparent;
             font-size: .9em;
-            &:hover {
+            &:hover, &:active, &.active {
                 border-color: $primary;
             }
             &.dropdown-toggle {
@@ -190,7 +192,7 @@ Enforce that dropdown becomes static for small screens.
             }
         }
         .nav-item > .nav-link {
-            &:hover, &:active {
+            &:hover, &:active, &.active {
                 .nav-item-text {
                     box-shadow: none;
                 }
