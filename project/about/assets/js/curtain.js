@@ -1,11 +1,13 @@
 function slideMember(el, normalOv, hoverOv, hoverWidth) {
   normalOv.style.width = el.clientWidth - hoverWidth + "px"
+  normalOv.classList.add("hover")
   hoverOv.style.width = hoverWidth + "px"
   hoverOv.classList.add("hover")
 }
 
 function resetMember(el, normalOv, hoverOv) {
   normalOv.style.width = "100%"
+  normalOv.classList.remove("hover")
   hoverOv.style.width = 0
   hoverOv.classList.remove("hover")
 }
