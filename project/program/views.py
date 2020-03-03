@@ -66,13 +66,17 @@ class PresenterView(View):
         if not is_url_same_domain(request, go_back_url):
             go_back_url = ''
 
-        filter_dict = {}
-        if not settings.TEDXNTUA_SHOW_UNPUBLISHED:
-            filter_dict = {'is_published': True}
+        if settings.TEDXNTUA_SHOW_UNPUBLISHED:
+            presenter = get_object_or_404(Presenter, slug=slug)
+            activities = presenter.activity_set.all()
+        else:
+            presenter = get_object_or_404(Presenter, slug=slug,
+                    is_published=True)
+            activities = presenter.activity_set.published()
 
-        presenter = get_object_or_404(Presenter, slug=slug, **filter_dict)
         return render(request, self.template_name, {
             'presenter': presenter,
+            'activities': activities,
             'go_back_url': go_back_url,
         })
 
