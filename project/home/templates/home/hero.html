@@ -32,7 +32,7 @@
             </div>
         </div>
         {% if settings.TEDXNTUA_TICKETS_ENABLED %}
-        <a href="{% url 'tickets' %}" class="btn btn-lg btn-primary">
+        <a href="{{ settings.TEDXNTUA_TICKETS_URL }}" class="btn btn-lg btn-primary">
             {% trans 'tickets.cta' %}
         </a>
         {% endif %}

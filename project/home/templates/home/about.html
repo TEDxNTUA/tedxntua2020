@@ -18,7 +18,7 @@
         </a>
         {% if settings.TEDXNTUA_TICKETS_ENABLED %}
         <h3>{% trans 'home.about.cta_header' %}</h3>
-        <a href="{% url 'tickets' %}" class="btn btn-lg btn-primary">
+        <a href="{{ settings.TEDXNTUA_TICKETS_URL }}" class="btn btn-lg btn-primary">
             {% trans 'tickets.cta' %}
         </a>
         {% endif %}

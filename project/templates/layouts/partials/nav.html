@@ -89,7 +89,7 @@
         </li>
         {% if settings.TEDXNTUA_TICKETS_ENABLED %}
         <li class="nav-item">
-            <a role="menuitem" class="nav-link" href="{% url 'tickets' %}">
+            <a role="menuitem" class="nav-link" href="{{ settings.TEDXNTUA_TICKETS_URL }}">
                 <div class="nav-link-icon circle-in-black blue top"
                     aria-hidden="true"></div>
                 <span class="nav-item-text">{% trans 'Tickets' %}</span>
