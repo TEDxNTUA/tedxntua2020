@@ -1,5 +1,5 @@
 dj-database-url==0.5.0
-Django==2.2.10
+Django==2.2.22
 mysqlclient==1.4.4
 django-versatileimagefield==1.10
 django-webpack-loader==0.6.0
