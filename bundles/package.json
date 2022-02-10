@@ -31,7 +31,7 @@
     "compass-mixins": "^0.12.10",
     "css-loader": "^1.0.1",
     "mini-css-extract-plugin": "^0.4.5",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.26.1",
